@@ -131,13 +131,8 @@ body {
   text-align:center; white-space:nowrap;
 }
 
-/* 移动端控制 */
-.mobile-ctrl { position:absolute; bottom:0; left:0; right:0; height:120px; display:none; z-index:15; pointer-events:none; }
-.touch-left, .touch-right { position:absolute; bottom:14px; width:72px; height:72px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); display:flex; align-items:center; justify-content:center; font-size:28px; pointer-events:auto; }
-.touch-left { left:16px; }
-.touch-right { right:16px; }
-.fire-btn { position:absolute; bottom:18px; left:50%; transform:translateX(-50%); width:74px; height:74px; border-radius:50%; background:rgba(239,68,68,0.25); border:2px solid rgba(239,68,68,0.6); display:flex; align-items:center; justify-content:center; font-size:24px; pointer-events:auto; }
-@media (hover:none) and (pointer:coarse) { .mobile-ctrl { display:block; } .controls-hint { display:none; } }
+/* 鼠标指针 */
+#gameCanvas { cursor:crosshair; }
 
 /* 暂停按钮 */
 .pause-btn { position:absolute; top:56px; right:14px; width:36px; height:36px; border-radius:9px; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:16px; cursor:pointer; z-index:12; display:none; }
@@ -183,7 +178,7 @@ body {
     <div class="select-wrap">
       <div class="select-title">
         <h1>✈️ 单词打飞机</h1>
-        <p>选择词汇范围与题型，开火击落正确答案！</p>
+        <p>选择词汇范围与题型，点击正确答案的敌机即可开火！</p>
       </div>
 
       <div class="section-card">
@@ -242,12 +237,7 @@ body {
       <div class="tgt-word" id="tgtWord">—</div>
       <div class="tgt-pos" id="tgtPos"></div>
     </div>
-    <div class="controls-hint">← → / A D 移动　·　空格发射　·　P 暂停</div>
-    <div class="mobile-ctrl">
-      <div class="touch-left" id="tLeft">◀</div>
-      <div class="fire-btn" id="tFire">🔥</div>
-      <div class="touch-right" id="tRight">▶</div>
-    </div>
+    <div class="controls-hint">👆 点击敌机发射炮弹　·　P 暂停</div>
     <div class="pause-overlay" id="pauseOverlay">
       <h2>⏸ 已暂停</h2>
       <button class="resume" id="resumeBtn">继续游戏</button>
@@ -307,9 +297,9 @@ const state = {
   qIndex:0,
 };
 const DIFF_CFG = {
-  easy:   { options:3, planeSpeed:0.55, spawnGap:2600, fireCD:280 },
-  normal: { options:4, planeSpeed:0.85, spawnGap:2100, fireCD:260 },
-  hard:   { options:5, planeSpeed:1.20, spawnGap:1700, fireCD:240 },
+  easy:   { options:3, planeSpeed:0.55, spawnGap:2600 },
+  normal: { options:4, planeSpeed:0.85, spawnGap:2100 },
+  hard:   { options:5, planeSpeed:1.20, spawnGap:1700 },
 };
 
 /* ============ DOM ============ */
@@ -433,24 +423,21 @@ window.addEventListener('resize',resize);
 const game = {
   running:false, paused:false, raf:0,
   score:0, kill:0, shots:0, hits:0, combo:0, maxCombo:0, hp:3,
-  player:{x:0,y:0,w:46,h:46,vx:0,speed:7},
-  bullets:[], planes:[], particles:[], floats:[],
+  player:{x:0,y:0,w:46,h:46,targetX:0},
+  bullets:[], planes:[], particles:[], floats:[], trails:[],
   curQ:null, curPlanes:[],        // 当前题目的飞机（带option）
   spawnTimer:0, nextSpawn:0,
-  fireCD:0, fireTimer:0,
+  lock:false,                     // 点击锁定（防止连点）
   lastTs:0,
-  keys:{},
-  // 触摸控制
-  touchLeft:false, touchRight:false, touchFire:false,
 };
 
 function resetGame(){
   game.running=true; game.paused=false;
   game.score=0; game.kill=0; game.shots=0; game.hits=0; game.combo=0; game.maxCombo=0; game.hp=3;
-  game.bullets=[]; game.planes=[]; game.particles=[]; game.floats=[];
+  game.bullets=[]; game.planes=[]; game.particles=[]; game.floats=[]; game.trails=[];
   game.curQ=null; game.curPlanes=[];
-  game.spawnTimer=0; game.fireTimer=0;
-  game.player.x=W/2; game.player.y=H-90;
+  game.spawnTimer=0; game.lock=false;
+  game.player.x=W/2; game.player.y=H-90; game.player.targetX=W/2;
   buildQuestions();
   nextQuestion();
   updateHUD();
@@ -485,65 +472,89 @@ function nextQuestion(){
   game.nextSpawn = 0;
 }
 
-/* ===== 输入 ===== */
+/* ===== 输入：点击敌机发射炮弹 ===== */
 window.addEventListener('keydown',e=>{
   if(!game.running) return;
   const k=e.key.toLowerCase();
-  game.keys[k]=true;
-  if(k===' '){ e.preventDefault(); tryFire(); }
   if(k==='p') togglePause();
 });
-window.addEventListener('keyup',e=>{ game.keys[e.key.toLowerCase()]=false; });
 
-// 触摸
-const tLeft=$('tLeft'), tRight=$('tRight'), tFire=$('tFire');
-['touchstart','mousedown'].forEach(ev=>{
-tLeft.addEventListener(ev,e=>{e.preventDefault();game.touchLeft=true;});
-tRight.addEventListener(ev,e=>{e.preventDefault();game.touchRight=true;});
-tFire.addEventListener(ev,e=>{e.preventDefault();game.touchFire=true;tryFire();});
-});
-['touchend','touchcancel','mouseup','mouseleave'].forEach(ev=>{
-tLeft.addEventListener(ev,()=>game.touchLeft=false);
-tRight.addEventListener(ev,()=>game.touchRight=false);
-tFire.addEventListener(ev,()=>game.touchFire=false);
-});
-// 拖动控制（canvas上滑动）
-let dragX=null;
-canvas.addEventListener('touchstart',e=>{ if(e.touches[0]) dragX=e.touches[0].clientX; });
-canvas.addEventListener('touchmove',e=>{
-  if(e.touches[0]&&dragX!=null){
-    game.player.x = e.touches[0].clientX;
-    dragX=e.touches[0].clientX;
-  }
-});
-canvas.addEventListener('touchend',()=>{ dragX=null; });
-
-function tryFire(){
-  if(!game.running||game.paused) return;
-  if(game.fireTimer>0) return;
-  const cfg=DIFF_CFG[state.diff];
-  game.fireTimer=cfg.fireCD;
-  game.bullets.push({x:game.player.x, y:game.player.y-24, vy:-13, w:5, h:16});
-  game.shots++;
+// 点击/触摸 canvas → 检测击中哪架敌机
+function getEventPos(e){
+  const rect=canvas.getBoundingClientRect();
+  let cx,cy;
+  if(e.touches&&e.touches[0]){ cx=e.touches[0].clientX; cy=e.touches[0].clientY; }
+  else if(e.changedTouches&&e.changedTouches[0]){ cx=e.changedTouches[0].clientX; cy=e.changedTouches[0].clientY; }
+  else { cx=e.clientX; cy=e.clientY; }
+  return {x:cx-rect.left, y:cy-rect.top};
 }
 
-/* ===== 发射/碰撞 ===== */
+function handleTap(e){
+  if(!game.running||game.paused||game.lock) return;
+  e.preventDefault();
+  const pos=getEventPos(e);
+  // 检测点击了哪架敌机（包含文字标签区域）
+  for(let i=0;i<game.planes.length;i++){
+    const p=game.planes[i];
+    if(p.dying||p.dead) continue;
+    // 飞机本体 + 上方文字标签的碰撞区域
+    const hitW=Math.max(p.w, 120), hitH=p.h+40;
+    if(pos.x>p.x-hitW/2 && pos.x<p.x+hitW/2 && pos.y>p.y-hitH/2-20 && pos.y<p.y+hitH/2){
+      fireAt(p);
+      return;
+    }
+  }
+}
+canvas.addEventListener('click',handleTap);
+canvas.addEventListener('touchstart',handleTap,{passive:false});
+
+function fireAt(target){
+  game.lock=true;
+  game.shots++;
+  // 玩家飞机朝目标方向微调
+  game.player.targetX = target.x;
+  // 发射追踪炮弹
+  game.bullets.push({
+    x:game.player.x, y:game.player.y-24,
+    target:target,
+    speed:9, w:6, h:18,
+    angle:0, alive:true,
+  });
+}
+
+/* ===== 追踪炮弹更新 ===== */
 function updateBullets(dt){
   for(let i=game.bullets.length-1;i>=0;i--){
     const b=game.bullets[i];
-    b.y+=b.vy;
-    if(b.y<-20){ game.bullets.splice(i,1); continue; }
-    // 碰撞飞机
-    for(let j=0;j<game.planes.length;j++){
-      const p=game.planes[j];
-      if(p.dying||p.dead) continue;
-      if(b.x>p.x-p.w/2 && b.x<p.x+p.w/2 && b.y>p.y-p.h/2 && b.y<p.y+p.h/2){
-        // 命中
-        game.bullets.splice(i,1);
-        hitPlane(p);
-        break;
-      }
+    if(!b.alive){ game.bullets.splice(i,1); continue; }
+    // 目标已死/已移除 → 炮弹直线飞出后消失
+    if(!b.target || b.target.dead || b.target.dying){
+      b.y -= b.speed;
+      if(b.y<-30){ game.bullets.splice(i,1); }
+      continue;
     }
+    // 追踪目标
+    const dx=b.target.x - b.x;
+    const dy=(b.target.y) - b.y;
+    const dist=Math.sqrt(dx*dx+dy*dy);
+    b.angle=Math.atan2(dy,dx);
+    if(dist < b.speed+8){
+      // 命中！
+      b.alive=false;
+      game.bullets.splice(i,1);
+      hitPlane(b.target);
+    } else {
+      b.x += (dx/dist)*b.speed;
+      b.y += (dy/dist)*b.speed;
+      // 尾焰粒子
+      game.trails.push({x:b.x, y:b.y, life:1, size:3+Math.random()*2});
+    }
+  }
+  // 更新尾焰
+  for(let i=game.trails.length-1;i>=0;i--){
+    const t=game.trails[i];
+    t.life-=0.08;
+    if(t.life<=0) game.trails.splice(i,1);
   }
 }
 
@@ -564,7 +575,7 @@ function hitPlane(p){
       showToast('✓ 命中！','#34d399');
       // 清除其他当前题飞机
       game.curPlanes.forEach(cp=>{ if(cp!==p && !cp.dead){ cp.dying=true; cp.dead=true; }});
-      setTimeout(nextQuestion, 450);
+      setTimeout(()=>{ game.lock=false; nextQuestion(); }, 450);
     } else {
       // 答错（击中干扰项）
       game.combo=0;
@@ -572,6 +583,7 @@ function hitPlane(p){
       floatText(p.x,p.y,'-30','#ef4444');
       showToast('✗ 答错','#ef4444');
       // 该干扰项消失，题目继续
+      setTimeout(()=>{ game.lock=false; }, 400);
     }
     updateHUD();
   }
@@ -589,7 +601,7 @@ function planeEscaped(p){
     game.curPlanes.forEach(cp=>{ if(cp!==p && !cp.dead){ cp.dying=true; cp.dead=true; }});
     updateHUD();
     if(game.hp<=0){ endGame(); return; }
-    setTimeout(nextQuestion,450);
+    setTimeout(()=>{ game.lock=false; nextQuestion(); },450);
   } else {
     // 干扰项逃脱，无影响
   }
@@ -644,15 +656,10 @@ function updateParticles(){
   }
 }
 function updatePlayer(){
-  const sp=game.player.speed;
-  let vx=0;
-  if(game.keys['arrowleft']||game.keys['a']||game.touchLeft) vx-=sp;
-  if(game.keys['arrowright']||game.keys['d']||game.touchRight) vx+=sp;
-  game.player.x+=vx;
+  // 飞机平滑追踪目标X位置
+  const dx=game.player.targetX - game.player.x;
+  game.player.x += dx*0.08;
   game.player.x=Math.max(28,Math.min(W-28,game.player.x));
-if(game.fireTimer>0) game.fireTimer-=16;
-// 自动连发（按住空格或开火键）
-if(game.keys[' ']||game.touchFire) tryFire();
 }
 
 /* ===== 绘制 ===== */
@@ -748,13 +755,39 @@ function roundRect(ctx,x,y,w,h,r){
 }
 
 function drawBullets(){
-  game.bullets.forEach(b=>{
+  // 尾焰
+  game.trails.forEach(t=>{
+    ctx.globalAlpha=t.life*0.6;
     ctx.fillStyle='#fbbf24';
-    ctx.shadowColor='#fbbf24'; ctx.shadowBlur=8;
-    ctx.fillRect(b.x-b.w/2,b.y-b.h/2,b.w,b.h);
+    ctx.beginPath();
+    ctx.arc(t.x,t.y,t.size*t.life,0,Math.PI*2);
+    ctx.fill();
+  });
+  ctx.globalAlpha=1;
+  // 炮弹
+  game.bullets.forEach(b=>{
+    ctx.save();
+    ctx.translate(b.x,b.y);
+    ctx.rotate(b.angle+Math.PI/2);
+    // 尾焰
+    ctx.fillStyle='#fbbf24';
+    ctx.shadowColor='#fbbf24'; ctx.shadowBlur=10;
+    ctx.beginPath();
+    ctx.moveTo(-3,b.h/2); ctx.lineTo(0,b.h/2+8+Math.random()*6); ctx.lineTo(3,b.h/2); ctx.closePath();
+    ctx.fill();
+    // 弹体
+    ctx.shadowBlur=6;
+    ctx.fillStyle='#fbbf24';
+    ctx.beginPath();
+    ctx.ellipse(0,0,b.w/2,b.h/2,0,0,Math.PI*2);
+    ctx.fill();
+    // 高光
     ctx.shadowBlur=0;
     ctx.fillStyle='rgba(255,255,255,0.9)';
-    ctx.fillRect(b.x-1,b.y-b.h/2,2,b.h);
+    ctx.beginPath();
+    ctx.ellipse(0,-2,1.5,b.h/3,0,0,Math.PI*2);
+    ctx.fill();
+    ctx.restore();
   });
 }
 function drawParticles(){
@@ -806,8 +839,10 @@ function loop(ts){
   drawBullets();
   drawPlayer();
   drawParticles();
+  drawTrails();
 }
 function drawPlanes_all(){ game.planes.forEach(drawPlane); }
+function drawTrails(){ /* 尾焰已在drawBullets中绘制 */ }
 
 /* ===== 开始/结束 ===== */
 function startGame(){
