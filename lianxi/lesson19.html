@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新概念英语第一册 · 第19课 Tired and thirsty</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Fredoka+One&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--pri:#6C5CE7;--pri-l:#A29BFE;--acc:#FDCB6E;--acc2:#E17055;--ok:#00B894;--err:#FF7675;--bg:#F8F9FD;--card:#fff;--txt:#2D3436;--txt-l:#636E72;--shd:0 8px 30px rgba(108,92,231,.15)}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--txt)}
+.slide-box{width:100vw;height:100vh;position:relative}
+.sl{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 50px 80px;opacity:0;transform:translateX(60px);transition:all .45s cubic-bezier(.4,0,.2,1);pointer-events:none;overflow:hidden}
+.sl.on{opacity:1;transform:translateX(0);pointer-events:auto}
+.sl.bk{opacity:0;transform:translateX(-60px)}
+.nav{position:fixed;bottom:0;left:0;right:0;height:54px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;gap:14px;z-index:100;border-top:1px solid #eee}
+.nb{width:42px;height:42px;border-radius:50%;border:none;background:var(--pri);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;box-shadow:0 2px 10px rgba(108,92,231,.3)}
+.nb:hover{transform:scale(1.1)}.nb:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.dots{display:flex;gap:5px;align-items:center}
+.dot{width:7px;height:7px;border-radius:50%;background:#ddd;transition:.3s;cursor:pointer}
+.dot.on{background:var(--pri);width:22px;border-radius:4px}
+.pn{font-size:13px;color:var(--txt-l);min-width:55px;text-align:center}
+.pbar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--pri),var(--acc));transition:width .4s;z-index:101;border-radius:0 2px 2px 0}
+.stit{font-size:38px;font-weight:900;margin-bottom:8px;text-align:center;line-height:1.3}
+.ssub{font-size:18px;color:var(--txt-l);margin-bottom:24px;text-align:center}
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:none;border-radius:14px;font-size:17px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.bp{background:var(--pri);color:#fff;box-shadow:0 4px 15px rgba(108,92,231,.4)}
+.bs{background:var(--ok);color:#fff;box-shadow:0 4px 15px rgba(0,184,148,.4)}
+.ba{background:var(--acc);color:var(--txt);box-shadow:0 4px 15px rgba(253,203,110,.4)}
+.bd{background:var(--err);color:#fff;box-shadow:0 4px 15px rgba(255,118,117,.4)}
+@keyframes bIn{0%{transform:scale(.3);opacity:0}50%{transform:scale(1.05)}70%{transform:scale(.95)}100%{transform:scale(1);opacity:1}}
+@keyframes fUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes cfall{0%{transform:translateY(-100vh) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.cov-bg{background:linear-gradient(135deg,#6C5CE7 0%,#A29BFE 50%,#74B9FF 100%);color:#fff}
+.cov-t{font-family:'Fredoka One',cursive;font-size:52px;margin-bottom:6px;text-shadow:0 3px 15px rgba(0,0,0,.2)}
+.cov-l{font-size:26px;opacity:.9;margin-bottom:16px}
+.cov-e{font-family:'Fredoka One',cursive;font-size:44px;color:var(--acc);text-shadow:0 3px 15px rgba(0,0,0,.2);margin-bottom:24px}
+.cov-icons{display:flex;gap:18px;font-size:46px;margin-bottom:24px}
+.cov-icons span{animation:flt 3s ease-in-out infinite}
+.cov-icons span:nth-child(2){animation-delay:.5s}
+.cov-icons span:nth-child(3){animation-delay:1s}
+.cov-icons span:nth-child(4){animation-delay:1.5s}
+.sbtn{padding:16px 44px;font-size:20px;border-radius:50px;background:var(--acc);color:var(--txt);border:none;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 6px 25px rgba(253,203,110,.5);transition:.3s}
+.sbtn:hover{transform:translateY(-3px) scale(1.05)}
+.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;max-width:720px}
+.wc{background:#fff;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 3px 15px rgba(0,0,0,.06);cursor:pointer;transition:.3s;border:2px solid transparent}
+.wc:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(108,92,231,.15);border-color:var(--pri-l)}
+.wc .we{font-size:28px}.wc .wen{font-size:18px;font-weight:700;color:var(--pri)}.wc .wph{font-size:12px;color:var(--txt-l)}.wc .wcn{font-size:15px;color:var(--txt-l);display:none}.wc .whint{font-size:13px;color:var(--pri-l);opacity:.7}
+.wc.flip{background:linear-gradient(135deg,var(--pri),var(--pri-l));color:#fff}
+.wc.flip .wen{color:#fff}.wc.flip .wph{color:rgba(255,255,255,.8)}.wc.flip .wcn{color:rgba(255,255,255,.9);font-size:18px;font-weight:700;display:block}.wc.flip .whint{display:none}
+.dlg{width:100%;max-width:660px;display:flex;flex-direction:column;gap:12px}
+.dl{display:flex;align-items:center;gap:10px;padding:14px 20px;border-radius:18px;font-size:18px;cursor:pointer;transition:transform .2s;animation:fUp .5s ease-out forwards;opacity:0}
+.dl:hover{transform:scale(1.02)}
+.dl.L{background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+.dl.R{background:linear-gradient(135deg,var(--pri),var(--pri-l));color:#fff;align-self:flex-end;border-bottom-right-radius:4px;box-shadow:0 3px 15px rgba(108,92,231,.3)}
+.dl .de{font-size:24px}.dl .den{font-weight:700}.dl .dcn{font-size:13px;opacity:.7;margin-left:6px}
+.qq{font-size:24px;font-weight:700;text-align:center;margin-bottom:20px}
+.qh{font-size:16px;color:var(--txt-l);text-align:center;margin-bottom:14px}
+.og{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%;max-width:620px}
+.ob{padding:16px 18px;border:3px solid #eee;border-radius:14px;background:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit;text-align:center}
+.ob:hover{border-color:var(--pri-l);transform:translateY(-2px);box-shadow:0 4px 15px rgba(108,92,231,.15)}
+.ob.ok{border-color:var(--ok);background:#E8F8F5;color:var(--ok);animation:pop .3s}
+.ob.no{border-color:var(--err);background:#FDEDEC;color:var(--err);animation:shk .4s}
+.ob.dis{pointer-events:none;opacity:.6}
+.pb{background:linear-gradient(135deg,#F3F0FF,#E8F8F5);border-radius:18px;padding:22px 28px;width:100%;max-width:660px;margin-bottom:14px}
+.pt{font-size:16px;font-weight:700;color:var(--pri);margin-bottom:8px}
+.ps{font-size:20px;font-weight:600;margin-bottom:4px;line-height:1.5}
+.pc{font-size:15px;color:var(--txt-l)}
+.phl{color:var(--pri);font-weight:900}
+.ci{display:flex;align-items:center;gap:10px;padding:13px 18px;background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.04);font-size:17px;width:100%;max-width:600px}
+.cic{font-size:22px}
+.sp{font-size:26px;color:var(--txt);text-align:center;margin-bottom:16px;font-weight:700}
+.sa{font-size:26px;color:var(--pri);text-align:center;font-weight:900;margin-bottom:14px;min-height:38px}
+.sht{font-size:15px;color:var(--txt-l);text-align:center;margin-bottom:16px}
+.lg{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.lb{width:46px;height:46px;border:2px solid #ddd;border-radius:10px;background:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;color:var(--pri)}
+.lb:hover{border-color:var(--pri);background:#F3F0FF}
+.lb.sel{background:var(--pri);color:#fff;border-color:var(--pri)}
+.lb.okl{background:var(--ok);color:#fff;border-color:var(--ok)}
+.lb.nol{background:var(--err);color:#fff;border-color:var(--err)}
+.fb{display:inline-block;border-bottom:3px solid var(--pri);min-width:100px;padding:0 6px;color:var(--pri);transition:.3s}
+.fb.okb{border-color:var(--ok);color:var(--ok)}.fb.nob{border-color:var(--err);color:var(--err)}
+.sd{font-size:66px;font-weight:900;color:var(--pri)}
+.sl2{font-size:18px;color:var(--txt-l)}
+.stars{font-size:44px;margin:14px 0}
+.star{display:inline-block;transition:.3s}
+.star.on{color:var(--acc);animation:bIn .5s}
+.star.off{color:#ddd}
+.divider{width:50px;height:3px;background:var(--pri-l);border-radius:2px;margin:12px auto}
+.cfc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:hidden}
+.cfp{position:absolute;width:10px;height:10px;border-radius:2px;animation:cfall 3s ease-in forwards}
+@media(max-width:768px){
+  .sl{padding:20px 20px 70px}
+  .stit{font-size:26px}.cov-t{font-size:34px}.cov-e{font-size:30px}
+  .wg{grid-template-columns:1fr}.og{grid-template-columns:1fr}
+  .qq{font-size:19px}.ps{font-size:17px}.sp{font-size:22px}.sa{font-size:20px}
+}
+
+.cov-bg{background:linear-gradient(135deg,#E17055 0%,#FDCB6E 50%,#6C5CE7 100%);color:#fff}
+</style>
+</head>
+<body>
+<div class="pbar" id="pbar"></div>
+<div class="slide-box" id="sb">
+
+<!-- S0: 封面 -->
+<div class="sl cov-bg on" data-i="0">
+  <div class="cov-icons"><span>👶</span><span>🧒</span><span>🥤</span><span>🍦</span></div>
+  <div class="cov-t">新概念英语</div>
+  <div class="cov-l">第一册 · 第19课</div>
+  <div class="cov-e">Tired and thirsty</div>
+  <div style="font-size:20px;margin-bottom:24px;opacity:.85">👋 又累又渴</div>
+  <button class="sbtn" onclick="go(1)">🚀 开始学习</button>
+</div>
+
+<!-- S1: 学习目标 -->
+<div class="sl" data-i="1">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">📖 学习目标</div>
+  <div class="stit">今天我们要学什么？</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:520px;margin-top:8px">
+    <div class="ci"><span class="cic">🔤</span><span>掌握<b>日常对话</b>中的常用短语</span></div>
+    <div class="ci"><span class="cic">💬</span><span>学会<b>关心和安慰他人</b></span></div>
+    <div class="ci"><span class="cic">📝</span><span>学会 <b>What's the matter? / There is...</b> 句型</span></div>
+    <div class="ci"><span class="cic">🗣️</span><span>能用英语<b>表达关心和安慰</b></span></div>
+  </div>
+</div>
+
+<!-- S2: 核心单词 -->
+<div class="sl" data-i="2">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">🔤 核心生词</div>
+  <div class="stit">核心单词</div>
+  <div class="ssub">点击卡片翻转查看中文 👆</div>
+  <div class="wg">
+    <div class="wc" onclick="flip(this)"><span class="we">👶</span><div><div class="wen">child</div><div class="wph">/tʃaɪld/</div><div class="whint">👆 点击查看释义</div><div class="wcn">孩子</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">👶</span><div><div class="wen">children</div><div class="wph">/ˈtʃɪldrən/</div><div class="whint">👆 点击查看释义</div><div class="wcn">孩子们</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🥤</span><div><div class="wen">ice cream</div><div class="wph">/aɪs kriːm/</div><div class="whint">👆 点击查看释义</div><div class="wcn">冰淇淋</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">😊</span><div><div class="wen">all right</div><div class="wph">/ɔːl raɪt/</div><div class="whint">👆 点击查看释义</div><div class="wcn">好了，没事</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">☝️</span><div><div class="wen">there</div><div class="wph">/ðeər/</div><div class="whint">👆 点击查看释义</div><div class="wcn">那里</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🍦</span><div><div class="wen">nice</div><div class="wph">/naɪs/</div><div class="whint">👆 点击查看释义</div><div class="wcn">好的，好吃的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🪑</span><div><div class="wen">sit down</div><div class="wph">/sɪt daʊn/</div><div class="whint">👆 点击查看释义</div><div class="wcn">坐下</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📋</span><div><div class="wen">matter</div><div class="wph">/ˈmætər/</div><div class="whint">👆 点击查看释义</div><div class="wcn">事情，问题</div></div></div>
+  </div>
+</div>
+
+<!-- S3: 扩展单词 -->
+<div class="sl" data-i="3">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">🔤 扩展生词</div>
+  <div class="stit">更多单词</div>
+  <div class="ssub">点击卡片翻转查看中文 👆</div>
+  <div class="wg">
+    <div class="wc" onclick="flip(this)"><span class="we">🏃</span><div><div class="wen">stand up</div><div class="wph">/stænd ʌp/</div><div class="whint">👆 点击查看释义</div><div class="wcn">站起来</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">👋</span><div><div class="wen">come here</div><div class="wph">/kʌm hɪər/</div><div class="whint">👆 点击查看释义</div><div class="wcn">过来</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">😊</span><div><div class="wen">look out</div><div class="wph">/lʊk aʊt/</div><div class="whint">👆 点击查看释义</div><div class="wcn">小心</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🏃</span><div><div class="wen">hurry up</div><div class="wph">/ˈhʌri ʌp/</div><div class="whint">👆 点击查看释义</div><div class="wcn">快点</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">😴</span><div><div class="wen">go to bed</div><div class="wph">/ɡoʊ tə bed/</div><div class="whint">👆 点击查看释义</div><div class="wcn">去睡觉</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🍽️</span><div><div class="wen">have dinner</div><div class="wph">/hæv ˈdɪnər/</div><div class="whint">👆 点击查看释义</div><div class="wcn">吃晚饭</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">have a look</div><div class="wph">/hæv ə lʊk/</div><div class="whint">👆 点击查看释义</div><div class="wcn">看一看</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">☕</span><div><div class="wen">have a drink</div><div class="wph">/hæv ə drɪŋk/</div><div class="whint">👆 点击查看释义</div><div class="wcn">喝点东西</div></div></div>
+  </div>
+</div>
+
+<!-- S4: 课文对话 -->
+<div class="sl" data-i="4">
+  <div class="badge" style="background:#E8F8F5;color:var(--ok)">💬 课文对话</div>
+  <div class="stit">对话场景</div>
+  <div class="ssub">妈妈关心孩子们 😊 点击句子可朗读</div>
+  <div class="dlg">
+    <div class="dl L" style="animation-delay:0.0s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">What's the matter, children?</span><span class="dcn">怎么了，孩子们？</span></div></div>
+    <div class="dl R" style="animation-delay:0.2s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">We're tired and thirsty, Mum.</span><span class="dcn">我们又累又渴，妈妈。</span></div></div>
+    <div class="dl L" style="animation-delay:0.4s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Sit down here.</span><span class="dcn">坐在这里。</span></div></div>
+    <div class="dl L" style="animation-delay:0.6s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Are you all right now?</span><span class="dcn">你们现在好了吗？</span></div></div>
+    <div class="dl R" style="animation-delay:0.8s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">No, we aren't.</span><span class="dcn">不，还没有。</span></div></div>
+    <div class="dl L" style="animation-delay:1.0s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Look! There's an ice cream man.</span><span class="dcn">看！那里有个卖冰淇淋的。</span></div></div>
+    <div class="dl L" style="animation-delay:1.2s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Two ice creams, please.</span><span class="dcn">请来两个冰淇淋。</span></div></div>
+    <div class="dl R" style="animation-delay:1.4s" onclick="speak(this)"><span class="de">👨</span><div><span class="den">Here you are, children.</span><span class="dcn">给你们，孩子们。</span></div></div>
+    <div class="dl L" style="animation-delay:1.6s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">Thank you, Mum.</span><span class="dcn">谢谢妈妈。</span></div></div>
+    <div class="dl R" style="animation-delay:1.8s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">These ice creams are nice.</span><span class="dcn">这些冰淇淋真好吃。</span></div></div>
+    <div class="dl L" style="animation-delay:2.0s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Are you all right now?</span><span class="dcn">你们现在好了吗？</span></div></div>
+    <div class="dl R" style="animation-delay:2.2s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">Yes, we are, thank you!</span><span class="dcn">是的，我们好了，谢谢！</span></div></div>
+  </div>
+</div>
+
+<!-- S5: 知识点1 -->
+<div class="sl" data-i="5">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">💡 知识点</div>
+  <div class="stit">There is / There are 的用法</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:580px;margin-top:8px">
+    <div class="pb"><div class="pt">📌 什么时候用？</div><div class="ps">表示<b>某处有某人/某物</b></div><div class="ps"><b>There is</b> + 单数名词</div><div class="ps"><b>There are</b> + 复数名词</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">🔊 例句</div><div class="ps">There's an ice cream man. <span style='font-size:15px;color:var(--txt-l)'>那里有个卖冰淇淋的。</span></div><div class="ps">There are two ice creams. <span style='font-size:15px;color:var(--txt-l)'>有两个冰淇淋。</span></div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#E8F8F5,#F3F0FF)"><div class="pt">⚠️ 缩写形式</div><div class="ps">There is = There's</div><div class="ps">There are 没有缩写形式</div></div>
+  </div>
+</div>
+
+<!-- S6: 知识点2 -->
+<div class="sl" data-i="6">
+  <div class="badge" style="background:#E8F8F5;color:var(--ok)">💡 知识点</div>
+  <div class="stit">all right 的用法</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:580px;margin-top:8px">
+    <div class="pb"><div class="pt">📌 什么时候用？</div><div class="ps">表示<b>"好了、没事、行"</b></div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">🔊 多种用法</div><div class="ps">Are you all right? <span style='font-size:15px;color:var(--txt-l)'>你没事吧？/ 你好了吗？</span></div><div class="ps">All right. <span style='font-size:15px;color:var(--txt-l)'>好的。/ 行。</span></div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#E8F8F5,#F3F0FF)"><div class="pt">🎯 与 fine/well 区分</div><div class="ps">I'm fine. = I'm well. = 身体好</div><div class="ps">I'm all right. = 我没事/我好了</div></div>
+  </div>
+</div>
+
+<!-- S7: 句型 -->
+<div class="sl" data-i="7">
+  <div class="badge" style="background:#FFF3E0;color:var(--acc2)">📝 核心句型</div>
+  <div class="stit">What's the matter? / Are you all right?</div>
+  <div class="ssub">怎么了？/ 你好了吗？</div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:620px">
+    <div class="pb"><div class="pt">📌 关心他人</div><div class="ps"><span class='phl'>What's the matter?</span> 怎么了？</div><div class="ps"><span class='phl'>Are you all right?</span> 你好了吗？</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">🔊 回答方式</div><div class="ps">I'm tired. / I'm thirsty. / I'm hungry.</div><div class="ps">Yes, I am. / No, I'm not.</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#E8F8F5,#F3F0FF)"><div class="pt">🎯 安慰他人</div><div class="ps">Look! There's... 看看！那里有……</div><div class="ps">It could be worse. 可能更糟呢。</div></div>
+  </div>
+</div>
+
+<!-- S8-S14: 练习页面 -->
+<div class="sl" data-i="8"><div class="badge" style="background:#FDEDEC;color:var(--acc2)">🇬🇧➡️🇨🇳 英译汉</div><div class="stit">选出正确的中文意思</div><div class="divider"></div><div id="q1" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="9"><div class="badge" style="background:#E8F8F5;color:var(--ok)">🇨🇳➡️🇬🇧 汉译英</div><div class="stit">选出正确的英文单词</div><div class="divider"></div><div id="q2" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="10"><div class="badge" style="background:#FFF3E0;color:var(--acc2)">✏️ 单词补全</div><div class="stit">补全缺失的字母</div><div class="ssub">根据中文提示，点击字母补全单词</div><div id="q3" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="11"><div class="badge" style="background:#F3F0FF;color:var(--pri)">📝 选择填空</div><div class="stit">选择正确的单词</div><div class="divider"></div><div id="q4" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="12"><div class="badge" style="background:#FFF3E0;color:var(--acc2)">💬 句型练习</div><div class="stit">看图说句子</div><div class="ssub">选择正确的英文句子</div><div id="q5" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="13"><div class="badge" style="background:#FDEDEC;color:var(--err)">🗣️ 口语练习</div><div class="stit">根据中文说英文</div><div class="ssub">先自己说说看，再点击查看答案</div><div id="q6" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="14"><div class="badge" style="background:#E8F8F5;color:var(--ok)">🧪 知识检测</div><div class="stit">来检测一下吧！</div><div class="divider"></div><div id="q7" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+
+<!-- S15: 成绩单 -->
+<div class="sl" data-i="15" style="background:linear-gradient(135deg,#E17055 0%,#FDCB6E 50%,#6C5CE7 100%);color:#fff">
+  <div style="font-size:56px;animation:flt 3s ease-in-out infinite">🏆</div>
+  <div class="stit" style="color:#fff;margin-top:12px">学习完成！</div>
+  <div class="divider" style="background:rgba(255,255,255,.4)"></div>
+  <div class="stars" id="fstars"></div>
+  <div class="sd" id="fscore" style="color:var(--acc)">0</div>
+  <div class="sl2" style="color:rgba(255,255,255,.8)">总分</div>
+  <div style="margin-top:20px;display:flex;gap:14px">
+    <button class="btn ba" onclick="resetAll()">🔄 再来一次</button>
+    <button class="btn bs" onclick="go(0)">🏠 回到首页</button>
+  </div>
+</div>
+
+</div>
+<div class="nav">
+  <button class="nb" id="prevB" onclick="prev()">◀</button>
+  <div class="dots" id="dots"></div>
+  <span class="pn" id="pn">1 / 16</span>
+  <button class="nb" id="nextB" onclick="next()">▶</button>
+</div>
+<div class="cfc" id="cfc"></div>
+
+<script>
+// ===== 课程数据 =====
+const D1=[{"en":"child","cn":"孩子","opts":["孩子","大人","老人","婴儿"]},{"en":"matter","cn":"事情","opts":["事情","物质","问题","答案"]},{"en":"ice cream","cn":"冰淇淋","opts":["冰淇淋","蛋糕","饼干","糖果"]},{"en":"all right","cn":"好了","opts":["好了","错误的","正常的","完美的"]},{"en":"sit down","cn":"坐下","opts":["坐下","站起来","跑步","走路"]}];
+const D2=[{"cn":"孩子","en":"child","opts":["child","children","baby","kid"]},{"cn":"冰淇淋","en":"ice cream","opts":["ice cream","cake","cookie","candy"]},{"cn":"好了","en":"all right","opts":["all right","wrong","OK","fine"]},{"cn":"坐下","en":"sit down","opts":["sit down","stand up","lie down","get up"]},{"cn":"那里","en":"there","opts":["there","here","where","everywhere"]}];
+const D3=[{"word":"children","show":"c h i l d _ e n","cn":"孩子们","blanks":[{"pos":5,"ans":"r"}]},{"word":"matter","show":"m a t t _ r","cn":"事情","blanks":[{"pos":4,"ans":"e"}]},{"word":"cream","show":"c r e _ m","cn":"奶油","blanks":[{"pos":3,"ans":"a"}]},{"word":"nice","show":"n _ c e","cn":"好的","blanks":[{"pos":1,"ans":"i"}]},{"word":"tired","show":"t i r _ d","cn":"疲惫的","blanks":[{"pos":3,"ans":"e"}]}];
+const D4=[{"sen":"What's the _____ , children?","ans":"matter","opts":["matter","wrong","problem","happened"],"cn":"怎么了，孩子们？"},{"sen":"_____ down here.","ans":"Sit","opts":["Sit","Stand","Look","Come"],"cn":"坐在这里。"},{"sen":"Are you all _____ now?","ans":"right","opts":["right","good","well","fine"],"cn":"你们现在好了吗？"},{"sen":"_____ an ice cream man.","ans":"There's","opts":["There's","Here's","That's","It's"],"cn":"那里有个卖冰淇淋的。"},{"sen":"These ice creams are _____.","ans":"nice","opts":["nice","nicely","good","well"],"cn":"这些冰淇淋真好吃。"}];
+const D5=[{"img":"❓","cn":"怎么了？","ans":"What's the matter?","opts":["What's the matter?","What's wrong?","How are you?","What happened?"]},{"img":"😴🥤","cn":"我们又累又渴。","ans":"We're tired and thirsty.","opts":["We're tired and thirsty.","We tired and thirsty.","I'm tired and thirsty.","We're tiring and thirsting."]},{"img":"🍦","cn":"那里有个卖冰淇淋的。","ans":"There's an ice cream man.","opts":["There's an ice cream man.","Here's an ice cream man.","That's an ice cream man.","It's an ice cream man."]},{"img":"😊","cn":"你们现在好了吗？","ans":"Are you all right now?","opts":["Are you all right now?","Are you right now?","You are all right now?","Do you all right now?"]}];
+const D6=[{"cn":"怎么了，孩子们？","en":"What's the matter, children?"},{"cn":"我们又累又渴。","en":"We're tired and thirsty, Mum."},{"cn":"坐在这里。","en":"Sit down here."},{"cn":"你们现在好了吗？","en":"Are you all right now?"},{"cn":"那里有个卖冰淇淋的。","en":"There's an ice cream man."},{"cn":"这些冰淇淋真好吃。","en":"These ice creams are nice."}];
+const D7=[{"q":"What's the matter?' 的意思是：","opts":["怎么了？","你好吗？","什么事？","什么问题？"],"ans":"怎么了？"},{"q":"\"child\" 的复数是：","opts":["children","childs","childes","child's"],"ans":"children"},{"q":"There's' 是什么的缩写？","opts":["There is","There has","These are","Their is"],"ans":"There is"},{"q":"\"all right\" 在 \"Are you all right?\" 中的意思是：","opts":["好了/没事","正确的","所有右边","全部正确"],"ans":"好了/没事"},{"q":"\"ice cream\" 的中文意思是：","opts":["冰淇淋","蛋糕","饼干","糖果"],"ans":"冰淇淋"},{"q":"\"sit down\" 的反义词组是：","opts":["stand up","sit up","lie down","get down"],"ans":"stand up"}];
+
+// ===== 通用交互脚本 =====
+const T=16;let cur=0,score=0,mx=0;
+
+function go(n){
+  if(n<0||n>=T)return;
+  const ss=document.querySelectorAll('.sl');cur=n;
+  ss.forEach((s,i)=>{s.classList.remove('on','bk');if(i===n)s.classList.add('on');else if(i<n)s.classList.add('bk')});
+  document.getElementById('pn').textContent=`${n+1} / ${T}`;
+  document.getElementById('prevB').disabled=(n===0);
+  document.getElementById('nextB').disabled=(n===T-1);
+  document.getElementById('pbar').style.width=((n+1)/T*100)+'%';
+  updDots();
+  if(n===8)initQ1();if(n===9)initQ2();if(n===10)initQ3();
+  if(n===11)initQ4();if(n===12)initQ5();if(n===13)initQ6();
+  if(n===14)initQ7();if(n===15)showFinal();
+}
+function next(){go(cur+1)}function prev(){go(cur-1)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}});
+
+function updDots(){const d=document.getElementById('dots');d.innerHTML='';for(let i=0;i<T;i++){const e=document.createElement('div');e.className='dot'+(i===cur?' on':'');e.onclick=()=>go(i);d.appendChild(e)}}
+function flip(c){c.classList.toggle('flip');c.style.animation='none';c.offsetHeight;c.style.animation='pop .3s'}
+function speak(el){el.style.animation='none';el.offsetHeight;el.style.animation='pop .3s';const t=el.querySelector('.den').textContent;if('speechSynthesis'in window){const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.75;speechSynthesis.speak(u)}}
+function tts(text){if('speechSynthesis'in window){const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=0.7;speechSynthesis.speak(u)}}
+function shuf(a){return[...a].sort(()=>Math.random()-.5)}
+function qResult(el,s,total,nextFn){const pct=Math.round(s/total*100);let emoji=pct>=80?'🎉':pct>=60?'👍':'💪';el.innerHTML=`<div style="font-size:48px;margin-bottom:8px">${emoji}</div><div class="qq">得分：${s} / ${total}</div><div style="font-size:20px;color:var(--txt-l);margin-bottom:20px">${pct>=80?'太棒了！':pct>=60?'不错哦！':'继续加油！'}</div><button class="btn bp" onclick="${nextFn}">继续 →</button>`;if(pct>=80)confetti()}
+
+// ===== Q1: 英译汉 =====
+let i1=0,s1=0;
+function initQ1(){i1=0;s1=0;showQ1()}
+function showQ1(){const el=document.getElementById('q1');if(i1>=D1.length){qResult(el,s1,D1.length,'next()');return}const q=D1[i1],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i1+1}/${D1.length} 题</div><div class="qq">"${q.en}" 的中文意思是？</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck1(this,'${o}','${q.cn}')">${o}</button>`).join('')}</div>`}
+function ck1(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s1++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i1++;showQ1()},900)}
+
+// ===== Q2: 汉译英 =====
+let i2=0,s2=0;
+function initQ2(){i2=0;s2=0;showQ2()}
+function showQ2(){const el=document.getElementById('q2');if(i2>=D2.length){qResult(el,s2,D2.length,'next()');return}const q=D2[i2],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i2+1}/${D2.length} 题</div><div class="qq">"${q.cn}" 的英文是？</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck2(this,'${o}','${q.en}')">${o}</button>`).join('')}</div>`}
+function ck2(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s2++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i2++;showQ2()},900)}
+
+// ===== Q3: 单词补全 =====
+let i3=0,s3=0;
+function initQ3(){i3=0;s3=0;showQ3()}
+function showQ3(){const el=document.getElementById('q3');if(i3>=D3.length){qResult(el,s3,D3.length,'next()');return}const q=D3[i3];const corrs=q.blanks.map(b=>b.ans);const all='abcdefghijklmnopqrstuvwxyz'.split('');const extras=all.filter(l=>!corrs.includes(l)).sort(()=>Math.random()-.5).slice(0,Math.max(1,6-corrs.length));const letters=shuf([...corrs,...extras]);const blankHTML=q.show.split(' ').map((ch,idx)=>{if(ch==='_'){const bi=q.blanks.findIndex(b=>b.pos===idx);return`<span class="fb" id="bk${bi}" style="font-size:28px;min-width:36px;text-align:center">_</span>`}return`<span style="font-size:28px">${ch}</span>`}).join(' ');el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i3+1}/${D3.length} 题</div><div class="qq">补全单词：${q.cn}</div><div style="margin:16px 0;letter-spacing:4px">${blankHTML}</div><div style="font-size:15px;color:var(--txt-l);margin-bottom:12px">点击字母填入：</div><div class="lg">${letters.map(l=>`<button class="lb" onclick="pickL(this,'${l}')">${l}</button>`).join('')}</div><div id="sf" style="font-size:18px;min-height:28px;margin-top:8px"></div>`;window._q3blanks=[...q.blanks];window._q3pos=0}
+function pickL(btn,l){const bl=window._q3blanks,pos=window._q3pos;if(pos>=bl.length)return;const bke=document.getElementById('bk'+pos);if(l===bl[pos].ans){bke.textContent=l;bke.classList.add('okb');btn.classList.add('okl');btn.disabled=true;window._q3pos++;if(window._q3pos>=bl.length){s3++;score++;mx++;document.getElementById('sf').innerHTML='<span style="color:var(--ok)">✅ 太棒了！</span>';setTimeout(()=>{i3++;showQ3()},1000)}}else{btn.classList.add('nol');mx++;document.getElementById('sf').innerHTML=`<span style="color:var(--err)">❌ 再想想！</span>`;setTimeout(()=>{bke.textContent=bl[pos].ans;bke.classList.add('okb');window._q3pos++;if(window._q3pos>=bl.length)setTimeout(()=>{i3++;showQ3()},800)},700)}}
+
+// ===== Q4: 选择填空 =====
+let i4=0,s4=0;
+function initQ4(){i4=0;s4=0;showQ4()}
+function showQ4(){const el=document.getElementById('q4');if(i4>=D4.length){qResult(el,s4,D4.length,'next()');return}const q=D4[i4],opts=shuf(q.opts);const sen=q.sen.replace('_____','<span style="color:var(--pri);border-bottom:3px solid var(--pri);padding:0 8px">_____</span>');el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i4+1}/${D4.length} 题</div><div class="qq" style="font-size:20px;line-height:1.6">${sen}</div><div class="qh">${q.cn}</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck4(this,'${o}','${q.ans}')">${o}</button>`).join('')}</div>`}
+function ck4(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s4++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i4++;showQ4()},900)}
+
+// ===== Q5: 句型练习 =====
+let i5=0,s5=0;
+function initQ5(){i5=0;s5=0;showQ5()}
+function showQ5(){const el=document.getElementById('q5');if(i5>=D5.length){qResult(el,s5,D5.length,'next()');return}const q=D5[i5],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i5+1}/${D5.length} 题</div><div style="font-size:56px;text-align:center;margin-bottom:10px">${q.img}</div><div class="qq">${q.cn}</div><div class="og" style="grid-template-columns:1fr">${opts.map(o=>`<button class="ob" style="font-size:16px" onclick="ck5(this)">${o}</button>`).join('')}</div>`;window._q5ans=q.ans}
+function ck5(b){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));const sel=b.textContent,cor=window._q5ans;if(sel===cor){b.classList.add('ok');s5++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i5++;showQ5()},900)}
+
+// ===== Q6: 口语练习 =====
+let i6=0;
+function initQ6(){i6=0;showQ6()}
+function showQ6(){const el=document.getElementById('q6');if(i6>=D6.length){el.innerHTML=`<div style="font-size:48px;margin-bottom:8px">🎉</div><div class="qq">口语练习完成！</div><div class="ssub">继续加油哦！💪</div><button class="btn bp" onclick="next()">继续 →</button>`;return}const q=D6[i6];el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i6+1}/${D6.length} 题</div><div class="sp">${q.cn}</div><div class="sa" id="spkAns">🤔 ???</div><div class="sht">先自己说一遍，再点击查看答案</div><div style="display:flex;gap:14px;margin-top:8px"><button class="btn bp" onclick="revealSpk()">👁️ 查看答案</button><button class="btn ba" onclick="tts(D6[i6].en)">🔊 朗读</button></div><div style="margin-top:18px;display:flex;gap:10px"><button class="btn bs" style="font-size:14px;padding:10px 18px" onclick="i6++;showQ6()">✅ 我会了</button><button class="btn bd" style="font-size:14px;padding:10px 18px" onclick="i6++;showQ6()">🔄 还需练习</button></div>`}
+function revealSpk(){const q=D6[i6],el=document.getElementById('spkAns');el.textContent=q.en;el.style.animation='bIn .5s'}
+
+// ===== Q7: 知识检测 =====
+let i7=0,s7=0;
+function initQ7(){i7=0;s7=0;showQ7()}
+function showQ7(){const el=document.getElementById('q7');if(i7>=D7.length){qResult(el,s7,D7.length,'next()');return}const q=D7[i7],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i7+1}/${D7.length} 题</div><div class="qq" style="font-size:20px">${q.q}</div><div class="og" style="grid-template-columns:1fr">${opts.map(o=>`<button class="ob" style="font-size:16px;text-align:left;padding:14px 18px" onclick="ck7(this)">${o}</button>`).join('')}</div>`;window._q7ans=q.ans}
+function ck7(b){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));const sel=b.textContent,cor=window._q7ans;if(sel===cor){b.classList.add('ok');s7++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i7++;showQ7()},900)}
+
+// ===== Final & Confetti =====
+function showFinal(){const pct=mx>0?Math.round(score/mx*100):0;const starCount=pct>=90?5:pct>=70?4:pct>=50?3:pct>=30?2:1;let html='';for(let i=0;i<5;i++)html+=`<span class="star ${i<starCount?'on':'off'}">⭐</span>`;document.getElementById('fstars').innerHTML=html;document.getElementById('fscore').textContent=score+' / '+mx;if(pct>=70)confetti()}
+function resetAll(){score=0;mx=0;go(0)}
+function confetti(){const c=document.getElementById('cfc');const colors=['#6C5CE7','#FDCB6E','#00B894','#FF7675','#74B9FF','#E17055','#A29BFE'];for(let i=0;i<60;i++){const p=document.createElement('div');p.className='cfp';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.animationDelay=Math.random()*2+'s';p.style.animationDuration=(2+Math.random()*2)+'s';p.style.width=(6+Math.random()*8)+'px';p.style.height=(6+Math.random()*8)+'px';p.style.borderRadius=Math.random()>.5?'50%':'2px';c.appendChild(p);setTimeout(()=>p.remove(),5000)}}
+go(0);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新概念英语第一册 · 第130课 He must have been.../He can't have been...</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Fredoka+One&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--pri:#6C5CE7;--pri-l:#A29BFE;--acc:#FDCB6E;--acc2:#E17055;--ok:#00B894;--err:#FF7675;--bg:#F8F9FD;--card:#fff;--txt:#2D3436;--txt-l:#636E72;--shd:0 8px 30px rgba(108,92,231,.15)}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--txt)}
+.slide-box{width:100vw;height:100vh;position:relative}
+.sl{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 50px 80px;opacity:0;transform:translateX(60px);transition:all .45s cubic-bezier(.4,0,.2,1);pointer-events:none;overflow:hidden}
+.sl.on{opacity:1;transform:translateX(0);pointer-events:auto}
+.sl.bk{opacity:0;transform:translateX(-60px)}
+.nav{position:fixed;bottom:0;left:0;right:0;height:54px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;gap:14px;z-index:100;border-top:1px solid #eee}
+.nb{width:42px;height:42px;border-radius:50%;border:none;background:var(--pri);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;box-shadow:0 2px 10px rgba(108,92,231,.3)}
+.nb:hover{transform:scale(1.1)}.nb:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.dots{display:flex;gap:5px;align-items:center}
+.dot{width:7px;height:7px;border-radius:50%;background:#ddd;transition:.3s;cursor:pointer}
+.dot.on{background:var(--pri);width:22px;border-radius:4px}
+.pn{font-size:13px;color:var(--txt-l);min-width:55px;text-align:center}
+.pbar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--pri),var(--acc));transition:width .4s;z-index:101;border-radius:0 2px 2px 0}
+.stit{font-size:38px;font-weight:900;margin-bottom:8px;text-align:center;line-height:1.3}
+.ssub{font-size:18px;color:var(--txt-l);margin-bottom:24px;text-align:center}
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:none;border-radius:14px;font-size:17px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.bp{background:var(--pri);color:#fff;box-shadow:0 4px 15px rgba(108,92,231,.4)}
+.bs{background:var(--ok);color:#fff;box-shadow:0 4px 15px rgba(0,184,148,.4)}
+.ba{background:var(--acc);color:var(--txt);box-shadow:0 4px 15px rgba(253,203,110,.4)}
+.bd{background:var(--err);color:#fff;box-shadow:0 4px 15px rgba(255,118,117,.4)}
+@keyframes bIn{0%{transform:scale(.3);opacity:0}50%{transform:scale(1.05)}70%{transform:scale(.95)}100%{transform:scale(1);opacity:1}}
+@keyframes fUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes cfall{0%{transform:translateY(-100vh) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.cov-bg{background:linear-gradient(135deg,#6C5CE7 0%,#A29BFE 50%,#74B9FF 100%);color:#fff}
+.cov-t{font-family:'Fredoka One',cursive;font-size:52px;margin-bottom:6px;text-shadow:0 3px 15px rgba(0,0,0,.2)}
+.cov-l{font-size:26px;opacity:.9;margin-bottom:16px}
+.cov-e{font-family:'Fredoka One',cursive;font-size:44px;color:var(--acc);text-shadow:0 3px 15px rgba(0,0,0,.2);margin-bottom:24px}
+.cov-icons{display:flex;gap:18px;font-size:46px;margin-bottom:24px}
+.cov-icons span{animation:flt 3s ease-in-out infinite}
+.cov-icons span:nth-child(2){animation-delay:.5s}
+.cov-icons span:nth-child(3){animation-delay:1s}
+.cov-icons span:nth-child(4){animation-delay:1.5s}
+.sbtn{padding:16px 44px;font-size:20px;border-radius:50px;background:var(--acc);color:var(--txt);border:none;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 6px 25px rgba(253,203,110,.5);transition:.3s}
+.sbtn:hover{transform:translateY(-3px) scale(1.05)}
+.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;max-width:720px}
+.wc{background:#fff;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 3px 15px rgba(0,0,0,.06);cursor:pointer;transition:.3s;border:2px solid transparent}
+.wc:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(108,92,231,.15);border-color:var(--pri-l)}
+.wc .we{font-size:28px}.wc .wen{font-size:18px;font-weight:700;color:var(--pri)}.wc .wph{font-size:12px;color:var(--txt-l)}.wc .wcn{font-size:15px;color:var(--txt-l);display:none}.wc .whint{font-size:13px;color:var(--pri-l);opacity:.7}
+.wc.flip{background:linear-gradient(135deg,var(--pri),var(--pri-l));color:#fff}
+.wc.flip .wen{color:#fff}.wc.flip .wph{color:rgba(255,255,255,.8)}.wc.flip .wcn{color:rgba(255,255,255,.9);font-size:18px;font-weight:700;display:block}.wc.flip .whint{display:none}
+.dlg{width:100%;max-width:660px;display:flex;flex-direction:column;gap:12px}
+.dl{display:flex;align-items:center;gap:10px;padding:14px 20px;border-radius:18px;font-size:18px;cursor:pointer;transition:transform .2s;animation:fUp .5s ease-out forwards;opacity:0}
+.dl:hover{transform:scale(1.02)}
+.dl.L{background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+.dl.R{background:linear-gradient(135deg,var(--pri),var(--pri-l));color:#fff;align-self:flex-end;border-bottom-right-radius:4px;box-shadow:0 3px 15px rgba(108,92,231,.3)}
+.dl .de{font-size:24px}.dl .den{font-weight:700}.dl .dcn{font-size:13px;opacity:.7;margin-left:6px}
+.qq{font-size:24px;font-weight:700;text-align:center;margin-bottom:20px}
+.qh{font-size:16px;color:var(--txt-l);text-align:center;margin-bottom:14px}
+.og{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%;max-width:620px}
+.ob{padding:16px 18px;border:3px solid #eee;border-radius:14px;background:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit;text-align:center}
+.ob:hover{border-color:var(--pri-l);transform:translateY(-2px);box-shadow:0 4px 15px rgba(108,92,231,.15)}
+.ob.ok{border-color:var(--ok);background:#E8F8F5;color:var(--ok);animation:pop .3s}
+.ob.no{border-color:var(--err);background:#FDEDEC;color:var(--err);animation:shk .4s}
+.ob.dis{pointer-events:none;opacity:.6}
+.pb{background:linear-gradient(135deg,#F3F0FF,#E8F8F5);border-radius:18px;padding:22px 28px;width:100%;max-width:660px;margin-bottom:14px}
+.pt{font-size:16px;font-weight:700;color:var(--pri);margin-bottom:8px}
+.ps{font-size:20px;font-weight:600;margin-bottom:4px;line-height:1.5}
+.pc{font-size:15px;color:var(--txt-l)}
+.phl{color:var(--pri);font-weight:900}
+.ci{display:flex;align-items:center;gap:10px;padding:13px 18px;background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.04);font-size:17px;width:100%;max-width:600px}
+.cic{font-size:22px}
+.sp{font-size:26px;color:var(--txt);text-align:center;margin-bottom:16px;font-weight:700}
+.sa{font-size:26px;color:var(--pri);text-align:center;font-weight:900;margin-bottom:14px;min-height:38px}
+.sht{font-size:15px;color:var(--txt-l);text-align:center;margin-bottom:16px}
+.lg{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.lb{width:46px;height:46px;border:2px solid #ddd;border-radius:10px;background:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;color:var(--pri)}
+.lb:hover{border-color:var(--pri);background:#F3F0FF}
+.lb.sel{background:var(--pri);color:#fff;border-color:var(--pri)}
+.lb.okl{background:var(--ok);color:#fff;border-color:var(--ok)}
+.lb.nol{background:var(--err);color:#fff;border-color:var(--err)}
+.fb{display:inline-block;border-bottom:3px solid var(--pri);min-width:100px;padding:0 6px;color:var(--pri);transition:.3s}
+.fb.okb{border-color:var(--ok);color:var(--ok)}.fb.nob{border-color:var(--err);color:var(--err)}
+.sd{font-size:66px;font-weight:900;color:var(--pri)}
+.sl2{font-size:18px;color:var(--txt-l)}
+.stars{font-size:44px;margin:14px 0}
+.star{display:inline-block;transition:.3s}
+.star.on{color:var(--acc);animation:bIn .5s}
+.star.off{color:#ddd}
+.divider{width:50px;height:3px;background:var(--pri-l);border-radius:2px;margin:12px auto}
+.cfc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:hidden}
+.cfp{position:absolute;width:10px;height:10px;border-radius:2px;animation:cfall 3s ease-in forwards}
+@media(max-width:768px){
+  .sl{padding:20px 20px 70px}
+  .stit{font-size:26px}.cov-t{font-size:34px}.cov-e{font-size:30px}
+  .wg{grid-template-columns:1fr}.og{grid-template-columns:1fr}
+  .qq{font-size:19px}.ps{font-size:17px}.sp{font-size:22px}.sa{font-size:20px}
+}
+
+.cov-bg{background:linear-gradient(135deg,#6C5CE7 0%,#A29BFE 50%,#74B9FF 100%);color:#fff}
+</style>
+</head>
+<body>
+<div class="pbar" id="pbar"></div>
+<div class="slide-box" id="sb">
+
+<!-- S0: 封面 -->
+<div class="sl cov-bg on" data-i="0">
+  <div class="cov-icons"><span>⏰</span><span>✅</span><span>❌</span><span>🤔</span></div>
+  <div class="cov-t">新概念英语</div>
+  <div class="cov-l">第一册 · 第130课</div>
+  <div class="cov-e">He must have been.../He can't have been...</div>
+  <div style="font-size:20px;margin-bottom:24px;opacity:.85">👋 他一定是……/他不可能……</div>
+  <button class="sbtn" onclick="go(1)">🚀 开始学习</button>
+</div>
+
+<!-- S1: 学习目标 -->
+<div class="sl" data-i="1">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">📖 学习目标</div>
+  <div class="stit">今天我们要学什么？</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:520px;margin-top:8px">
+    <div class="ci"><span class="cic">🔤</span><span>巩固<b>must have been / can't have been</b>的用法</span></div>
+    <div class="ci"><span class="cic">💬</span><span>学会<b>may have been</b>表示对过去的可能推测</span></div>
+    <div class="ci"><span class="cic">📝</span><span>掌握<b>对过去不同把握程度的推测</b></span></div>
+    <div class="ci"><span class="cic">🗣️</span><span>能用英语<b>对过去的事情做出不同把握程度的推测</b></span></div>
+  </div>
+</div>
+
+<!-- S2: 核心单词 -->
+<div class="sl" data-i="2">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">🔤 核心生词</div>
+  <div class="stit">核心单词</div>
+  <div class="ssub">点击卡片翻转查看中文 👆</div>
+  <div class="wg">
+    <div class="wc" onclick="flip(this)"><span class="we">✅</span><div><div class="wen">must have been</div><div class="wph">/mʌst hæv biːn/</div><div class="whint">👆 点击查看释义</div><div class="wcn">一定是（过去）</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">❌</span><div><div class="wen">can't have been</div><div class="wph">/kænt hæv biːn/</div><div class="whint">👆 点击查看释义</div><div class="wcn">不可能（过去）</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🤔</span><div><div class="wen">may have been</div><div class="wph">/meɪ hæv biːn/</div><div class="whint">👆 点击查看释义</div><div class="wcn">可能（过去）</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🤔</span><div><div class="wen">might have been</div><div class="wph">/maɪt hæv biːn/</div><div class="whint">👆 点击查看释义</div><div class="wcn">也许（过去）</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">asleep</div><div class="wph">/əˈsliːp/</div><div class="whint">👆 点击查看释义</div><div class="wcn">睡着的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">awake</div><div class="wph">/əˈweɪk/</div><div class="whint">👆 点击查看释义</div><div class="wcn">醒着的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">tired</div><div class="wph">/taɪərd/</div><div class="whint">👆 点击查看释义</div><div class="wcn">疲倦的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">worried</div><div class="wph">/ˈwɜːrid/</div><div class="whint">👆 点击查看释义</div><div class="wcn">担心的</div></div></div>
+  </div>
+</div>
+
+<!-- S3: 扩展单词 -->
+<div class="sl" data-i="3">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">🔤 扩展生词</div>
+  <div class="stit">更多单词</div>
+  <div class="ssub">点击卡片翻转查看中文 👆</div>
+  <div class="wg">
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">at home</div><div class="wph">/ət hoʊm/</div><div class="whint">👆 点击查看释义</div><div class="wcn">在家</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">at work</div><div class="wph">/ət wɜːrk/</div><div class="whint">👆 点击查看释义</div><div class="wcn">在上班</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">at the office</div><div class="wph">/ət ði ˈɔːfɪs/</div><div class="whint">👆 点击查看释义</div><div class="wcn">在办公室</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">in a hurry</div><div class="wph">/ɪn ə ˈhɜːri/</div><div class="whint">👆 点击查看释义</div><div class="wcn">匆忙</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">right</div><div class="wph">/raɪt/</div><div class="whint">👆 点击查看释义</div><div class="wcn">正确的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">wrong</div><div class="wph">/rɔːŋ/</div><div class="whint">👆 点击查看释义</div><div class="wcn">错误的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">joking</div><div class="wph">/ˈdʒoʊkɪŋ/</div><div class="whint">👆 点击查看释义</div><div class="wcn">开玩笑</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📖</span><div><div class="wen">serious</div><div class="wph">/ˈsɪriəs/</div><div class="whint">👆 点击查看释义</div><div class="wcn">认真的</div></div></div>
+  </div>
+</div>
+
+<!-- S4: 课文对话 -->
+<div class="sl" data-i="4">
+  <div class="badge" style="background:#E8F8F5;color:var(--ok)">💬 课文对话</div>
+  <div class="stit">对话场景</div>
+  <div class="ssub">过去推测练习 ⏰ 点击句子可朗读</div>
+  <div class="dlg">
+    <div class="dl L" style="animation-delay:0.0s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">He was driving very fast. He must have been in a hurry.</span><span class="dcn">他开得很快。他一定很匆忙。</span></div></div>
+    <div class="dl R" style="animation-delay:0.2s" onclick="speak(this)"><span class="de">👦</span><div><span class="den">Or he may have been late for work.</span><span class="dcn">或者他可能上班迟到了。</span></div></div>
+    <div class="dl L" style="animation-delay:0.4s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">She was crying. She must have been very sad.</span><span class="dcn">她在哭。她一定很伤心。</span></div></div>
+    <div class="dl R" style="animation-delay:0.6s" onclick="speak(this)"><span class="de">👦</span><div><span class="den">Or she might have been watching a sad film.</span><span class="dcn">或者她也许在看一部伤感的电影。</span></div></div>
+    <div class="dl L" style="animation-delay:0.8s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">He wasn't at home yesterday. He can't have been asleep.</span><span class="dcn">他昨天不在家。他不可能在睡觉。</span></div></div>
+    <div class="dl R" style="animation-delay:1.0s" onclick="speak(this)"><span class="de">👦</span><div><span class="den">He may have been at the office.</span><span class="dcn">他可能在办公室。</span></div></div>
+    <div class="dl L" style="animation-delay:1.2s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">They were laughing. They can't have been worried.</span><span class="dcn">他们在笑。他们不可能在担心。</span></div></div>
+    <div class="dl R" style="animation-delay:1.4s" onclick="speak(this)"><span class="de">👦</span><div><span class="den">They might have been joking.</span><span class="dcn">他们也许在开玩笑。</span></div></div>
+    <div class="dl L" style="animation-delay:1.6s" onclick="speak(this)"><span class="de">👧</span><div><span class="den">She must have been tired after working all day.</span><span class="dcn">工作了一整天后她一定很累。</span></div></div>
+    <div class="dl R" style="animation-delay:1.8s" onclick="speak(this)"><span class="de">👦</span><div><span class="den">She can't have been tired. She was dancing!</span><span class="dcn">她不可能累。她在跳舞呢！</span></div></div>
+  </div>
+</div>
+
+<!-- S5: 知识点1 -->
+<div class="sl" data-i="5">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">💡 知识点</div>
+  <div class="stit">对过去推测的程度对比</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:580px;margin-top:8px">
+    <div class="pb"><div class="pt">📌 推测程度（过去）</div><div class="ps"><b>must have been</b> → 90%以上把握（一定是）</div><div class="ps"><b>can't have been</b> → 90%以上否定把握（不可能）</div><div class="ps"><b>may have been</b> → 约50%把握（可能）</div><div class="ps"><b>might have been</b> → 约30%把握（也许）</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">📌 现在推测 vs 过去推测</div><div class="ps">现在：He <b>must be</b> tired. 他现在一定很累。</div><div class="ps">过去：He <b>must have been</b> tired. 他当时一定很累。</div><div class="ps">现在：He <b>can't be</b> at home. 他现在不可能在家。</div><div class="ps">过去：He <b>can't have been</b> at home. 他当时不可能在家。</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#E8F8F5,#F3F0FF)"><div class="pt">📌 例句对比</div><div class="ps">He <b>must have been</b> in a hurry. 他一定很匆忙。</div><div class="ps">He <b>may have been</b> late for work. 他可能上班迟到了。</div><div class="ps">He <b>can't have been</b> asleep. 他不可能在睡觉。</div><div class="ps">He <b>might have been</b> joking. 他也许在开玩笑。</div></div>
+  </div>
+</div>
+
+<!-- S6: 知识点2 -->
+<div class="sl" data-i="6">
+  <div class="badge" style="background:#E8F8F5;color:var(--ok)">💡 知识点</div>
+  <div class="stit">must have been vs should have been</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:580px;margin-top:8px">
+    <div class="pb"><div class="pt">📌 must have been（推测）</div><div class="ps">He <b>must have been</b> tired. 他当时一定很累。（推测）</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">📌 should have been（应该但没有）</div><div class="ps">He <b>should have been</b> more careful. 他本应该更小心。（但实际没有）</div><div class="ps">You <b>shouldn't have been</b> driving so fast. 你本不应该开那么快。</div></div>
+  </div>
+</div>
+
+<!-- S7: 句型 -->
+<div class="sl" data-i="7">
+  <div class="badge" style="background:#FFF3E0;color:var(--acc2)">📝 核心句型</div>
+  <div class="stit">S + must/may/might/can't have been + ...</div>
+  <div class="ssub">对过去不同把握程度的推测</div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:620px">
+    <div class="pb"><div class="pt">📌 句型结构</div><div class="ps"><span class='phl'>must have been → 一定是 (90%+)</span></div><div class="ps"><span class='phl'>can't have been → 不可能 (90%+)</span></div><div class="ps"><span class='phl'>may have been → 可能 (50%)</span></div><div class="ps"><span class='phl'>might have been → 也许是 (30%)</span></div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">🔊 例句</div><div class="ps">He <b>must have been</b> in a hurry. 他一定很匆忙。</div><div class="ps">He <b>can't have been</b> asleep. 他不可能在睡觉。</div><div class="ps">He <b>may have been</b> at the office. 他可能在办公室。</div><div class="ps">He <b>might have been</b> joking. 他也许在开玩笑。</div></div>
+  </div>
+</div>
+
+<!-- S8-S14: 练习页面 -->
+<div class="sl" data-i="8"><div class="badge" style="background:#FDEDEC;color:var(--acc2)">🇬🇧➡️🇨🇳 英译汉</div><div class="stit">选出正确的中文意思</div><div class="divider"></div><div id="q1" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="9"><div class="badge" style="background:#E8F8F5;color:var(--ok)">🇨🇳➡️🇬🇧 汉译英</div><div class="stit">选出正确的英文单词</div><div class="divider"></div><div id="q2" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="10"><div class="badge" style="background:#FFF3E0;color:var(--acc2)">✏️ 单词补全</div><div class="stit">补全缺失的字母</div><div class="ssub">根据中文提示，点击字母补全单词</div><div id="q3" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="11"><div class="badge" style="background:#F3F0FF;color:var(--pri)">📝 选择填空</div><div class="stit">选择正确的单词</div><div class="divider"></div><div id="q4" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="12"><div class="badge" style="background:#FFF3E0;color:var(--acc2)">💬 句型练习</div><div class="stit">看图说句子</div><div class="ssub">选择正确的英文句子</div><div id="q5" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="13"><div class="badge" style="background:#FDEDEC;color:var(--err)">🗣️ 口语练习</div><div class="stit">根据中文说英文</div><div class="ssub">先自己说说看，再点击查看答案</div><div id="q6" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="14"><div class="badge" style="background:#E8F8F5;color:var(--ok)">🧪 知识检测</div><div class="stit">来检测一下吧！</div><div class="divider"></div><div id="q7" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+
+<!-- S15: 成绩单 -->
+<div class="sl" data-i="15" style="background:linear-gradient(135deg,#6C5CE7 0%,#A29BFE 50%,#74B9FF 100%);color:#fff">
+  <div style="font-size:56px;animation:flt 3s ease-in-out infinite">🏆</div>
+  <div class="stit" style="color:#fff;margin-top:12px">学习完成！</div>
+  <div class="divider" style="background:rgba(255,255,255,.4)"></div>
+  <div class="stars" id="fstars"></div>
+  <div class="sd" id="fscore" style="color:var(--acc)">0</div>
+  <div class="sl2" style="color:rgba(255,255,255,.8)">总分</div>
+  <div style="margin-top:20px;display:flex;gap:14px">
+    <button class="btn ba" onclick="resetAll()">🔄 再来一次</button>
+    <button class="btn bs" onclick="go(0)">🏠 回到首页</button>
+  </div>
+</div>
+
+</div>
+<div class="nav">
+  <button class="nb" id="prevB" onclick="prev()">◀</button>
+  <div class="dots" id="dots"></div>
+  <span class="pn" id="pn">1 / 16</span>
+  <button class="nb" id="nextB" onclick="next()">▶</button>
+</div>
+<div class="cfc" id="cfc"></div>
+
+<script>
+// ===== 课程数据 =====
+const D1=[{"en":"must have been","cn":"一定是（过去）","opts":["一定是（过去）","不可能（过去）","可能（过去）","也许是（过去）"]},{"en":"can't have been","cn":"不可能（过去）","opts":["不可能（过去）","一定是（过去）","可能（过去）","必须是（过去）"]},{"en":"may have been","cn":"可能（过去）","opts":["可能（过去）","一定是（过去）","不可能（过去）","必须是（过去）"]},{"en":"asleep","cn":"睡着的","opts":["睡着的","醒着的","疲倦的","担心的"]},{"en":"awake","cn":"醒着的","opts":["醒着的","睡着的","疲倦的","高兴的"]}];
+const D2=[{"cn":"一定是（过去）","en":"must have been","opts":["must have been","can't have been","may have been","might have been"]},{"cn":"不可能（过去）","en":"can't have been","opts":["can't have been","must have been","may have been","might have been"]},{"cn":"可能（过去）","en":"may have been","opts":["may have been","must have been","can't have been","might have been"]},{"cn":"睡着的","en":"asleep","opts":["asleep","awake","tired","worried"]},{"cn":"匆忙","en":"in a hurry","opts":["in a hurry","in a rush","in time","on time"]}];
+const D3=[{"word":"asleep","show":"a s l e e _","cn":"睡着的","blanks":[{"pos":5,"ans":"p"}]},{"word":"awake","show":"a w a k _","cn":"醒着的","blanks":[{"pos":4,"ans":"e"}]},{"word":"worried","show":"w o r r i e _","cn":"担心的","blanks":[{"pos":6,"ans":"d"}]},{"word":"serious","show":"s e r i o u _","cn":"认真的","blanks":[{"pos":6,"ans":"s"}]},{"word":"hurried","show":"h u r r i e _","cn":"匆忙的","blanks":[{"pos":6,"ans":"d"}]}];
+const D4=[{"sen":"He was driving fast. He must have _____ in a hurry.","ans":"been","opts":["been","being","be","was"],"cn":"他开得很快。他一定很匆忙。"},{"sen":"She was crying. She can't have _____ happy.","ans":"been","opts":["been","being","be","was"],"cn":"她在哭。她不可能开心。"},{"sen":"He may have _____ at the office.","ans":"been","opts":["been","being","be","was"],"cn":"他可能在办公室。"},{"sen":"They might have _____ joking.","ans":"been","opts":["been","being","be","was"],"cn":"他们也许在开玩笑。"},{"sen":"He should have _____ more careful.","ans":"been","opts":["been","being","be","was"],"cn":"他本应该更小心。"}];
+const D5=[{"img":"🚗💨","cn":"他开得很快。他一定很匆忙。","ans":"He was driving fast. He must have been in a hurry.","opts":["He was driving fast. He must have been in a hurry.","He was driving fast. He can't have been in a hurry.","He was driving fast. He may have been in a hurry.","He was driving fast. He must be in a hurry."]},{"img":"😢❓","cn":"她在哭。她一定很伤心。","ans":"She was crying. She must have been very sad.","opts":["She was crying. She must have been very sad.","She was crying. She can't have been very sad.","She was crying. She may have been very sad.","She was crying. She must be very sad."]},{"img":"😂❓","cn":"他们在笑。他们不可能在担心。","ans":"They were laughing. They can't have been worried.","opts":["They were laughing. They can't have been worried.","They were laughing. They must have been worried.","They were laughing. They may have been worried.","They were laughing. They can't be worried."]}];
+const D6=[{"cn":"他一定很匆忙。","en":"He must have been in a hurry."},{"cn":"他可能上班迟到了。","en":"He may have been late for work."},{"cn":"他不可能在睡觉。","en":"He can't have been asleep."},{"cn":"他们也许在开玩笑。","en":"They might have been joking."},{"cn":"他本应该更小心。","en":"He should have been more careful."}];
+const D7=[{"q":"\"must have been\" 推测的是什么时候的情况？","opts":["过去","现在","将来","经常"],"ans":"过去"},{"q":"过去推测的把握程度从大到小排列正确的是：","opts":["must > may > might","might > may > must","may > must > might","must > might > may"],"ans":"must > may > might"},{"q":"He can't have been at home' 的意思是：","opts":["他不可能在家（过去）","他一定在家（过去）","他可能在家（过去）","他不应该在家（过去）"],"ans":"他不可能在家（过去）"},{"q":"\"He should have been more careful\" 表示：","opts":["他本应该更小心（但实际没有）","他一定很小心","他可能很小心","他也许很小心"],"ans":"他本应该更小心（但实际没有）"},{"q":"\"may have been\" 的把握程度约为：","opts":["50%","90%","30%","10%"],"ans":"50%"},{"q":"\"She was laughing. She can't have been sad.\" 这句话推测的是：\"","opts":["过去的情况","现在的情况","将来的情况","经常的情况"],"ans":"过去的情况"}];
+
+// ===== 通用交互脚本 =====
+const T=16;let cur=0,score=0,mx=0;
+
+function go(n){
+  if(n<0||n>=T)return;
+  const ss=document.querySelectorAll('.sl');cur=n;
+  ss.forEach((s,i)=>{s.classList.remove('on','bk');if(i===n)s.classList.add('on');else if(i<n)s.classList.add('bk')});
+  document.getElementById('pn').textContent=`${n+1} / ${T}`;
+  document.getElementById('prevB').disabled=(n===0);
+  document.getElementById('nextB').disabled=(n===T-1);
+  document.getElementById('pbar').style.width=((n+1)/T*100)+'%';
+  updDots();
+  if(n===8)initQ1();if(n===9)initQ2();if(n===10)initQ3();
+  if(n===11)initQ4();if(n===12)initQ5();if(n===13)initQ6();
+  if(n===14)initQ7();if(n===15)showFinal();
+}
+function next(){go(cur+1)}function prev(){go(cur-1)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}});
+
+function updDots(){const d=document.getElementById('dots');d.innerHTML='';for(let i=0;i<T;i++){const e=document.createElement('div');e.className='dot'+(i===cur?' on':'');e.onclick=()=>go(i);d.appendChild(e)}}
+function flip(c){c.classList.toggle('flip');c.style.animation='none';c.offsetHeight;c.style.animation='pop .3s'}
+function speak(el){el.style.animation='none';el.offsetHeight;el.style.animation='pop .3s';const t=el.querySelector('.den').textContent;if('speechSynthesis'in window){const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.75;speechSynthesis.speak(u)}}
+function tts(text){if('speechSynthesis'in window){const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=0.7;speechSynthesis.speak(u)}}
+function shuf(a){return[...a].sort(()=>Math.random()-.5)}
+function qResult(el,s,total,nextFn){const pct=Math.round(s/total*100);let emoji=pct>=80?'🎉':pct>=60?'👍':'💪';el.innerHTML=`<div style="font-size:48px;margin-bottom:8px">${emoji}</div><div class="qq">得分：${s} / ${total}</div><div style="font-size:20px;color:var(--txt-l);margin-bottom:20px">${pct>=80?'太棒了！':pct>=60?'不错哦！':'继续加油！'}</div><button class="btn bp" onclick="${nextFn}">继续 →</button>`;if(pct>=80)confetti()}
+
+// ===== Q1: 英译汉 =====
+let i1=0,s1=0;
+function initQ1(){i1=0;s1=0;showQ1()}
+function showQ1(){const el=document.getElementById('q1');if(i1>=D1.length){qResult(el,s1,D1.length,'next()');return}const q=D1[i1],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i1+1}/${D1.length} 题</div><div class="qq">"${q.en}" 的中文意思是？</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck1(this,'${o}','${q.cn}')">${o}</button>`).join('')}</div>`}
+function ck1(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s1++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i1++;showQ1()},900)}
+
+// ===== Q2: 汉译英 =====
+let i2=0,s2=0;
+function initQ2(){i2=0;s2=0;showQ2()}
+function showQ2(){const el=document.getElementById('q2');if(i2>=D2.length){qResult(el,s2,D2.length,'next()');return}const q=D2[i2],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i2+1}/${D2.length} 题</div><div class="qq">"${q.cn}" 的英文是？</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck2(this,'${o}','${q.en}')">${o}</button>`).join('')}</div>`}
+function ck2(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s2++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i2++;showQ2()},900)}
+
+// ===== Q3: 单词补全 =====
+let i3=0,s3=0;
+function initQ3(){i3=0;s3=0;showQ3()}
+function showQ3(){const el=document.getElementById('q3');if(i3>=D3.length){qResult(el,s3,D3.length,'next()');return}const q=D3[i3];const corrs=q.blanks.map(b=>b.ans);const all='abcdefghijklmnopqrstuvwxyz'.split('');const extras=all.filter(l=>!corrs.includes(l)).sort(()=>Math.random()-.5).slice(0,Math.max(1,6-corrs.length));const letters=shuf([...corrs,...extras]);const blankHTML=q.show.split(' ').map((ch,idx)=>{if(ch==='_'){const bi=q.blanks.findIndex(b=>b.pos===idx);return`<span class="fb" id="bk${bi}" style="font-size:28px;min-width:36px;text-align:center">_</span>`}return`<span style="font-size:28px">${ch}</span>`}).join(' ');el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i3+1}/${D3.length} 题</div><div class="qq">补全单词：${q.cn}</div><div style="margin:16px 0;letter-spacing:4px">${blankHTML}</div><div style="font-size:15px;color:var(--txt-l);margin-bottom:12px">点击字母填入：</div><div class="lg">${letters.map(l=>`<button class="lb" onclick="pickL(this,'${l}')">${l}</button>`).join('')}</div><div id="sf" style="font-size:18px;min-height:28px;margin-top:8px"></div>`;window._q3blanks=[...q.blanks];window._q3pos=0}
+function pickL(btn,l){const bl=window._q3blanks,pos=window._q3pos;if(pos>=bl.length)return;const bke=document.getElementById('bk'+pos);if(l===bl[pos].ans){bke.textContent=l;bke.classList.add('okb');btn.classList.add('okl');btn.disabled=true;window._q3pos++;if(window._q3pos>=bl.length){s3++;score++;mx++;document.getElementById('sf').innerHTML='<span style="color:var(--ok)">✅ 太棒了！</span>';setTimeout(()=>{i3++;showQ3()},1000)}}else{btn.classList.add('nol');mx++;document.getElementById('sf').innerHTML=`<span style="color:var(--err)">❌ 再想想！</span>`;setTimeout(()=>{bke.textContent=bl[pos].ans;bke.classList.add('okb');window._q3pos++;if(window._q3pos>=bl.length)setTimeout(()=>{i3++;showQ3()},800)},700)}}
+
+// ===== Q4: 选择填空 =====
+let i4=0,s4=0;
+function initQ4(){i4=0;s4=0;showQ4()}
+function showQ4(){const el=document.getElementById('q4');if(i4>=D4.length){qResult(el,s4,D4.length,'next()');return}const q=D4[i4],opts=shuf(q.opts);const sen=q.sen.replace('_____','<span style="color:var(--pri);border-bottom:3px solid var(--pri);padding:0 8px">_____</span>');el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i4+1}/${D4.length} 题</div><div class="qq" style="font-size:20px;line-height:1.6">${sen}</div><div class="qh">${q.cn}</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck4(this,'${o}','${q.ans}')">${o}</button>`).join('')}</div>`}
+function ck4(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s4++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i4++;showQ4()},900)}
+
+// ===== Q5: 句型练习 =====
+let i5=0,s5=0;
+function initQ5(){i5=0;s5=0;showQ5()}
+function showQ5(){const el=document.getElementById('q5');if(i5>=D5.length){qResult(el,s5,D5.length,'next()');return}const q=D5[i5],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i5+1}/${D5.length} 题</div><div style="font-size:56px;text-align:center;margin-bottom:10px">${q.img}</div><div class="qq">${q.cn}</div><div class="og" style="grid-template-columns:1fr">${opts.map(o=>`<button class="ob" style="font-size:16px" onclick="ck5(this)">${o}</button>`).join('')}</div>`;window._q5ans=q.ans}
+function ck5(b){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));const sel=b.textContent,cor=window._q5ans;if(sel===cor){b.classList.add('ok');s5++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i5++;showQ5()},900)}
+
+// ===== Q6: 口语练习 =====
+let i6=0;
+function initQ6(){i6=0;showQ6()}
+function showQ6(){const el=document.getElementById('q6');if(i6>=D6.length){el.innerHTML=`<div style="font-size:48px;margin-bottom:8px">🎉</div><div class="qq">口语练习完成！</div><div class="ssub">继续加油哦！💪</div><button class="btn bp" onclick="next()">继续 →</button>`;return}const q=D6[i6];el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i6+1}/${D6.length} 题</div><div class="sp">${q.cn}</div><div class="sa" id="spkAns">🤔 ???</div><div class="sht">先自己说一遍，再点击查看答案</div><div style="display:flex;gap:14px;margin-top:8px"><button class="btn bp" onclick="revealSpk()">👁️ 查看答案</button><button class="btn ba" onclick="tts(D6[i6].en)">🔊 朗读</button></div><div style="margin-top:18px;display:flex;gap:10px"><button class="btn bs" style="font-size:14px;padding:10px 18px" onclick="i6++;showQ6()">✅ 我会了</button><button class="btn bd" style="font-size:14px;padding:10px 18px" onclick="i6++;showQ6()">🔄 还需练习</button></div>`}
+function revealSpk(){const q=D6[i6],el=document.getElementById('spkAns');el.textContent=q.en;el.style.animation='bIn .5s'}
+
+// ===== Q7: 知识检测 =====
+let i7=0,s7=0;
+function initQ7(){i7=0;s7=0;showQ7()}
+function showQ7(){const el=document.getElementById('q7');if(i7>=D7.length){qResult(el,s7,D7.length,'next()');return}const q=D7[i7],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i7+1}/${D7.length} 题</div><div class="qq" style="font-size:20px">${q.q}</div><div class="og" style="grid-template-columns:1fr">${opts.map(o=>`<button class="ob" style="font-size:16px;text-align:left;padding:14px 18px" onclick="ck7(this)">${o}</button>`).join('')}</div>`;window._q7ans=q.ans}
+function ck7(b){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));const sel=b.textContent,cor=window._q7ans;if(sel===cor){b.classList.add('ok');s7++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i7++;showQ7()},900)}
+
+// ===== Final & Confetti =====
+function showFinal(){const pct=mx>0?Math.round(score/mx*100):0;const starCount=pct>=90?5:pct>=70?4:pct>=50?3:pct>=30?2:1;let html='';for(let i=0;i<5;i++)html+=`<span class="star ${i<starCount?'on':'off'}">⭐</span>`;document.getElementById('fstars').innerHTML=html;document.getElementById('fscore').textContent=score+' / '+mx;if(pct>=70)confetti()}
+function resetAll(){score=0;mx=0;go(0)}
+function confetti(){const c=document.getElementById('cfc');const colors=['#6C5CE7','#FDCB6E','#00B894','#FF7675','#74B9FF','#E17055','#A29BFE'];for(let i=0;i<60;i++){const p=document.createElement('div');p.className='cfp';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.animationDelay=Math.random()*2+'s';p.style.animationDuration=(2+Math.random()*2)+'s';p.style.width=(6+Math.random()*8)+'px';p.style.height=(6+Math.random()*8)+'px';p.style.borderRadius=Math.random()>.5?'50%':'2px';c.appendChild(p);setTimeout(()=>p.remove(),5000)}}
+go(0);
+
+</script>
+</body>
+</html>

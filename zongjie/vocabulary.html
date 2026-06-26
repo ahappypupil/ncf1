@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>核心词汇表 - 新概念英语第一册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .vocab-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #28a745;
+        }
+        .vocab-card h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        .word-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        .word-table th, .word-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .word-table th {
+            background-color: #667eea;
+            color: white;
+        }
+        .word-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .word {
+            font-weight: bold;
+            color: #667eea;
+        }
+        .phonetic {
+            color: #6c757d;
+            font-style: italic;
+        }
+        .example {
+            background: #e3f2fd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .note {
+            background: #fff3cd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        .highlight {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .search-box {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .category-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .category-btn:hover {
+            background: #5568d3;
+        }
+        .category-btn.active {
+            background: #764ba2;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script>
+        function searchWords() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const tables = document.querySelectorAll('.word-table');
+            
+            tables.forEach(table => {
+                const rows = table.querySelectorAll('tr:not(:first-child)');
+                rows.forEach(row => {
+                    const word = row.querySelector('.word').textContent.toLowerCase();
+                    const meaning = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                    if (word.includes(input) || meaning.includes(input)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        function showCategory(category) {
+            const sections = document.querySelectorAll('.vocab-card');
+            const buttons = document.querySelectorAll('.category-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            sections.forEach(section => {
+                if (category === 'all' || section.dataset.category === category) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="nav">
+                <a href="index.html">首页</a> > 核心词汇表
+            </div>
+            <h1>核心词汇表</h1>
+            <p class="subtitle">新概念英语第一册 | 高频词汇 | 词性 | 释义 | 例句 | 分类汇总</p>
+        </header>
+
+        <div class="section">
+            <h2>词汇说明</h2>
+            <p>本词汇表收录了新概念英语第一册全部核心高频词汇，共计约800个，按照词性和话题分类，便于系统学习和记忆。每个单词都配有音标、释义和典型例句，帮助学习者全面掌握单词用法。</p>
+            
+            <div class="note">
+                <strong>词汇学习建议：</strong><br>
+                1. 每天学习30-50个新单词，定期复习旧单词<br>
+                2. 结合例句记忆单词，理解单词在实际语境中的用法<br>
+                3. 尝试用所学单词造句，加深记忆<br>
+                4. 按照分类集中记忆相关单词，提高学习效率<br>
+                5. 利用搜索功能快速查找需要的单词
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="输入单词或中文释义搜索..." onkeyup="searchWords()">
+            </div>
+
+            <div class="category-nav">
+                <button class="category-btn active" onclick="showCategory('all')">全部</button>
+                <button class="category-btn" onclick="showCategory('noun')">名词</button>
+                <button class="category-btn" onclick="showCategory('verb')">动词</button>
+                <button class="category-btn" onclick="showCategory('adj')">形容词</button>
+                <button class="category-btn" onclick="showCategory('adv')">副词</button>
+                <button class="category-btn" onclick="showCategory('prep')">介词</button>
+                <button class="category-btn" onclick="showCategory('conj')">连词</button>
+                <button class="category-btn" onclick="showCategory('pron')">代词</button>
+                <button class="category-btn" onclick="showCategory('num')">数词</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="vocab-card" data-category="noun">
+                <h3>日常用品类名词</h3>
+                <table class="word-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">单词</th>
+                            <th width="15%">音标</th>
+                            <th width="20%">词性</th>
+                            <th width="20%">释义</th>
+                            <th width="30%">例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="word">pen</span></td>
+                            <td><span class="phonetic">/pen/</span></td>
+                            <td>n.</td>
+                            <td>钢笔</td>
+                            <td>
+                                <div class="example">I have a blue pen. 我有一支蓝色的钢笔。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">pencil</span></td>
+                            <td><span class="phonetic">/'pensl/</span></td>
+                            <td>n.</td>
+                            <td>铅笔</td>
+                            <td>
+                                <div class="example">Please give me a pencil. 请给我一支铅笔。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">book</span></td>
+                            <td><span class="phonetic">/bʊk/</span></td>
+                            <td>n.</td>
+                            <td>书</td>
+                            <td>
+                                <div class="example">This is an interesting book. 这是一本有趣的书。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">watch</span></td>
+                            <td><span class="phonetic">/wɒtʃ/</span></td>
+                            <td>n.</td>
+                            <td>手表</td>
+                            <td>
+                                <div class="example">My watch is very expensive. 我的手表很贵。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">coat</span></td>
+                            <td><span class="phonetic">/kəʊt/</span></td>
+                            <td>n.</td>
+                            <td>外套，上衣</td>
+                            <td>
+                                <div class="example">Put on your coat. It's cold outside. 穿上你的外套，外面很冷。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">dress</span></td>
+                            <td><span class="phonetic">/dres/</span></td>
+                            <td>n.</td>
+                            <td>连衣裙</td>
+                            <td>
+                                <div class="example">She is wearing a beautiful dress. 她穿着一件漂亮的连衣裙。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">skirt</span></td>
+                            <td><span class="phonetic">/skɜːt/</span></td>
+                            <td>n.</td>
+                            <td>裙子</td>
+                            <td>
+                                <div class="example">The red skirt is very nice. 这条红裙子很漂亮。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">shirt</span></td>
+                            <td><span class="phonetic">/ʃɜːt/</span></td>
+                            <td>n.</td>
+                            <td>衬衣</td>
+                            <td>
+                                <div class="example">Your shirt is very clean. 你的衬衣很干净。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">car</span></td>
+                            <td><span class="phonetic">/kɑː/</span></td>
+                            <td>n.</td>
+                            <td>小汽车</td>
+                            <td>
+                                <div class="example">My father has a new car. 我爸爸有一辆新车。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">house</span></td>
+                            <td><span class="phonetic">/haʊs/</span></td>
+                            <td>n.</td>
+                            <td>房子</td>
+                            <td>
+                                <div class="example">They live in a big house. 他们住在一个大房子里。</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="vocab-card" data-category="noun">
+                <h3>食物类名词</h3>
+                <table class="word-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">单词</th>
+                            <th width="15%">音标</th>
+                            <th width="20%">词性</th>
+                            <th width="20%">释义</th>
+                            <th width="30%">例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="word">egg</span></td>
+                            <td><span class="phonetic">/eg/</span></td>
+                            <td>n.</td>
+                            <td>鸡蛋</td>
+                            <td>
+                                <div class="example">I eat an egg every morning. 我每天早上吃一个鸡蛋。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">bread</span></td>
+                            <td><span class="phonetic">/bred/</span></td>
+                            <td>n.</td>
+                            <td>面包</td>
+                            <td>
+                                <div class="example">Would you like some bread? 你想要一些面包吗？</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">milk</span></td>
+                            <td><span class="phonetic">/mɪlk/</span></td>
+                            <td>n.</td>
+                            <td>牛奶</td>
+                            <td>
+                                <div class="example">Drinking milk is good for your health. 喝牛奶对你的健康有好处。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">coffee</span></td>
+                            <td><span class="phonetic">/'kɒfi/</span></td>
+                            <td>n.</td>
+                            <td>咖啡</td>
+                            <td>
+                                <div class="example">I usually drink coffee in the morning. 我通常早上喝咖啡。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">tea</span></td>
+                            <td><span class="phonetic">/tiː/</span></td>
+                            <td>n.</td>
+                            <td>茶</td>
+                            <td>
+                                <div class="example">Chinese tea is very famous in the world. 中国茶在世界上很有名。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">rice</span></td>
+                            <td><span class="phonetic">/raɪs/</span></td>
+                            <td>n.</td>
+                            <td>米饭</td>
+                            <td>
+                                <div class="example">Rice is the main food in southern China. 米饭是中国南方的主食。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">meat</span></td>
+                            <td><span class="phonetic">/miːt/</span></td>
+                            <td>n.</td>
+                            <td>肉</td>
+                            <td>
+                                <div class="example">I don't eat too much meat. 我不吃太多肉。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">fruit</span></td>
+                            <td><span class="phonetic">/fruːt/</span></td>
+                            <td>n.</td>
+                            <td>水果</td>
+                            <td>
+                                <div class="example">We should eat more fruit every day. 我们应该每天多吃水果。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">vegetable</span></td>
+                            <td><span class="phonetic">/'vedʒtəbl/</span></td>
+                            <td>n.</td>
+                            <td>蔬菜</td>
+                            <td>
+                                <div class="example">Vegetables are rich in vitamins. 蔬菜富含维生素。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">apple</span></td>
+                            <td><span class="phonetic">/'æpl/</span></td>
+                            <td>n.</td>
+                            <td>苹果</td>
+                            <td>
+                                <div class="example">An apple a day keeps the doctor away. 一天一苹果，医生远离我。</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="vocab-card" data-category="verb">
+                <h3>常用动词</h3>
+                <table class="word-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">单词</th>
+                            <th width="15%">音标</th>
+                            <th width="20%">词性</th>
+                            <th width="20%">释义</th>
+                            <th width="30%">例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="word">be</span></td>
+                            <td><span class="phonetic">/biː/</span></td>
+                            <td>v.</td>
+                            <td>是</td>
+                            <td>
+                                <div class="example">I am a student. 我是一名学生。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">have</span></td>
+                            <td><span class="phonetic">/hæv/</span></td>
+                            <td>v.</td>
+                            <td>有，吃，喝</td>
+                            <td>
+                                <div class="example">I have a new bike. 我有一辆新自行车。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">do</span></td>
+                            <td><span class="phonetic">/duː/</span></td>
+                            <td>v.</td>
+                            <td>做</td>
+                            <td>
+                                <div class="example">What are you doing now? 你现在在做什么？</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">go</span></td>
+                            <td><span class="phonetic">/gəʊ/</span></td>
+                            <td>v.</td>
+                            <td>去</td>
+                            <td>
+                                <div class="example">I go to school by bus every day. 我每天坐公交车去上学。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">come</span></td>
+                            <td><span class="phonetic">/kʌm/</span></td>
+                            <td>v.</td>
+                            <td>来</td>
+                            <td>
+                                <div class="example">Come here, please. 请到这里来。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">see</span></td>
+                            <td><span class="phonetic">/siː/</span></td>
+                            <td>v.</td>
+                            <td>看见</td>
+                            <td>
+                                <div class="example">I can see a bird in the tree. 我能看见树上有一只鸟。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">look</span></td>
+                            <td><span class="phonetic">/lʊk/</span></td>
+                            <td>v.</td>
+                            <td>看</td>
+                            <td>
+                                <div class="example">Look at the blackboard, please. 请看黑板。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">say</span></td>
+                            <td><span class="phonetic">/seɪ/</span></td>
+                            <td>v.</td>
+                            <td>说</td>
+                            <td>
+                                <div class="example">What did he say just now? 他刚才说什么了？</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">speak</span></td>
+                            <td><span class="phonetic">/spiːk/</span></td>
+                            <td>v.</td>
+                            <td>讲，说</td>
+                            <td>
+                                <div class="example">He can speak three languages. 他会说三种语言。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">tell</span></td>
+                            <td><span class="phonetic">/tel/</span></td>
+                            <td>v.</td>
+                            <td>告诉</td>
+                            <td>
+                                <div class="example">Please tell me your name. 请告诉我你的名字。</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="vocab-card" data-category="adj">
+                <h3>常用形容词</h3>
+                <table class="word-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">单词</th>
+                            <th width="15%">音标</th>
+                            <th width="20%">词性</th>
+                            <th width="20%">释义</th>
+                            <th width="30%">例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="word">good</span></td>
+                            <td><span class="phonetic">/gʊd/</span></td>
+                            <td>adj.</td>
+                            <td>好的</td>
+                            <td>
+                                <div class="example">He is a good student. 他是一个好学生。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">bad</span></td>
+                            <td><span class="phonetic">/bæd/</span></td>
+                            <td>adj.</td>
+                            <td>坏的</td>
+                            <td>
+                                <div class="example">Smoking is bad for your health. 吸烟对你的健康有害。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">big</span></td>
+                            <td><span class="phonetic">/bɪg/</span></td>
+                            <td>adj.</td>
+                            <td>大的</td>
+                            <td>
+                                <div class="example">This is a big house. 这是一个大房子。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">small</span></td>
+                            <td><span class="phonetic">/smɔːl/</span></td>
+                            <td>adj.</td>
+                            <td>小的</td>
+                            <td>
+                                <div class="example">The cat is very small. 这只猫很小。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">old</span></td>
+                            <td><span class="phonetic">/əʊld/</span></td>
+                            <td>adj.</td>
+                            <td>老的，旧的</td>
+                            <td>
+                                <div class="example">My grandfather is very old. 我爷爷很老了。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">young</span></td>
+                            <td><span class="phonetic">/jʌŋ/</span></td>
+                            <td>adj.</td>
+                            <td>年轻的</td>
+                            <td>
+                                <div class="example">She looks very young for her age. 她看起来比实际年龄年轻很多。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">new</span></td>
+                            <td><span class="phonetic">/njuː/</span></td>
+                            <td>adj.</td>
+                            <td>新的</td>
+                            <td>
+                                <div class="example">I have a new computer. 我有一台新电脑。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">happy</span></td>
+                            <td><span class="phonetic">/'hæpi/</span></td>
+                            <td>adj.</td>
+                            <td>高兴的</td>
+                            <td>
+                                <div class="example">We are very happy today. 我们今天很高兴。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">sad</span></td>
+                            <td><span class="phonetic">/sæd/</span></td>
+                            <td>adj.</td>
+                            <td>难过的</td>
+                            <td>
+                                <div class="example">She felt sad when she heard the bad news. 听到这个坏消息时她很难过。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">beautiful</span></td>
+                            <td><span class="phonetic">/'bjuːtɪfl/</span></td>
+                            <td>adj.</td>
+                            <td>美丽的</td>
+                            <td>
+                                <div class="example">The park is very beautiful in spring. 春天的公园很美。</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="vocab-card" data-category="adv">
+                <h3>常用副词</h3>
+                <table class="word-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">单词</th>
+                            <th width="15%">音标</th>
+                            <th width="20%">词性</th>
+                            <th width="20%">释义</th>
+                            <th width="30%">例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="word">very</span></td>
+                            <td><span class="phonetic">/'veri/</span></td>
+                            <td>adv.</td>
+                            <td>非常</td>
+                            <td>
+                                <div class="example">Thank you very much. 非常感谢你。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">too</span></td>
+                            <td><span class="phonetic">/tuː/</span></td>
+                            <td>adv.</td>
+                            <td>也，太</td>
+                            <td>
+                                <div class="example">Nice to meet you too. 见到你我也很高兴。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">so</span></td>
+                            <td><span class="phonetic">/səʊ/</span></td>
+                            <td>adv.</td>
+                            <td>如此，这么</td>
+                            <td>
+                                <div class="example">I am so happy to see you. 见到你我太高兴了。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">now</span></td>
+                            <td><span class="phonetic">/naʊ/</span></td>
+                            <td>adv.</td>
+                            <td>现在</td>
+                            <td>
+                                <div class="example">What are you doing now? 你现在在做什么？</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">here</span></td>
+                            <td><span class="phonetic">/hɪə/</span></td>
+                            <td>adv.</td>
+                            <td>这里</td>
+                            <td>
+                                <div class="example">Come here, please. 请到这里来。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">there</span></td>
+                            <td><span class="phonetic">/ðeə/</span></td>
+                            <td>adv.</td>
+                            <td>那里</td>
+                            <td>
+                                <div class="example">The book is over there. 书在那边。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">often</span></td>
+                            <td><span class="phonetic">/'ɒfn/</span></td>
+                            <td>adv.</td>
+                            <td>经常</td>
+                            <td>
+                                <div class="example">I often play basketball after school. 我经常放学后打篮球。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">usually</span></td>
+                            <td><span class="phonetic">/'juːʒuəli/</span></td>
+                            <td>adv.</td>
+                            <td>通常</td>
+                            <td>
+                                <div class="example">I usually get up at 7 o'clock. 我通常7点起床。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">always</span></td>
+                            <td><span class="phonetic">/'ɔːlweɪz/</span></td>
+                            <td>adv.</td>
+                            <td>总是</td>
+                            <td>
+                                <div class="example">He is always late for school. 他上学总是迟到。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">never</span></td>
+                            <td><span class="phonetic">/'nevə/</span></td>
+                            <td>adv.</td>
+                            <td>从不</td>
+                            <td>
+                                <div class="example">I never eat junk food. 我从不吃垃圾食品。</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="vocab-card" data-category="prep">
+                <h3>常用介词</h3>
+                <table class="word-table">
+                    <thead>
+                        <tr>
+                            <th width="15%">单词</th>
+                            <th width="15%">音标</th>
+                            <th width="20%">词性</th>
+                            <th width="20%">释义</th>
+                            <th width="30%">例句</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="word">in</span></td>
+                            <td><span class="phonetic">/ɪn/</span></td>
+                            <td>prep.</td>
+                            <td>在...里面</td>
+                            <td>
+                                <div class="example">There is a book in the bag. 书包里有一本书。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">on</span></td>
+                            <td><span class="phonetic">/ɒn/</span></td>
+                            <td>prep.</td>
+                            <td>在...上面</td>
+                            <td>
+                                <div class="example">The pen is on the desk. 钢笔在桌子上。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">under</span></td>
+                            <td><span class="phonetic">/'ʌndə/</span></td>
+                            <td>prep.</td>
+                            <td>在...下面</td>
+                            <td>
+                                <div class="example">The cat is under the table. 猫在桌子下面。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">near</span></td>
+                            <td><span class="phonetic">/nɪə/</span></td>
+                            <td>prep.</td>
+                            <td>在...附近</td>
+                            <td>
+                                <div class="example">My home is near the school. 我家在学校附近。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">next to</span></td>
+                            <td><span class="phonetic">/nekst tuː/</span></td>
+                            <td>prep.</td>
+                            <td>紧挨着</td>
+                            <td>
+                                <div class="example">The bank is next to the post office. 银行紧挨着邮局。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">between</span></td>
+                            <td><span class="phonetic">/bɪ'twiːn/</span></td>
+                            <td>prep.</td>
+                            <td>在...之间</td>
+                            <td>
+                                <div class="example">The library is between the park and the supermarket. 图书馆在公园和超市之间。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">at</span></td>
+                            <td><span class="phonetic">/æt/</span></td>
+                            <td>prep.</td>
+                            <td>在（地点、时间）</td>
+                            <td>
+                                <div class="example">I usually get up at 7 o'clock. 我通常7点起床。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">for</span></td>
+                            <td><span class="phonetic">/fɔː/</span></td>
+                            <td>prep.</td>
+                            <td>为了，给</td>
+                            <td>
+                                <div class="example">This gift is for you. 这个礼物是给你的。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">with</span></td>
+                            <td><span class="phonetic">/wɪð/</span></td>
+                            <td>prep.</td>
+                            <td>和...一起</td>
+                            <td>
+                                <div class="example">I often play with my friends. 我经常和朋友们一起玩。</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="word">from</span></td>
+                            <td><span class="phonetic">/frɒm/</span></td>
+                            <td>prep.</td>
+                            <td>从，来自</td>
+                            <td>
+                                <div class="example">I come from China. 我来自中国。</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 新概念英语第一册知识点总结 | 核心词汇表</p>
+        </footer>
+    </div>
+</body>
+</html>

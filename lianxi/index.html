@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习课程首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            padding: 12px 24px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .lesson-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            background: #f0f4ff;
+            color: #667eea;
+        }
+        .lesson-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .lesson-title {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 练习课程</h1>
+            <p>共144个练习课程，点击进入学习</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-btn">🏠 返回项目首页</a>
+            <a href="../zongjie/index.html" class="nav-btn">📊 查看总结资料</a>
+        </div>
+
+        <div class="lessons-grid">
+            <a href="lesson1.html" class="lesson-card">
+                <div class="lesson-number">1</div>
+                <div class="lesson-title">第1课</div>
+            </a>
+            <a href="lesson2.html" class="lesson-card">
+                <div class="lesson-number">2</div>
+                <div class="lesson-title">第2课</div>
+            </a>
+            <a href="lesson3.html" class="lesson-card">
+                <div class="lesson-number">3</div>
+                <div class="lesson-title">第3课</div>
+            </a>
+            <a href="lesson4.html" class="lesson-card">
+                <div class="lesson-number">4</div>
+                <div class="lesson-title">第4课</div>
+            </a>
+            <a href="lesson5.html" class="lesson-card">
+                <div class="lesson-number">5</div>
+                <div class="lesson-title">第5课</div>
+            </a>
+            <a href="lesson6.html" class="lesson-card">
+                <div class="lesson-number">6</div>
+                <div class="lesson-title">第6课</div>
+            </a>
+            <a href="lesson7.html" class="lesson-card">
+                <div class="lesson-number">7</div>
+                <div class="lesson-title">第7课</div>
+            </a>
+            <a href="lesson8.html" class="lesson-card">
+                <div class="lesson-number">8</div>
+                <div class="lesson-title">第8课</div>
+            </a>
+            <a href="lesson9.html" class="lesson-card">
+                <div class="lesson-number">9</div>
+                <div class="lesson-title">第9课</div>
+            </a>
+            <a href="lesson10.html" class="lesson-card">
+                <div class="lesson-number">10</div>
+                <div class="lesson-title">第10课</div>
+            </a>
+            <a href="lesson11.html" class="lesson-card">
+                <div class="lesson-number">11</div>
+                <div class="lesson-title">第11课</div>
+            </a>
+            <a href="lesson12.html" class="lesson-card">
+                <div class="lesson-number">12</div>
+                <div class="lesson-title">第12课</div>
+            </a>
+            <a href="lesson13.html" class="lesson-card">
+                <div class="lesson-number">13</div>
+                <div class="lesson-title">第13课</div>
+            </a>
+            <a href="lesson14.html" class="lesson-card">
+                <div class="lesson-number">14</div>
+                <div class="lesson-title">第14课</div>
+            </a>
+            <a href="lesson15.html" class="lesson-card">
+                <div class="lesson-number">15</div>
+                <div class="lesson-title">第15课</div>
+            </a>
+            <a href="lesson16.html" class="lesson-card">
+                <div class="lesson-number">16</div>
+                <div class="lesson-title">第16课</div>
+            </a>
+            <a href="lesson17.html" class="lesson-card">
+                <div class="lesson-number">17</div>
+                <div class="lesson-title">第17课</div>
+            </a>
+            <a href="lesson18.html" class="lesson-card">
+                <div class="lesson-number">18</div>
+                <div class="lesson-title">第18课</div>
+            </a>
+            <a href="lesson19.html" class="lesson-card">
+                <div class="lesson-number">19</div>
+                <div class="lesson-title">第19课</div>
+            </a>
+            <a href="lesson20.html" class="lesson-card">
+                <div class="lesson-number">20</div>
+                <div class="lesson-title">第20课</div>
+            </a>
+            <a href="lesson21.html" class="lesson-card">
+                <div class="lesson-number">21</div>
+                <div class="lesson-title">第21课</div>
+            </a>
+            <a href="lesson22.html" class="lesson-card">
+                <div class="lesson-number">22</div>
+                <div class="lesson-title">第22课</div>
+            </a>
+            <a href="lesson23.html" class="lesson-card">
+                <div class="lesson-number">23</div>
+                <div class="lesson-title">第23课</div>
+            </a>
+            <a href="lesson24.html" class="lesson-card">
+                <div class="lesson-number">24</div>
+                <div class="lesson-title">第24课</div>
+            </a>
+            <a href="lesson25.html" class="lesson-card">
+                <div class="lesson-number">25</div>
+                <div class="lesson-title">第25课</div>
+            </a>
+            <a href="lesson26.html" class="lesson-card">
+                <div class="lesson-number">26</div>
+                <div class="lesson-title">第26课</div>
+            </a>
+            <a href="lesson27.html" class="lesson-card">
+                <div class="lesson-number">27</div>
+                <div class="lesson-title">第27课</div>
+            </a>
+            <a href="lesson28.html" class="lesson-card">
+                <div class="lesson-number">28</div>
+                <div class="lesson-title">第28课</div>
+            </a>
+            <a href="lesson29.html" class="lesson-card">
+                <div class="lesson-number">29</div>
+                <div class="lesson-title">第29课</div>
+            </a>
+            <a href="lesson30.html" class="lesson-card">
+                <div class="lesson-number">30</div>
+                <div class="lesson-title">第30课</div>
+            </a>
+            <a href="lesson31.html" class="lesson-card">
+                <div class="lesson-number">31</div>
+                <div class="lesson-title">第31课</div>
+            </a>
+            <a href="lesson32.html" class="lesson-card">
+                <div class="lesson-number">32</div>
+                <div class="lesson-title">第32课</div>
+            </a>
+            <a href="lesson33.html" class="lesson-card">
+                <div class="lesson-number">33</div>
+                <div class="lesson-title">第33课</div>
+            </a>
+            <a href="lesson34.html" class="lesson-card">
+                <div class="lesson-number">34</div>
+                <div class="lesson-title">第34课</div>
+            </a>
+            <a href="lesson35.html" class="lesson-card">
+                <div class="lesson-number">35</div>
+                <div class="lesson-title">第35课</div>
+            </a>
+            <a href="lesson36.html" class="lesson-card">
+                <div class="lesson-number">36</div>
+                <div class="lesson-title">第36课</div>
+            </a>
+            <a href="lesson37.html" class="lesson-card">
+                <div class="lesson-number">37</div>
+                <div class="lesson-title">第37课</div>
+            </a>
+            <a href="lesson38.html" class="lesson-card">
+                <div class="lesson-number">38</div>
+                <div class="lesson-title">第38课</div>
+            </a>
+            <a href="lesson39.html" class="lesson-card">
+                <div class="lesson-number">39</div>
+                <div class="lesson-title">第39课</div>
+            </a>
+            <a href="lesson40.html" class="lesson-card">
+                <div class="lesson-number">40</div>
+                <div class="lesson-title">第40课</div>
+            </a>
+            <a href="lesson41.html" class="lesson-card">
+                <div class="lesson-number">41</div>
+                <div class="lesson-title">第41课</div>
+            </a>
+            <a href="lesson42.html" class="lesson-card">
+                <div class="lesson-number">42</div>
+                <div class="lesson-title">第42课</div>
+            </a>
+            <a href="lesson43.html" class="lesson-card">
+                <div class="lesson-number">43</div>
+                <div class="lesson-title">第43课</div>
+            </a>
+            <a href="lesson44.html" class="lesson-card">
+                <div class="lesson-number">44</div>
+                <div class="lesson-title">第44课</div>
+            </a>
+            <a href="lesson45.html" class="lesson-card">
+                <div class="lesson-number">45</div>
+                <div class="lesson-title">第45课</div>
+            </a>
+            <a href="lesson46.html" class="lesson-card">
+                <div class="lesson-number">46</div>
+                <div class="lesson-title">第46课</div>
+            </a>
+            <a href="lesson47.html" class="lesson-card">
+                <div class="lesson-number">47</div>
+                <div class="lesson-title">第47课</div>
+            </a>
+            <a href="lesson48.html" class="lesson-card">
+                <div class="lesson-number">48</div>
+                <div class="lesson-title">第48课</div>
+            </a>
+            <a href="lesson49.html" class="lesson-card">
+                <div class="lesson-number">49</div>
+                <div class="lesson-title">第49课</div>
+            </a>
+            <a href="lesson50.html" class="lesson-card">
+                <div class="lesson-number">50</div>
+                <div class="lesson-title">第50课</div>
+            </a>
+            <a href="lesson51.html" class="lesson-card">
+                <div class="lesson-number">51</div>
+                <div class="lesson-title">第51课</div>
+            </a>
+            <a href="lesson52.html" class="lesson-card">
+                <div class="lesson-number">52</div>
+                <div class="lesson-title">第52课</div>
+            </a>
+            <a href="lesson53.html" class="lesson-card">
+                <div class="lesson-number">53</div>
+                <div class="lesson-title">第53课</div>
+            </a>
+            <a href="lesson54.html" class="lesson-card">
+                <div class="lesson-number">54</div>
+                <div class="lesson-title">第54课</div>
+            </a>
+            <a href="lesson55.html" class="lesson-card">
+                <div class="lesson-number">55</div>
+                <div class="lesson-title">第55课</div>
+            </a>
+            <a href="lesson56.html" class="lesson-card">
+                <div class="lesson-number">56</div>
+                <div class="lesson-title">第56课</div>
+            </a>
+            <a href="lesson57.html" class="lesson-card">
+                <div class="lesson-number">57</div>
+                <div class="lesson-title">第57课</div>
+            </a>
+            <a href="lesson58.html" class="lesson-card">
+                <div class="lesson-number">58</div>
+                <div class="lesson-title">第58课</div>
+            </a>
+            <a href="lesson59.html" class="lesson-card">
+                <div class="lesson-number">59</div>
+                <div class="lesson-title">第59课</div>
+            </a>
+            <a href="lesson60.html" class="lesson-card">
+                <div class="lesson-number">60</div>
+                <div class="lesson-title">第60课</div>
+            </a>
+            <a href="lesson61.html" class="lesson-card">
+                <div class="lesson-number">61</div>
+                <div class="lesson-title">第61课</div>
+            </a>
+            <a href="lesson62.html" class="lesson-card">
+                <div class="lesson-number">62</div>
+                <div class="lesson-title">第62课</div>
+            </a>
+            <a href="lesson63.html" class="lesson-card">
+                <div class="lesson-number">63</div>
+                <div class="lesson-title">第63课</div>
+            </a>
+            <a href="lesson64.html" class="lesson-card">
+                <div class="lesson-number">64</div>
+                <div class="lesson-title">第64课</div>
+            </a>
+            <a href="lesson65.html" class="lesson-card">
+                <div class="lesson-number">65</div>
+                <div class="lesson-title">第65课</div>
+            </a>
+            <a href="lesson66.html" class="lesson-card">
+                <div class="lesson-number">66</div>
+                <div class="lesson-title">第66课</div>
+            </a>
+            <a href="lesson67.html" class="lesson-card">
+                <div class="lesson-number">67</div>
+                <div class="lesson-title">第67课</div>
+            </a>
+            <a href="lesson68.html" class="lesson-card">
+                <div class="lesson-number">68</div>
+                <div class="lesson-title">第68课</div>
+            </a>
+            <a href="lesson69.html" class="lesson-card">
+                <div class="lesson-number">69</div>
+                <div class="lesson-title">第69课</div>
+            </a>
+            <a href="lesson70.html" class="lesson-card">
+                <div class="lesson-number">70</div>
+                <div class="lesson-title">第70课</div>
+            </a>
+            <a href="lesson71.html" class="lesson-card">
+                <div class="lesson-number">71</div>
+                <div class="lesson-title">第71课</div>
+            </a>
+            <a href="lesson72.html" class="lesson-card">
+                <div class="lesson-number">72</div>
+                <div class="lesson-title">第72课</div>
+            </a>
+            <a href="lesson73.html" class="lesson-card">
+                <div class="lesson-number">73</div>
+                <div class="lesson-title">第73课</div>
+            </a>
+            <a href="lesson74.html" class="lesson-card">
+                <div class="lesson-number">74</div>
+                <div class="lesson-title">第74课</div>
+            </a>
+            <a href="lesson75.html" class="lesson-card">
+                <div class="lesson-number">75</div>
+                <div class="lesson-title">第75课</div>
+            </a>
+            <a href="lesson76.html" class="lesson-card">
+                <div class="lesson-number">76</div>
+                <div class="lesson-title">第76课</div>
+            </a>
+            <a href="lesson77.html" class="lesson-card">
+                <div class="lesson-number">77</div>
+                <div class="lesson-title">第77课</div>
+            </a>
+            <a href="lesson78.html" class="lesson-card">
+                <div class="lesson-number">78</div>
+                <div class="lesson-title">第78课</div>
+            </a>
+            <a href="lesson79.html" class="lesson-card">
+                <div class="lesson-number">79</div>
+                <div class="lesson-title">第79课</div>
+            </a>
+            <a href="lesson80.html" class="lesson-card">
+                <div class="lesson-number">80</div>
+                <div class="lesson-title">第80课</div>
+            </a>
+            <a href="lesson81.html" class="lesson-card">
+                <div class="lesson-number">81</div>
+                <div class="lesson-title">第81课</div>
+            </a>
+            <a href="lesson82.html" class="lesson-card">
+                <div class="lesson-number">82</div>
+                <div class="lesson-title">第82课</div>
+            </a>
+            <a href="lesson83.html" class="lesson-card">
+                <div class="lesson-number">83</div>
+                <div class="lesson-title">第83课</div>
+            </a>
+            <a href="lesson84.html" class="lesson-card">
+                <div class="lesson-number">84</div>
+                <div class="lesson-title">第84课</div>
+            </a>
+            <a href="lesson85.html" class="lesson-card">
+                <div class="lesson-number">85</div>
+                <div class="lesson-title">第85课</div>
+            </a>
+            <a href="lesson86.html" class="lesson-card">
+                <div class="lesson-number">86</div>
+                <div class="lesson-title">第86课</div>
+            </a>
+            <a href="lesson87.html" class="lesson-card">
+                <div class="lesson-number">87</div>
+                <div class="lesson-title">第87课</div>
+            </a>
+            <a href="lesson88.html" class="lesson-card">
+                <div class="lesson-number">88</div>
+                <div class="lesson-title">第88课</div>
+            </a>
+            <a href="lesson89.html" class="lesson-card">
+                <div class="lesson-number">89</div>
+                <div class="lesson-title">第89课</div>
+            </a>
+            <a href="lesson90.html" class="lesson-card">
+                <div class="lesson-number">90</div>
+                <div class="lesson-title">第90课</div>
+            </a>
+            <a href="lesson91.html" class="lesson-card">
+                <div class="lesson-number">91</div>
+                <div class="lesson-title">第91课</div>
+            </a>
+            <a href="lesson92.html" class="lesson-card">
+                <div class="lesson-number">92</div>
+                <div class="lesson-title">第92课</div>
+            </a>
+            <a href="lesson93.html" class="lesson-card">
+                <div class="lesson-number">93</div>
+                <div class="lesson-title">第93课</div>
+            </a>
+            <a href="lesson94.html" class="lesson-card">
+                <div class="lesson-number">94</div>
+                <div class="lesson-title">第94课</div>
+            </a>
+            <a href="lesson95.html" class="lesson-card">
+                <div class="lesson-number">95</div>
+                <div class="lesson-title">第95课</div>
+            </a>
+            <a href="lesson96.html" class="lesson-card">
+                <div class="lesson-number">96</div>
+                <div class="lesson-title">第96课</div>
+            </a>
+            <a href="lesson97.html" class="lesson-card">
+                <div class="lesson-number">97</div>
+                <div class="lesson-title">第97课</div>
+            </a>
+            <a href="lesson98.html" class="lesson-card">
+                <div class="lesson-number">98</div>
+                <div class="lesson-title">第98课</div>
+            </a>
+            <a href="lesson99.html" class="lesson-card">
+                <div class="lesson-number">99</div>
+                <div class="lesson-title">第99课</div>
+            </a>
+            <a href="lesson100.html" class="lesson-card">
+                <div class="lesson-number">100</div>
+                <div class="lesson-title">第100课</div>
+            </a>
+            <a href="lesson101.html" class="lesson-card">
+                <div class="lesson-number">101</div>
+                <div class="lesson-title">第101课</div>
+            </a>
+            <a href="lesson102.html" class="lesson-card">
+                <div class="lesson-number">102</div>
+                <div class="lesson-title">第102课</div>
+            </a>
+            <a href="lesson103.html" class="lesson-card">
+                <div class="lesson-number">103</div>
+                <div class="lesson-title">第103课</div>
+            </a>
+            <a href="lesson104.html" class="lesson-card">
+                <div class="lesson-number">104</div>
+                <div class="lesson-title">第104课</div>
+            </a>
+            <a href="lesson105.html" class="lesson-card">
+                <div class="lesson-number">105</div>
+                <div class="lesson-title">第105课</div>
+            </a>
+            <a href="lesson106.html" class="lesson-card">
+                <div class="lesson-number">106</div>
+                <div class="lesson-title">第106课</div>
+            </a>
+            <a href="lesson107.html" class="lesson-card">
+                <div class="lesson-number">107</div>
+                <div class="lesson-title">第107课</div>
+            </a>
+            <a href="lesson108.html" class="lesson-card">
+                <div class="lesson-number">108</div>
+                <div class="lesson-title">第108课</div>
+            </a>
+            <a href="lesson109.html" class="lesson-card">
+                <div class="lesson-number">109</div>
+                <div class="lesson-title">第109课</div>
+            </a>
+            <a href="lesson110.html" class="lesson-card">
+                <div class="lesson-number">110</div>
+                <div class="lesson-title">第110课</div>
+            </a>
+            <a href="lesson111.html" class="lesson-card">
+                <div class="lesson-number">111</div>
+                <div class="lesson-title">第111课</div>
+            </a>
+            <a href="lesson112.html" class="lesson-card">
+                <div class="lesson-number">112</div>
+                <div class="lesson-title">第112课</div>
+            </a>
+            <a href="lesson113.html" class="lesson-card">
+                <div class="lesson-number">113</div>
+                <div class="lesson-title">第113课</div>
+            </a>
+            <a href="lesson114.html" class="lesson-card">
+                <div class="lesson-number">114</div>
+                <div class="lesson-title">第114课</div>
+            </a>
+            <a href="lesson115.html" class="lesson-card">
+                <div class="lesson-number">115</div>
+                <div class="lesson-title">第115课</div>
+            </a>
+            <a href="lesson116.html" class="lesson-card">
+                <div class="lesson-number">116</div>
+                <div class="lesson-title">第116课</div>
+            </a>
+            <a href="lesson117.html" class="lesson-card">
+                <div class="lesson-number">117</div>
+                <div class="lesson-title">第117课</div>
+            </a>
+            <a href="lesson118.html" class="lesson-card">
+                <div class="lesson-number">118</div>
+                <div class="lesson-title">第118课</div>
+            </a>
+            <a href="lesson119.html" class="lesson-card">
+                <div class="lesson-number">119</div>
+                <div class="lesson-title">第119课</div>
+            </a>
+            <a href="lesson120.html" class="lesson-card">
+                <div class="lesson-number">120</div>
+                <div class="lesson-title">第120课</div>
+            </a>
+            <a href="lesson121.html" class="lesson-card">
+                <div class="lesson-number">121</div>
+                <div class="lesson-title">第121课</div>
+            </a>
+            <a href="lesson122.html" class="lesson-card">
+                <div class="lesson-number">122</div>
+                <div class="lesson-title">第122课</div>
+            </a>
+            <a href="lesson123.html" class="lesson-card">
+                <div class="lesson-number">123</div>
+                <div class="lesson-title">第123课</div>
+            </a>
+            <a href="lesson124.html" class="lesson-card">
+                <div class="lesson-number">124</div>
+                <div class="lesson-title">第124课</div>
+            </a>
+            <a href="lesson125.html" class="lesson-card">
+                <div class="lesson-number">125</div>
+                <div class="lesson-title">第125课</div>
+            </a>
+            <a href="lesson126.html" class="lesson-card">
+                <div class="lesson-number">126</div>
+                <div class="lesson-title">第126课</div>
+            </a>
+            <a href="lesson127.html" class="lesson-card">
+                <div class="lesson-number">127</div>
+                <div class="lesson-title">第127课</div>
+            </a>
+            <a href="lesson128.html" class="lesson-card">
+                <div class="lesson-number">128</div>
+                <div class="lesson-title">第128课</div>
+            </a>
+            <a href="lesson129.html" class="lesson-card">
+                <div class="lesson-number">129</div>
+                <div class="lesson-title">第129课</div>
+            </a>
+            <a href="lesson130.html" class="lesson-card">
+                <div class="lesson-number">130</div>
+                <div class="lesson-title">第130课</div>
+            </a>
+            <a href="lesson131.html" class="lesson-card">
+                <div class="lesson-number">131</div>
+                <div class="lesson-title">第131课</div>
+            </a>
+            <a href="lesson132.html" class="lesson-card">
+                <div class="lesson-number">132</div>
+                <div class="lesson-title">第132课</div>
+            </a>
+            <a href="lesson133.html" class="lesson-card">
+                <div class="lesson-number">133</div>
+                <div class="lesson-title">第133课</div>
+            </a>
+            <a href="lesson134.html" class="lesson-card">
+                <div class="lesson-number">134</div>
+                <div class="lesson-title">第134课</div>
+            </a>
+            <a href="lesson135.html" class="lesson-card">
+                <div class="lesson-number">135</div>
+                <div class="lesson-title">第135课</div>
+            </a>
+            <a href="lesson136.html" class="lesson-card">
+                <div class="lesson-number">136</div>
+                <div class="lesson-title">第136课</div>
+            </a>
+            <a href="lesson137.html" class="lesson-card">
+                <div class="lesson-number">137</div>
+                <div class="lesson-title">第137课</div>
+            </a>
+            <a href="lesson138.html" class="lesson-card">
+                <div class="lesson-number">138</div>
+                <div class="lesson-title">第138课</div>
+            </a>
+            <a href="lesson139.html" class="lesson-card">
+                <div class="lesson-number">139</div>
+                <div class="lesson-title">第139课</div>
+            </a>
+            <a href="lesson140.html" class="lesson-card">
+                <div class="lesson-number">140</div>
+                <div class="lesson-title">第140课</div>
+            </a>
+            <a href="lesson141.html" class="lesson-card">
+                <div class="lesson-number">141</div>
+                <div class="lesson-title">第141课</div>
+            </a>
+            <a href="lesson142.html" class="lesson-card">
+                <div class="lesson-number">142</div>
+                <div class="lesson-title">第142课</div>
+            </a>
+            <a href="lesson143.html" class="lesson-card">
+                <div class="lesson-number">143</div>
+                <div class="lesson-title">第143课</div>
+            </a>
+            <a href="lesson144.html" class="lesson-card">
+                <div class="lesson-number">144</div>
+                <div class="lesson-title">第144课</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

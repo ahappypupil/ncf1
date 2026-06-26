@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语法综合练习题 - 新概念英语第一册语法专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .exercise-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #17a2b8;
+        }
+        .exercise-card h3 {
+            color: #17a2b8;
+            margin-bottom: 15px;
+        }
+        .question {
+            background: #e9ecef;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .options {
+            margin: 10px 0 10px 20px;
+        }
+        .options li {
+            margin: 5px 0;
+        }
+        .answer-toggle {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .answer-toggle:hover {
+            background: #5568d3;
+        }
+        .answer {
+            background: #d4edda;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #28a745;
+            display: none;
+        }
+        .fill-blank-input {
+            border: none;
+            border-bottom: 1px solid #667eea;
+            padding: 2px 5px;
+            width: 100px;
+            text-align: center;
+            font-size: 1rem;
+            background: transparent;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .table th, .table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #667eea;
+            color: white;
+        }
+        .table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .highlight {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        .note {
+            background: #fff3cd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+        .translation {
+            background: #f3e5f5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #9c27b0;
+        }
+        .score-section {
+            background: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script>
+        function toggleAnswer(id) {
+            const answer = document.getElementById(id);
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="nav">
+                <a href="index.html">首页</a> > 语法专题 > 综合练习题
+            </div>
+            <h1>语法综合练习题</h1>
+            <p class="subtitle">新概念英语第一册 | 语法专项训练 | 附参考答案及解析</p>
+        </header>
+
+        <div class="section">
+            <h2>练习说明</h2>
+            <p>本套练习题针对新概念英语第一册的核心语法知识点设计，涵盖时态、词类、句子结构、从句、情态动词等所有重要语法点。每套题包含多种题型，帮助你全面检验语法掌握程度。</p>
+            
+            <div class="note">
+                <strong>建议学习方法：</strong><br>
+                1. 先独立完成练习，不要提前看答案<br>
+                2. 做完后对照参考答案，标记错题<br>
+                3. 认真阅读错题解析，理解错误原因<br>
+                4. 定期复习错题，巩固知识点
+            </div>
+
+            <div class="score-section">
+                <h3>评分标准</h3>
+                <p>90分以上：优秀，语法基础非常扎实</p>
+                <p>70-89分：良好，基本掌握核心语法点</p>
+                <p>60-69分：合格，仍需加强薄弱环节</p>
+                <p>60分以下：需要系统复习语法知识点</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>一、单项选择题（共20题，每题2分，共40分）</h2>
+            
+            <div class="exercise-card">
+                <h3>时态专项</h3>
+                
+                <div class="question">
+                    <p>1. Look! The boys ______ football on the playground.</p>
+                    <div class="options">
+                        <li>A. play</li>
+                        <li>B. played</li>
+                        <li>C. are playing</li>
+                        <li>D. have played</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans1')">查看答案</button>
+                    <div class="answer" id="ans1">
+                        <strong>答案：C</strong><br>
+                        解析：Look! 是现在进行时的标志词，表示正在发生的动作，结构为am/is/are + 动词ing形式。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. He ______ to the party last weekend.</p>
+                    <div class="options">
+                        <li>A. doesn't go</li>
+                        <li>B. didn't go</li>
+                        <li>C. hasn't gone</li>
+                        <li>D. won't go</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans2')">查看答案</button>
+                    <div class="answer" id="ans2">
+                        <strong>答案：B</strong><br>
+                        解析：last weekend 是一般过去时的时间标志词，否定句用didn't + 动词原形。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. I ______ this book for two weeks. I will return it tomorrow.</p>
+                    <div class="options">
+                        <li>A. have borrowed</li>
+                        <li>B. borrowed</li>
+                        <li>C. have kept</li>
+                        <li>D. keep</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans3')">查看答案</button>
+                    <div class="answer" id="ans3">
+                        <strong>答案：C</strong><br>
+                        解析：for two weeks 表示一段时间，需要用延续性动词。borrow是短暂性动词，keep是延续性动词，现在完成时表示动作从过去持续到现在。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. The film ______ for ten minutes when we got to the cinema.</p>
+                    <div class="options">
+                        <li>A. has started</li>
+                        <li>B. had started</li>
+                        <li>C. has been on</li>
+                        <li>D. had been on</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans4')">查看答案</button>
+                    <div class="answer" id="ans4">
+                        <strong>答案：D</strong><br>
+                        解析："我们到达电影院"是过去的动作，"电影已经开始十分钟"发生在过去的过去，用过去完成时。start是短暂性动词，be on是延续性动词，可以和一段时间连用。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. He said he ______ to Beijing the next month.</p>
+                    <div class="options">
+                        <li>A. will go</li>
+                        <li>B. would go</li>
+                        <li>C. goes</li>
+                        <li>D. went</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans5')">查看答案</button>
+                    <div class="answer" id="ans5">
+                        <strong>答案：B</strong><br>
+                        解析：主句是一般过去时，宾语从句要用相应的过去时态。the next month 表示将来，所以用过去将来时would + 动词原形。
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h3>情态动词专项</h3>
+                
+                <div class="question">
+                    <p>6. - ______ I smoke here?<br> - No, you ______. Look at the sign: No smoking!</p>
+                    <div class="options">
+                        <li>A. May; mustn't</li>
+                        <li>B. Can; needn't</li>
+                        <li>C. Must; can't</li>
+                        <li>D. May; don't have to</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans6')">查看答案</button>
+                    <div class="answer" id="ans6">
+                        <strong>答案：A</strong><br>
+                        解析：May I...? 表示请求许可。根据"禁止吸烟"的标志，回答是"不，你禁止在这里吸烟"，mustn't表示"禁止，不允许"。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>7. The light is on in his room. He ______ at home.</p>
+                    <div class="options">
+                        <li>A. can be</li>
+                        <li>B. may be</li>
+                        <li>C. must be</li>
+                        <li>D. would be</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans7')">查看答案</button>
+                    <div class="answer" id="ans7">
+                        <strong>答案：C</strong><br>
+                        解析：灯亮着，表示非常肯定的猜测，must be表示"肯定，一定"。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>8. - Must I finish the work today?<br> - No, you ______. You can finish it tomorrow.</p>
+                    <div class="options">
+                        <li>A. mustn't</li>
+                        <li>B. can't</li>
+                        <li>C. needn't</li>
+                        <li>D. shouldn't</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans8')">查看答案</button>
+                    <div class="answer" id="ans8">
+                        <strong>答案：C</strong><br>
+                        解析：回答must引导的疑问句，否定回答用needn't或don't have to，表示"不必"。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>9. You ______ drive so fast. It's dangerous.</p>
+                    <div class="options">
+                        <li>A. shouldn't</li>
+                        <li>B. needn't</li>
+                        <li>C. may not</li>
+                        <li>D. won't</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans9')">查看答案</button>
+                    <div class="answer" id="ans9">
+                        <strong>答案：A</strong><br>
+                        解析：shouldn't表示"不应该"，用于提建议或劝告。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>10. ______ you please pass me the salt?</p>
+                    <div class="options">
+                        <li>A. Shall</li>
+                        <li>B. Will</li>
+                        <li>C. Must</li>
+                        <li>D. Need</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans10')">查看答案</button>
+                    <div class="answer" id="ans10">
+                        <strong>答案：B</strong><br>
+                        解析：Will you please...? 是表示请求的常用句型，语气委婉客气。
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h3>从句专项</h3>
+                
+                <div class="question">
+                    <p>11. Can you tell me ______?</p>
+                    <div class="options">
+                        <li>A. where does he live</li>
+                        <li>B. where he lives</li>
+                        <li>C. where did he live</li>
+                        <li>D. where he lived</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans11')">查看答案</button>
+                    <div class="answer" id="ans11">
+                        <strong>答案：B</strong><br>
+                        解析：宾语从句要用陈述语序，排除A和C。询问现在的住址，用一般现在时。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>12. The book ______ I bought yesterday is very interesting.</p>
+                    <div class="options">
+                        <li>A. who</li>
+                        <li>B. whom</li>
+                        <li>C. which</li>
+                        <li>D. whose</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans12')">查看答案</button>
+                    <div class="answer" id="ans12">
+                        <strong>答案：C</strong><br>
+                        解析：定语从句的先行词是the book，指物，关系代词用which或that。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>13. I will call you as soon as I ______ in Beijing.</p>
+                    <div class="options">
+                        <li>A. arrive</li>
+                        <li>B. arrived</li>
+                        <li>C. will arrive</li>
+                        <li>D. have arrived</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans13')">查看答案</button>
+                    <div class="answer" id="ans13">
+                        <strong>答案：A</strong><br>
+                        解析：as soon as 引导时间状语从句，主句用一般将来时，从句用一般现在时表示将来。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>14. He asked me ______ I could help him.</p>
+                    <div class="options">
+                        <li>A. that</li>
+                        <li>B. if</li>
+                        <li>C. what</li>
+                        <li>D. which</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans14')">查看答案</button>
+                    <div class="answer" id="ans14">
+                        <strong>答案：B</strong><br>
+                        解析：间接引语中，表示"是否"用if或whether引导宾语从句。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>15. This is the best film ______ I have ever seen.</p>
+                    <div class="options">
+                        <li>A. which</li>
+                        <li>B. that</li>
+                        <li>C. who</li>
+                        <li>D. whose</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans15')">查看答案</button>
+                    <div class="answer" id="ans15">
+                        <strong>答案：B</strong><br>
+                        解析：先行词被最高级修饰时，关系代词只能用that。
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise-card">
+                <h3>词类与句子结构专项</h3>
+                
+                <div class="question">
+                    <p>16. ______ interesting story it is!</p>
+                    <div class="options">
+                        <li>A. What</li>
+                        <li>B. What an</li>
+                        <li>C. How</li>
+                        <li>D. How an</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans16')">查看答案</button>
+                    <div class="answer" id="ans16">
+                        <strong>答案：B</strong><br>
+                        解析：感叹句结构：What + a/an + 形容词 + 可数名词单数 + 主语 + 谓语！interesting是以元音音素开头，所以用an。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>17. There ______ a meeting tomorrow afternoon.</p>
+                    <div class="options">
+                        <li>A. is going to have</li>
+                        <li>B. will have</li>
+                        <li>C. is going to be</li>
+                        <li>D. are going to be</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans17')">查看答案</button>
+                    <div class="answer" id="ans17">
+                        <strong>答案：C</strong><br>
+                        解析：There be句型的一般将来时结构是There is/are going to be 或 There will be。a meeting是单数，所以用is。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>18. She is ______ than her sister.</p>
+                    <div class="options">
+                        <li>A. tall</li>
+                        <li>B. taller</li>
+                        <li>C. more tall</li>
+                        <li>D. tallest</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans18')">查看答案</button>
+                    <div class="answer" id="ans18">
+                        <strong>答案：B</strong><br>
+                        解析：than是比较级的标志词，tall的比较级是taller。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>19. ______ the bad weather, we still went to the park.</p>
+                    <div class="options">
+                        <li>A. Because</li>
+                        <li>B. Although</li>
+                        <li>C. If</li>
+                        <li>D. When</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans19')">查看答案</button>
+                    <div class="answer" id="ans19">
+                        <strong>答案：B</strong><br>
+                        解析：although表示"尽管，虽然"，引导让步状语从句。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>20. He speaks English very well, ______?</p>
+                    <div class="options">
+                        <li>A. does he</li>
+                        <li>B. doesn't he</li>
+                        <li>C. is he</li>
+                        <li>D. isn't he</li>
+                    </div>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans20')">查看答案</button>
+                    <div class="answer" id="ans20">
+                        <strong>答案：B</strong><br>
+                        解析：反意疑问句遵循"前肯后否"原则。谓语动词是实义动词speaks，所以疑问部分用doesn't he。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>二、填空题（共10题，每题3分，共30分）</h2>
+            
+            <div class="exercise-card">
+                <div class="question">
+                    <p>1. She <input type="text" class="fill-blank-input"> (work) in this company for 5 years.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans21')">查看答案</button>
+                    <div class="answer" id="ans21">
+                        <strong>答案：has worked</strong><br>
+                        解析：for 5 years 表示一段时间，用现在完成时。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>2. Listen! Someone <input type="text" class="fill-blank-input"> (sing) in the next room.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans22')">查看答案</button>
+                    <div class="answer" id="ans22">
+                        <strong>答案：is singing</strong><br>
+                        解析：Listen! 是现在进行时的标志词。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>3. When I got to the station, the train <input type="text" class="fill-blank-input"> (leave).</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans23')">查看答案</button>
+                    <div class="answer" id="ans23">
+                        <strong>答案：had left</strong><br>
+                        解析：火车离开发生在我到达车站之前，是过去的过去，用过去完成时。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>4. He said he <input type="text" class="fill-blank-input"> (buy) a new bike the next week.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans24')">查看答案</button>
+                    <div class="answer" id="ans24">
+                        <strong>答案：would buy</strong><br>
+                        解析：主句是一般过去时，从句表示将来，用过去将来时。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>5. You <input type="text" class="fill-blank-input"> (must) tell lies. It's a bad habit.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans25')">查看答案</button>
+                    <div class="answer" id="ans25">
+                        <strong>答案：mustn't</strong><br>
+                        解析：mustn't表示"禁止，不允许"。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>6. The girl <input type="text" class="fill-blank-input"> is wearing a red dress is my sister.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans26')">查看答案</button>
+                    <div class="answer" id="ans26">
+                        <strong>答案：who/that</strong><br>
+                        解析：定语从句先行词是the girl，指人，关系代词用who或that。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>7. I don't know <input type="text" class="fill-blank-input"> he will come or not.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans27')">查看答案</button>
+                    <div class="answer" id="ans27">
+                        <strong>答案：whether</strong><br>
+                        解析：whether...or not 是固定搭配，表示"是否"。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>8. <input type="text" class="fill-blank-input"> beautiful the flower is!</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans28')">查看答案</button>
+                    <div class="answer" id="ans28">
+                        <strong>答案：How</strong><br>
+                        解析：How引导的感叹句结构：How + 形容词/副词 + 主语 + 谓语！
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>9. There are three <input type="text" class="fill-blank-input"> (apple) on the table.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans29')">查看答案</button>
+                    <div class="answer" id="ans29">
+                        <strong>答案：apples</strong><br>
+                        解析：apple是可数名词，three后面用复数形式。
+                    </div>
+                </div>
+
+                <div class="question">
+                    <p>10. She usually goes to school <input type="text" class="fill-blank-input"> foot.</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans30')">查看答案</button>
+                    <div class="answer" id="ans30">
+                        <strong>答案：on</strong><br>
+                        解析：on foot是固定搭配，表示"步行"。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>三、翻译题（共5题，每题6分，共30分）</h2>
+            
+            <div class="exercise-card">
+                <div class="translation">
+                    <p>1. 我已经学英语三年了。</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans31')">查看答案</button>
+                    <div class="answer" id="ans31">
+                        <strong>答案：I have studied English for three years.</strong><br>
+                        解析：表示动作从过去持续到现在，用现在完成时，for + 时间段。
+                    </div>
+                </div>
+
+                <div class="translation">
+                    <p>2. 他现在可能正在家里看电视。</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans32')">查看答案</button>
+                    <div class="answer" id="ans32">
+                        <strong>答案：He may be watching TV at home now.</strong><br>
+                        解析：表示对正在进行的动作的猜测，用may be + 动词ing形式。
+                    </div>
+                </div>
+
+                <div class="translation">
+                    <p>3. 你能告诉我邮局在哪里吗？</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans33')">查看答案</button>
+                    <div class="answer" id="ans33">
+                        <strong>答案：Can you tell me where the post office is?</strong><br>
+                        解析：宾语从句要用陈述语序。
+                    </div>
+                </div>
+
+                <div class="translation">
+                    <p>4. 除非你努力学习，否则你不会通过考试。</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans34')">查看答案</button>
+                    <div class="answer" id="ans34">
+                        <strong>答案：You won't pass the exam unless you study hard.</strong><br>
+                        解析：unless表示"除非"，引导条件状语从句，主句用一般将来时，从句用一般现在时。
+                    </div>
+                </div>
+
+                <div class="translation">
+                    <p>5. 这本书值得一读。</p>
+                    <button class="answer-toggle" onclick="toggleAnswer('ans35')">查看答案</button>
+                    <div class="answer" id="ans35">
+                        <strong>答案：The book is worth reading.</strong><br>
+                        解析：be worth doing 是固定搭配，表示"值得做某事"，主动形式表示被动含义。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 新概念英语第一册知识点总结 | 语法专题 - 综合练习题</p>
+        </footer>
+    </div>
+</body>
+</html>

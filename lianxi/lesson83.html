@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新概念英语第一册 · 第83课 Going on holiday</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&family=Fredoka+One&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--pri:#6C5CE7;--pri-l:#A29BFE;--acc:#FDCB6E;--acc2:#E17055;--ok:#00B894;--err:#FF7675;--bg:#F8F9FD;--card:#fff;--txt:#2D3436;--txt-l:#636E72;--shd:0 8px 30px rgba(108,92,231,.15)}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Noto Sans SC',sans-serif;background:var(--bg);color:var(--txt)}
+.slide-box{width:100vw;height:100vh;position:relative}
+.sl{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 50px 80px;opacity:0;transform:translateX(60px);transition:all .45s cubic-bezier(.4,0,.2,1);pointer-events:none;overflow:hidden}
+.sl.on{opacity:1;transform:translateX(0);pointer-events:auto}
+.sl.bk{opacity:0;transform:translateX(-60px)}
+.nav{position:fixed;bottom:0;left:0;right:0;height:54px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;gap:14px;z-index:100;border-top:1px solid #eee}
+.nb{width:42px;height:42px;border-radius:50%;border:none;background:var(--pri);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;box-shadow:0 2px 10px rgba(108,92,231,.3)}
+.nb:hover{transform:scale(1.1)}.nb:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.dots{display:flex;gap:5px;align-items:center}
+.dot{width:7px;height:7px;border-radius:50%;background:#ddd;transition:.3s;cursor:pointer}
+.dot.on{background:var(--pri);width:22px;border-radius:4px}
+.pn{font-size:13px;color:var(--txt-l);min-width:55px;text-align:center}
+.pbar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,var(--pri),var(--acc));transition:width .4s;z-index:101;border-radius:0 2px 2px 0}
+.stit{font-size:38px;font-weight:900;margin-bottom:8px;text-align:center;line-height:1.3}
+.ssub{font-size:18px;color:var(--txt-l);margin-bottom:24px;text-align:center}
+.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:none;border-radius:14px;font-size:17px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:scale(.97)}
+.bp{background:var(--pri);color:#fff;box-shadow:0 4px 15px rgba(108,92,231,.4)}
+.bs{background:var(--ok);color:#fff;box-shadow:0 4px 15px rgba(0,184,148,.4)}
+.ba{background:var(--acc);color:var(--txt);box-shadow:0 4px 15px rgba(253,203,110,.4)}
+.bd{background:var(--err);color:#fff;box-shadow:0 4px 15px rgba(255,118,117,.4)}
+@keyframes bIn{0%{transform:scale(.3);opacity:0}50%{transform:scale(1.05)}70%{transform:scale(.95)}100%{transform:scale(1);opacity:1}}
+@keyframes fUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
+@keyframes cfall{0%{transform:translateY(-100vh) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}
+.cov-bg{background:linear-gradient(135deg,#6C5CE7 0%,#A29BFE 50%,#74B9FF 100%);color:#fff}
+.cov-t{font-family:'Fredoka One',cursive;font-size:52px;margin-bottom:6px;text-shadow:0 3px 15px rgba(0,0,0,.2)}
+.cov-l{font-size:26px;opacity:.9;margin-bottom:16px}
+.cov-e{font-family:'Fredoka One',cursive;font-size:44px;color:var(--acc);text-shadow:0 3px 15px rgba(0,0,0,.2);margin-bottom:24px}
+.cov-icons{display:flex;gap:18px;font-size:46px;margin-bottom:24px}
+.cov-icons span{animation:flt 3s ease-in-out infinite}
+.cov-icons span:nth-child(2){animation-delay:.5s}
+.cov-icons span:nth-child(3){animation-delay:1s}
+.cov-icons span:nth-child(4){animation-delay:1.5s}
+.sbtn{padding:16px 44px;font-size:20px;border-radius:50px;background:var(--acc);color:var(--txt);border:none;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 6px 25px rgba(253,203,110,.5);transition:.3s}
+.sbtn:hover{transform:translateY(-3px) scale(1.05)}
+.wg{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;width:100%;max-width:720px}
+.wc{background:#fff;border-radius:14px;padding:16px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 3px 15px rgba(0,0,0,.06);cursor:pointer;transition:.3s;border:2px solid transparent}
+.wc:hover{transform:translateY(-2px);box-shadow:0 6px 25px rgba(108,92,231,.15);border-color:var(--pri-l)}
+.wc .we{font-size:28px}.wc .wen{font-size:18px;font-weight:700;color:var(--pri)}.wc .wph{font-size:12px;color:var(--txt-l)}.wc .wcn{font-size:15px;color:var(--txt-l);display:none}.wc .whint{font-size:13px;color:var(--pri-l);opacity:.7}
+.wc.flip{background:linear-gradient(135deg,var(--pri),var(--pri-l));color:#fff}
+.wc.flip .wen{color:#fff}.wc.flip .wph{color:rgba(255,255,255,.8)}.wc.flip .wcn{color:rgba(255,255,255,.9);font-size:18px;font-weight:700;display:block}.wc.flip .whint{display:none}
+.dlg{width:100%;max-width:660px;display:flex;flex-direction:column;gap:12px}
+.dl{display:flex;align-items:center;gap:10px;padding:14px 20px;border-radius:18px;font-size:18px;cursor:pointer;transition:transform .2s;animation:fUp .5s ease-out forwards;opacity:0}
+.dl:hover{transform:scale(1.02)}
+.dl.L{background:#fff;box-shadow:0 3px 15px rgba(0,0,0,.08);align-self:flex-start;border-bottom-left-radius:4px}
+.dl.R{background:linear-gradient(135deg,var(--pri),var(--pri-l));color:#fff;align-self:flex-end;border-bottom-right-radius:4px;box-shadow:0 3px 15px rgba(108,92,231,.3)}
+.dl .de{font-size:24px}.dl .den{font-weight:700}.dl .dcn{font-size:13px;opacity:.7;margin-left:6px}
+.qq{font-size:24px;font-weight:700;text-align:center;margin-bottom:20px}
+.qh{font-size:16px;color:var(--txt-l);text-align:center;margin-bottom:14px}
+.og{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%;max-width:620px}
+.ob{padding:16px 18px;border:3px solid #eee;border-radius:14px;background:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:.2s;font-family:inherit;text-align:center}
+.ob:hover{border-color:var(--pri-l);transform:translateY(-2px);box-shadow:0 4px 15px rgba(108,92,231,.15)}
+.ob.ok{border-color:var(--ok);background:#E8F8F5;color:var(--ok);animation:pop .3s}
+.ob.no{border-color:var(--err);background:#FDEDEC;color:var(--err);animation:shk .4s}
+.ob.dis{pointer-events:none;opacity:.6}
+.pb{background:linear-gradient(135deg,#F3F0FF,#E8F8F5);border-radius:18px;padding:22px 28px;width:100%;max-width:660px;margin-bottom:14px}
+.pt{font-size:16px;font-weight:700;color:var(--pri);margin-bottom:8px}
+.ps{font-size:20px;font-weight:600;margin-bottom:4px;line-height:1.5}
+.pc{font-size:15px;color:var(--txt-l)}
+.phl{color:var(--pri);font-weight:900}
+.ci{display:flex;align-items:center;gap:10px;padding:13px 18px;background:#fff;border-radius:12px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.04);font-size:17px;width:100%;max-width:600px}
+.cic{font-size:22px}
+.sp{font-size:26px;color:var(--txt);text-align:center;margin-bottom:16px;font-weight:700}
+.sa{font-size:26px;color:var(--pri);text-align:center;font-weight:900;margin-bottom:14px;min-height:38px}
+.sht{font-size:15px;color:var(--txt-l);text-align:center;margin-bottom:16px}
+.lg{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.lb{width:46px;height:46px;border:2px solid #ddd;border-radius:10px;background:#fff;font-size:20px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;color:var(--pri)}
+.lb:hover{border-color:var(--pri);background:#F3F0FF}
+.lb.sel{background:var(--pri);color:#fff;border-color:var(--pri)}
+.lb.okl{background:var(--ok);color:#fff;border-color:var(--ok)}
+.lb.nol{background:var(--err);color:#fff;border-color:var(--err)}
+.fb{display:inline-block;border-bottom:3px solid var(--pri);min-width:100px;padding:0 6px;color:var(--pri);transition:.3s}
+.fb.okb{border-color:var(--ok);color:var(--ok)}.fb.nob{border-color:var(--err);color:var(--err)}
+.sd{font-size:66px;font-weight:900;color:var(--pri)}
+.sl2{font-size:18px;color:var(--txt-l)}
+.stars{font-size:44px;margin:14px 0}
+.star{display:inline-block;transition:.3s}
+.star.on{color:var(--acc);animation:bIn .5s}
+.star.off{color:#ddd}
+.divider{width:50px;height:3px;background:var(--pri-l);border-radius:2px;margin:12px auto}
+.cfc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:hidden}
+.cfp{position:absolute;width:10px;height:10px;border-radius:2px;animation:cfall 3s ease-in forwards}
+@media(max-width:768px){
+  .sl{padding:20px 20px 70px}
+  .stit{font-size:26px}.cov-t{font-size:34px}.cov-e{font-size:30px}
+  .wg{grid-template-columns:1fr}.og{grid-template-columns:1fr}
+  .qq{font-size:19px}.ps{font-size:17px}.sp{font-size:22px}.sa{font-size:20px}
+}
+
+.cov-bg{background:linear-gradient(135deg,#0984E3 0%,#74B9FF 50%,#A29BFE 100%);color:#fff}
+</style>
+</head>
+<body>
+<div class="pbar" id="pbar"></div>
+<div class="slide-box" id="sb">
+
+<!-- S0: 封面 -->
+<div class="sl cov-bg on" data-i="0">
+  <div class="cov-icons"><span>🏖️</span><span>🧳</span><span>✈️</span><span>🌞</span></div>
+  <div class="cov-t">新概念英语</div>
+  <div class="cov-l">第一册 · 第83课</div>
+  <div class="cov-e">Going on holiday</div>
+  <div style="font-size:20px;margin-bottom:24px;opacity:.85">👋 度假</div>
+  <button class="sbtn" onclick="go(1)">🚀 开始学习</button>
+</div>
+
+<!-- S1: 学习目标 -->
+<div class="sl" data-i="1">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">📖 学习目标</div>
+  <div class="stit">今天我们要学什么？</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:520px;margin-top:8px">
+    <div class="ci"><span class="cic">🔤</span><span>掌握<b>度假与出行</b>相关词汇</span></div>
+    <div class="ci"><span class="cic">💬</span><span>学会<b>现在完成时</b>的基本用法</span></div>
+    <div class="ci"><span class="cic">📝</span><span>掌握 <b>have/has + 过去分词</b></span></div>
+    <div class="ci"><span class="cic">🗣️</span><span>能用英语<b>描述已经做过的事</b></span></div>
+  </div>
+</div>
+
+<!-- S2: 核心单词 -->
+<div class="sl" data-i="2">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">🔤 核心生词</div>
+  <div class="stit">核心单词</div>
+  <div class="ssub">点击卡片翻转查看中文 👆</div>
+  <div class="wg">
+    <div class="wc" onclick="flip(this)"><span class="we">🧹</span><div><div class="wen">mess</div><div class="wph">/mes/</div><div class="whint">👆 点击查看释义</div><div class="wcn">杂乱，凌乱</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📦</span><div><div class="wen">pack</div><div class="wph">/pæk/</div><div class="whint">👆 点击查看释义</div><div class="wcn">打包，装箱</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🧳</span><div><div class="wen">suitcase</div><div class="wph">/ˈsuːtkeɪs/</div><div class="whint">👆 点击查看释义</div><div class="wcn">手提箱</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🚪</span><div><div class="wen">leave</div><div class="wph">/liːv/</div><div class="whint">👆 点击查看释义</div><div class="wcn">离开（过去式left）</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">⏰</span><div><div class="wen">already</div><div class="wph">/ɔːlˈredi/</div><div class="whint">👆 点击查看释义</div><div class="wcn">已经</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🏖️</span><div><div class="wen">holiday</div><div class="wph">/ˈhɑːlɪdeɪ/</div><div class="whint">👆 点击查看释义</div><div class="wcn">假日</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🧳</span><div><div class="wen">pack</div><div class="wph">/pæk/</div><div class="whint">👆 点击查看释义</div><div class="wcn">打包</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">👋</span><div><div class="wen">leave</div><div class="wph">/liːv/</div><div class="whint">👆 点击查看释义</div><div class="wcn">离开</div></div></div>
+  </div>
+</div>
+
+<!-- S3: 扩展单词 -->
+<div class="sl" data-i="3">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">🔤 扩展生词</div>
+  <div class="stit">更多单词</div>
+  <div class="ssub">点击卡片翻转查看中文 👆</div>
+  <div class="wg">
+    <div class="wc" onclick="flip(this)"><span class="we">🏠</span><div><div class="wen">living room</div><div class="wph">/ˈlɪvɪŋ ruːm/</div><div class="whint">👆 点击查看释义</div><div class="wcn">客厅</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🧹</span><div><div class="wen">untidy</div><div class="wph">/ʌnˈtaɪdi/</div><div class="whint">👆 点击查看释义</div><div class="wcn">不整齐的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🍀</span><div><div class="wen">lucky</div><div class="wph">/ˈlʌki/</div><div class="whint">👆 点击查看释义</div><div class="wcn">幸运的</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📅</span><div><div class="wen">tomorrow</div><div class="wph">/təˈmɑːroʊ/</div><div class="whint">👆 点击查看释义</div><div class="wcn">明天</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📅</span><div><div class="wen">this year</div><div class="wph">/ðɪs jɪr/</div><div class="whint">👆 点击查看释义</div><div class="wcn">今年</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">🌍</span><div><div class="wen">Italy</div><div class="wph">/ˈɪtəli/</div><div class="whint">👆 点击查看释义</div><div class="wcn">意大利</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">✈️</span><div><div class="wen">go on holiday</div><div class="wph">/ɡoʊ ɑːn ˈhɑːlɪdeɪ/</div><div class="whint">👆 点击查看释义</div><div class="wcn">去度假</div></div></div>
+    <div class="wc" onclick="flip(this)"><span class="we">📦</span><div><div class="wen">packing</div><div class="wph">/ˈpækɪŋ/</div><div class="whint">👆 点击查看释义</div><div class="wcn">打包中</div></div></div>
+  </div>
+</div>
+
+<!-- S4: 课文对话 -->
+<div class="sl" data-i="4">
+  <div class="badge" style="background:#E8F8F5;color:var(--ok)">💬 课文对话</div>
+  <div class="stit">对话场景</div>
+  <div class="ssub">准备度假 🏖️ 点击句子可朗读</div>
+  <div class="dlg">
+    <div class="dl L" style="animation-delay:0.0s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Hello, Sam. Come in.</span><span class="dcn">你好，萨姆。请进。</span></div></div>
+    <div class="dl R" style="animation-delay:0.2s" onclick="speak(this)"><span class="de">👨</span><div><span class="den">Hi, Sam. We are having lunch. Do you want to have lunch with us?</span><span class="dcn">嗨，萨姆。我们正在吃午饭。你想和我们一起吃吗？</span></div></div>
+    <div class="dl L" style="animation-delay:0.4s" onclick="speak(this)"><span class="de">👨</span><div><span class="den">No, thank you, Tom. I have already had lunch. I had lunch at half past twelve.</span><span class="dcn">不，谢谢，汤姆。我已经吃过午饭了。我12点半吃的。</span></div></div>
+    <div class="dl R" style="animation-delay:0.6s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Have a cup of coffee then.</span><span class="dcn">那么来杯咖啡吧。</span></div></div>
+    <div class="dl L" style="animation-delay:0.8s" onclick="speak(this)"><span class="de">👨</span><div><span class="den">I have just had a cup, thank you. I had one after my lunch.</span><span class="dcn">我刚喝了一杯，谢谢。我午饭后喝的。</span></div></div>
+    <div class="dl R" style="animation-delay:1.0s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Excuse the mess, Sam. This room is very untidy. We are packing our suitcases. We are going to leave tomorrow.</span><span class="dcn">请见谅这里很乱，萨姆。这间屋子很不整齐。我们正在装手提箱。我们明天就要走了。</span></div></div>
+    <div class="dl L" style="animation-delay:1.2s" onclick="speak(this)"><span class="de">👩</span><div><span class="den">Tom and I are going to have a holiday.</span><span class="dcn">我和汤姆要去度假。</span></div></div>
+    <div class="dl R" style="animation-delay:1.4s" onclick="speak(this)"><span class="de">👨</span><div><span class="den">Aren't you lucky!</span><span class="dcn">你们真幸运！</span></div></div>
+  </div>
+</div>
+
+<!-- S5: 知识点1 -->
+<div class="sl" data-i="5">
+  <div class="badge" style="background:#F3F0FF;color:var(--pri)">💡 知识点</div>
+  <div class="stit">现在完成时</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:580px;margin-top:8px">
+    <div class="pb"><div class="pt">📌 结构：have/has + 过去分词</div><div class="ps">I <b>have already had</b> lunch. 我已经吃过午饭了。</div><div class="ps">I <b>have just had</b> a cup of coffee. 我刚喝了一杯咖啡。</div><div class="ps">She <b>has already packed</b> her suitcase. 她已经装好了手提箱。</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">📌 标志词</div><div class="ps"><b>already</b> 已经（用于肯定句）</div><div class="ps"><b>just</b> 刚刚</div><div class="ps"><b>yet</b> 还（用于否定/疑问句）</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#E8F8F5,#F3F0FF)"><div class="pt">📌 与一般过去时的区别</div><div class="ps">I <b>have had</b> lunch. → 强调<b>现在不饿</b></div><div class="ps">I <b>had</b> lunch at 12:30. → 强调<b>过去的时间</b></div></div>
+  </div>
+</div>
+
+<!-- S6: 知识点2 -->
+<div class="sl" data-i="6">
+  <div class="badge" style="background:#E8F8F5;color:var(--ok)">💡 知识点</div>
+  <div class="stit">already / just / yet</div>
+  <div class="divider"></div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:580px;margin-top:8px">
+    <div class="pb"><div class="pt">📌 already 已经</div><div class="ps">I have <b>already</b> had lunch. 我已经吃过午饭了。</div><div class="ps">She has <b>already</b> left. 她已经走了。</div><div class="ps">⚠️ already 用于<b>肯定句</b>，放在 have/has 和过去分词之间</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">📌 just 刚刚</div><div class="ps">I have <b>just</b> had a cup. 我刚喝了一杯。</div><div class="ps">He has <b>just</b> finished his homework. 他刚完成作业。</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#E8F8F5,#F3F0FF)"><div class="pt">📌 yet 还（没）</div><div class="ps">Have you had lunch <b>yet</b>? 你吃午饭了吗？</div><div class="ps">I haven't had lunch <b>yet</b>. 我还没吃午饭。</div><div class="ps">⚠️ yet 用于<b>否定句/疑问句</b>，放在句末</div></div>
+  </div>
+</div>
+
+<!-- S7: 句型 -->
+<div class="sl" data-i="7">
+  <div class="badge" style="background:#FFF3E0;color:var(--acc2)">📝 核心句型</div>
+  <div class="stit">I have already + 过去分词</div>
+  <div class="ssub">我已经……了</div>
+  <div style="display:flex;flex-direction:column;gap:12px;width:100%;max-width:620px">
+    <div class="pb"><div class="pt">📌 句型结构</div><div class="ps"><span class='phl'>I have already</span> + 过去分词</div></div>
+    <div class="pb" style="background:linear-gradient(135deg,#FFF3E0,#FDEDEC)"><div class="pt">🔊 例句</div><div class="ps">I have already had lunch.</div><div class="ps">I have already seen that film.</div></div>
+  </div>
+</div>
+
+<!-- S8-S14: 练习页面 -->
+<div class="sl" data-i="8"><div class="badge" style="background:#FDEDEC;color:var(--acc2)">🇬🇧➡️🇨🇳 英译汉</div><div class="stit">选出正确的中文意思</div><div class="divider"></div><div id="q1" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="9"><div class="badge" style="background:#E8F8F5;color:var(--ok)">🇨🇳➡️🇬🇧 汉译英</div><div class="stit">选出正确的英文单词</div><div class="divider"></div><div id="q2" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="10"><div class="badge" style="background:#FFF3E0;color:var(--acc2)">✏️ 单词补全</div><div class="stit">补全缺失的字母</div><div class="ssub">根据中文提示，点击字母补全单词</div><div id="q3" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="11"><div class="badge" style="background:#F3F0FF;color:var(--pri)">📝 选择填空</div><div class="stit">选择正确的单词</div><div class="divider"></div><div id="q4" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="12"><div class="badge" style="background:#FFF3E0;color:var(--acc2)">💬 句型练习</div><div class="stit">看图说句子</div><div class="ssub">选择正确的英文句子</div><div id="q5" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="13"><div class="badge" style="background:#FDEDEC;color:var(--err)">🗣️ 口语练习</div><div class="stit">根据中文说英文</div><div class="ssub">先自己说说看，再点击查看答案</div><div id="q6" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+<div class="sl" data-i="14"><div class="badge" style="background:#E8F8F5;color:var(--ok)">🧪 知识检测</div><div class="stit">来检测一下吧！</div><div class="divider"></div><div id="q7" style="width:100%;max-width:620px;display:flex;flex-direction:column;align-items:center"></div></div>
+
+<!-- S15: 成绩单 -->
+<div class="sl" data-i="15" style="background:linear-gradient(135deg,#0984E3 0%,#74B9FF 50%,#A29BFE 100%);color:#fff">
+  <div style="font-size:56px;animation:flt 3s ease-in-out infinite">🏆</div>
+  <div class="stit" style="color:#fff;margin-top:12px">学习完成！</div>
+  <div class="divider" style="background:rgba(255,255,255,.4)"></div>
+  <div class="stars" id="fstars"></div>
+  <div class="sd" id="fscore" style="color:var(--acc)">0</div>
+  <div class="sl2" style="color:rgba(255,255,255,.8)">总分</div>
+  <div style="margin-top:20px;display:flex;gap:14px">
+    <button class="btn ba" onclick="resetAll()">🔄 再来一次</button>
+    <button class="btn bs" onclick="go(0)">🏠 回到首页</button>
+  </div>
+</div>
+
+</div>
+<div class="nav">
+  <button class="nb" id="prevB" onclick="prev()">◀</button>
+  <div class="dots" id="dots"></div>
+  <span class="pn" id="pn">1 / 16</span>
+  <button class="nb" id="nextB" onclick="next()">▶</button>
+</div>
+<div class="cfc" id="cfc"></div>
+
+<script>
+// ===== 课程数据 =====
+const D1=[{"en":"mess","cn":"杂乱","opts":["杂乱","整洁","干净","漂亮"]},{"en":"pack","cn":"打包","opts":["打包","打开","放","拿"]},{"en":"suitcase","cn":"手提箱","opts":["手提箱","书包","背包","箱子"]},{"en":"already","cn":"已经","opts":["已经","刚刚","还","将要"]},{"en":"leave","cn":"离开","opts":["离开","到达","停留","出发"]}];
+const D2=[{"cn":"杂乱","en":"mess","opts":["mess","mass","miss","mouse"]},{"cn":"打包","en":"pack","opts":["pack","pick","park","peak"]},{"cn":"手提箱","en":"suitcase","opts":["suitcase","briefcase","backpack","handbag"]},{"cn":"已经","en":"already","opts":["already","ready","just","yet"]},{"cn":"离开","en":"leave","opts":["leave","live","left","leaf"]}];
+const D3=[{"word":"suitcase","show":"s u i t c a s _","cn":"手提箱","blanks":[{"pos":7,"ans":"e"}]},{"word":"already","show":"a l r e a d _","cn":"已经","blanks":[{"pos":6,"ans":"y"}]},{"word":"holiday","show":"h o l i d a _","cn":"假日","blanks":[{"pos":6,"ans":"y"}]},{"word":"leave","show":"l e a _ e","cn":"离开","blanks":[{"pos":3,"ans":"v"}]},{"word":"untidy","show":"u n t i d _","cn":"不整齐的","blanks":[{"pos":5,"ans":"y"}]}];
+const D4=[{"sen":"I have _____ had lunch.","ans":"already","opts":["already","just","yet","still"],"cn":"我已经吃过午饭了。"},{"sen":"I have _____ had a cup of coffee.","ans":"just","opts":["just","already","yet","still"],"cn":"我刚喝了一杯咖啡。"},{"sen":"We are _____ our suitcases.","ans":"packing","opts":["packing","packing","pack","packed"],"cn":"我们正在装手提箱。"},{"sen":"We are going to _____ tomorrow.","ans":"leave","opts":["leave","left","leaving","leaves"],"cn":"我们明天就要走了。"},{"sen":"Aren't you _____!","ans":"lucky","opts":["lucky","luck","happy","good"],"cn":"你们真幸运！"}];
+const D5=[{"img":"🍽️✅","cn":"我已经吃过午饭了。","ans":"I have already had lunch.","opts":["I have already had lunch.","I already had lunch.","I have just had lunch.","I had already lunch."]},{"img":"☕🕐","cn":"我刚喝了一杯咖啡。","ans":"I have just had a cup of coffee.","opts":["I have just had a cup of coffee.","I just had a cup of coffee.","I have already had a cup of coffee.","I had just a cup of coffee."]},{"img":"🧳📦📅","cn":"我们正在装手提箱。我们明天就要走了。","ans":"We are packing our suitcases. We are going to leave tomorrow.","opts":["We are packing our suitcases. We are going to leave tomorrow.","We pack our suitcases. We going to leave tomorrow.","We are packing our suitcase. We are going to leave tomorrow.","We are packed our suitcases. We are going to leave tomorrow."]}];
+const D6=[{"cn":"我已经吃过午饭了。","en":"I have already had lunch."},{"cn":"我刚喝了一杯咖啡。","en":"I have just had a cup of coffee."},{"cn":"请见谅这里很乱。","en":"Excuse the mess."},{"cn":"我们正在装手提箱。","en":"We are packing our suitcases."},{"cn":"我们明天就要走了。","en":"We are going to leave tomorrow."},{"cn":"你们真幸运！","en":"Aren't you lucky!"}];
+const D7=[{"q":"\"already\" 的意思是：","opts":["已经","刚刚","还","将要"],"ans":"已经"},{"q":"\"just\" 的意思是：","opts":["刚刚","已经","还","将要"],"ans":"刚刚"},{"q":"\"I have already had lunch.\" 是什么时态？","opts":["现在完成时","一般过去时","现在进行时","一般将来时"],"ans":"现在完成时"},{"q":"\"suitcase\" 的意思是：","opts":["手提箱","书包","背包","行李"],"ans":"手提箱"},{"q":"\"pack\" 的意思是：","opts":["打包","打开","放","拿"],"ans":"打包"},{"q":"\"untidy\" 的意思是：","opts":["不整齐的","整齐的","不常见的","不舒服的"],"ans":"不整齐的"}];
+
+// ===== 通用交互脚本 =====
+const T=16;let cur=0,score=0,mx=0;
+
+function go(n){
+  if(n<0||n>=T)return;
+  const ss=document.querySelectorAll('.sl');cur=n;
+  ss.forEach((s,i)=>{s.classList.remove('on','bk');if(i===n)s.classList.add('on');else if(i<n)s.classList.add('bk')});
+  document.getElementById('pn').textContent=`${n+1} / ${T}`;
+  document.getElementById('prevB').disabled=(n===0);
+  document.getElementById('nextB').disabled=(n===T-1);
+  document.getElementById('pbar').style.width=((n+1)/T*100)+'%';
+  updDots();
+  if(n===8)initQ1();if(n===9)initQ2();if(n===10)initQ3();
+  if(n===11)initQ4();if(n===12)initQ5();if(n===13)initQ6();
+  if(n===14)initQ7();if(n===15)showFinal();
+}
+function next(){go(cur+1)}function prev(){go(cur-1)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();next()}if(e.key==='ArrowLeft'){e.preventDefault();prev()}});
+
+function updDots(){const d=document.getElementById('dots');d.innerHTML='';for(let i=0;i<T;i++){const e=document.createElement('div');e.className='dot'+(i===cur?' on':'');e.onclick=()=>go(i);d.appendChild(e)}}
+function flip(c){c.classList.toggle('flip');c.style.animation='none';c.offsetHeight;c.style.animation='pop .3s'}
+function speak(el){el.style.animation='none';el.offsetHeight;el.style.animation='pop .3s';const t=el.querySelector('.den').textContent;if('speechSynthesis'in window){const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=0.75;speechSynthesis.speak(u)}}
+function tts(text){if('speechSynthesis'in window){const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=0.7;speechSynthesis.speak(u)}}
+function shuf(a){return[...a].sort(()=>Math.random()-.5)}
+function qResult(el,s,total,nextFn){const pct=Math.round(s/total*100);let emoji=pct>=80?'🎉':pct>=60?'👍':'💪';el.innerHTML=`<div style="font-size:48px;margin-bottom:8px">${emoji}</div><div class="qq">得分：${s} / ${total}</div><div style="font-size:20px;color:var(--txt-l);margin-bottom:20px">${pct>=80?'太棒了！':pct>=60?'不错哦！':'继续加油！'}</div><button class="btn bp" onclick="${nextFn}">继续 →</button>`;if(pct>=80)confetti()}
+
+// ===== Q1: 英译汉 =====
+let i1=0,s1=0;
+function initQ1(){i1=0;s1=0;showQ1()}
+function showQ1(){const el=document.getElementById('q1');if(i1>=D1.length){qResult(el,s1,D1.length,'next()');return}const q=D1[i1],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i1+1}/${D1.length} 题</div><div class="qq">"${q.en}" 的中文意思是？</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck1(this,'${o}','${q.cn}')">${o}</button>`).join('')}</div>`}
+function ck1(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s1++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i1++;showQ1()},900)}
+
+// ===== Q2: 汉译英 =====
+let i2=0,s2=0;
+function initQ2(){i2=0;s2=0;showQ2()}
+function showQ2(){const el=document.getElementById('q2');if(i2>=D2.length){qResult(el,s2,D2.length,'next()');return}const q=D2[i2],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i2+1}/${D2.length} 题</div><div class="qq">"${q.cn}" 的英文是？</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck2(this,'${o}','${q.en}')">${o}</button>`).join('')}</div>`}
+function ck2(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s2++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i2++;showQ2()},900)}
+
+// ===== Q3: 单词补全 =====
+let i3=0,s3=0;
+function initQ3(){i3=0;s3=0;showQ3()}
+function showQ3(){const el=document.getElementById('q3');if(i3>=D3.length){qResult(el,s3,D3.length,'next()');return}const q=D3[i3];const corrs=q.blanks.map(b=>b.ans);const all='abcdefghijklmnopqrstuvwxyz'.split('');const extras=all.filter(l=>!corrs.includes(l)).sort(()=>Math.random()-.5).slice(0,Math.max(1,6-corrs.length));const letters=shuf([...corrs,...extras]);const blankHTML=q.show.split(' ').map((ch,idx)=>{if(ch==='_'){const bi=q.blanks.findIndex(b=>b.pos===idx);return`<span class="fb" id="bk${bi}" style="font-size:28px;min-width:36px;text-align:center">_</span>`}return`<span style="font-size:28px">${ch}</span>`}).join(' ');el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i3+1}/${D3.length} 题</div><div class="qq">补全单词：${q.cn}</div><div style="margin:16px 0;letter-spacing:4px">${blankHTML}</div><div style="font-size:15px;color:var(--txt-l);margin-bottom:12px">点击字母填入：</div><div class="lg">${letters.map(l=>`<button class="lb" onclick="pickL(this,'${l}')">${l}</button>`).join('')}</div><div id="sf" style="font-size:18px;min-height:28px;margin-top:8px"></div>`;window._q3blanks=[...q.blanks];window._q3pos=0}
+function pickL(btn,l){const bl=window._q3blanks,pos=window._q3pos;if(pos>=bl.length)return;const bke=document.getElementById('bk'+pos);if(l===bl[pos].ans){bke.textContent=l;bke.classList.add('okb');btn.classList.add('okl');btn.disabled=true;window._q3pos++;if(window._q3pos>=bl.length){s3++;score++;mx++;document.getElementById('sf').innerHTML='<span style="color:var(--ok)">✅ 太棒了！</span>';setTimeout(()=>{i3++;showQ3()},1000)}}else{btn.classList.add('nol');mx++;document.getElementById('sf').innerHTML=`<span style="color:var(--err)">❌ 再想想！</span>`;setTimeout(()=>{bke.textContent=bl[pos].ans;bke.classList.add('okb');window._q3pos++;if(window._q3pos>=bl.length)setTimeout(()=>{i3++;showQ3()},800)},700)}}
+
+// ===== Q4: 选择填空 =====
+let i4=0,s4=0;
+function initQ4(){i4=0;s4=0;showQ4()}
+function showQ4(){const el=document.getElementById('q4');if(i4>=D4.length){qResult(el,s4,D4.length,'next()');return}const q=D4[i4],opts=shuf(q.opts);const sen=q.sen.replace('_____','<span style="color:var(--pri);border-bottom:3px solid var(--pri);padding:0 8px">_____</span>');el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i4+1}/${D4.length} 题</div><div class="qq" style="font-size:20px;line-height:1.6">${sen}</div><div class="qh">${q.cn}</div><div class="og">${opts.map(o=>`<button class="ob" onclick="ck4(this,'${o}','${q.ans}')">${o}</button>`).join('')}</div>`}
+function ck4(b,sel,cor){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));if(sel===cor){b.classList.add('ok');s4++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i4++;showQ4()},900)}
+
+// ===== Q5: 句型练习 =====
+let i5=0,s5=0;
+function initQ5(){i5=0;s5=0;showQ5()}
+function showQ5(){const el=document.getElementById('q5');if(i5>=D5.length){qResult(el,s5,D5.length,'next()');return}const q=D5[i5],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i5+1}/${D5.length} 题</div><div style="font-size:56px;text-align:center;margin-bottom:10px">${q.img}</div><div class="qq">${q.cn}</div><div class="og" style="grid-template-columns:1fr">${opts.map(o=>`<button class="ob" style="font-size:16px" onclick="ck5(this)">${o}</button>`).join('')}</div>`;window._q5ans=q.ans}
+function ck5(b){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));const sel=b.textContent,cor=window._q5ans;if(sel===cor){b.classList.add('ok');s5++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i5++;showQ5()},900)}
+
+// ===== Q6: 口语练习 =====
+let i6=0;
+function initQ6(){i6=0;showQ6()}
+function showQ6(){const el=document.getElementById('q6');if(i6>=D6.length){el.innerHTML=`<div style="font-size:48px;margin-bottom:8px">🎉</div><div class="qq">口语练习完成！</div><div class="ssub">继续加油哦！💪</div><button class="btn bp" onclick="next()">继续 →</button>`;return}const q=D6[i6];el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i6+1}/${D6.length} 题</div><div class="sp">${q.cn}</div><div class="sa" id="spkAns">🤔 ???</div><div class="sht">先自己说一遍，再点击查看答案</div><div style="display:flex;gap:14px;margin-top:8px"><button class="btn bp" onclick="revealSpk()">👁️ 查看答案</button><button class="btn ba" onclick="tts(D6[i6].en)">🔊 朗读</button></div><div style="margin-top:18px;display:flex;gap:10px"><button class="btn bs" style="font-size:14px;padding:10px 18px" onclick="i6++;showQ6()">✅ 我会了</button><button class="btn bd" style="font-size:14px;padding:10px 18px" onclick="i6++;showQ6()">🔄 还需练习</button></div>`}
+function revealSpk(){const q=D6[i6],el=document.getElementById('spkAns');el.textContent=q.en;el.style.animation='bIn .5s'}
+
+// ===== Q7: 知识检测 =====
+let i7=0,s7=0;
+function initQ7(){i7=0;s7=0;showQ7()}
+function showQ7(){const el=document.getElementById('q7');if(i7>=D7.length){qResult(el,s7,D7.length,'next()');return}const q=D7[i7],opts=shuf(q.opts);el.innerHTML=`<div style="font-size:14px;color:var(--txt-l);margin-bottom:6px">第 ${i7+1}/${D7.length} 题</div><div class="qq" style="font-size:20px">${q.q}</div><div class="og" style="grid-template-columns:1fr">${opts.map(o=>`<button class="ob" style="font-size:16px;text-align:left;padding:14px 18px" onclick="ck7(this)">${o}</button>`).join('')}</div>`;window._q7ans=q.ans}
+function ck7(b){const bs=b.parentElement.querySelectorAll('.ob');bs.forEach(x=>x.classList.add('dis'));const sel=b.textContent,cor=window._q7ans;if(sel===cor){b.classList.add('ok');s7++;score++}else{b.classList.add('no');bs.forEach(x=>{if(x.textContent===cor)x.classList.add('ok')})}mx++;setTimeout(()=>{i7++;showQ7()},900)}
+
+// ===== Final & Confetti =====
+function showFinal(){const pct=mx>0?Math.round(score/mx*100):0;const starCount=pct>=90?5:pct>=70?4:pct>=50?3:pct>=30?2:1;let html='';for(let i=0;i<5;i++)html+=`<span class="star ${i<starCount?'on':'off'}">⭐</span>`;document.getElementById('fstars').innerHTML=html;document.getElementById('fscore').textContent=score+' / '+mx;if(pct>=70)confetti()}
+function resetAll(){score=0;mx=0;go(0)}
+function confetti(){const c=document.getElementById('cfc');const colors=['#6C5CE7','#FDCB6E','#00B894','#FF7675','#74B9FF','#E17055','#A29BFE'];for(let i=0;i<60;i++){const p=document.createElement('div');p.className='cfp';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.animationDelay=Math.random()*2+'s';p.style.animationDuration=(2+Math.random()*2)+'s';p.style.width=(6+Math.random()*8)+'px';p.style.height=(6+Math.random()*8)+'px';p.style.borderRadius=Math.random()>.5?'50%':'2px';c.appendChild(p);setTimeout(()=>p.remove(),5000)}}
+go(0);
+
+</script>
+</body>
+</html>
