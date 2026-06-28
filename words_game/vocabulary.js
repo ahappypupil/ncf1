@@ -2,6 +2,7 @@
  * 新概念英语第一册 词汇数据
  * 由「完整单词表.md」和「单词思维导图.md」合成
  * 生成时间: 2026-06-25T09:53:07.457Z
+ * 更新: 补全偶数课单词 (参照「新概念英语第一册单词.docx」)
  *
  * 数据结构:
  * - meta: 元信息
@@ -10,7 +11,7 @@
 const vocabulary = {
   "meta": {
     "description": "按课次和主题分类合成的新概念英语第一册词汇数据",
-    "total": 921
+    "total": 1140
   },
   "vocabulary": [
     {
@@ -30,17 +31,17 @@ const vocabulary = {
       "subcategory": "家庭成员"
     },
     {
-      "lesson": 0,
+      "lesson": 4,
       "word": "son",
-      "pos": "",
+      "pos": "n",
       "meaning": "儿子",
       "topic": "🧑 人物称谓",
       "subcategory": "家庭成员"
     },
     {
-      "lesson": 0,
+      "lesson": 4,
       "word": "daughter",
-      "pos": "",
+      "pos": "n",
       "meaning": "女儿",
       "topic": "🧑 人物称谓",
       "subcategory": "家庭成员"
@@ -118,9 +119,9 @@ const vocabulary = {
       "subcategory": "家庭成员"
     },
     {
-      "lesson": 0,
+      "lesson": 4,
       "word": "teacher",
-      "pos": "",
+      "pos": "n",
       "meaning": "老师",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
@@ -142,9 +143,9 @@ const vocabulary = {
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "nurse",
-      "pos": "",
+      "pos": "n",
       "meaning": "护士",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
@@ -158,50 +159,50 @@ const vocabulary = {
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "policeman",
-      "pos": "",
+      "pos": "n",
       "meaning": "警察",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "postman",
-      "pos": "",
+      "pos": "n",
       "meaning": "邮递员",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "milkman",
-      "pos": "",
-      "meaning": "送奶工",
+      "pos": "n",
+      "meaning": "送牛奶的人",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "mechanic",
-      "pos": "",
+      "pos": "n",
       "meaning": "机械师",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "hairdresser",
-      "pos": "",
+      "pos": "n",
       "meaning": "理发师",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
     },
     {
-      "lesson": 0,
+      "lesson": 8,
       "word": "housewife",
-      "pos": "",
-      "meaning": "家庭主妇",
+      "pos": "n",
+      "meaning": "家庭妇女",
       "topic": "🧑 人物称谓",
       "subcategory": "职业身份"
     },
@@ -502,9 +503,9 @@ const vocabulary = {
       "subcategory": "称呼代词"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "woman",
-      "pos": "",
+      "pos": "n",
       "meaning": "女人",
       "topic": "🧑 人物称谓",
       "subcategory": "称呼代词"
@@ -702,10 +703,10 @@ const vocabulary = {
       "subcategory": "人称代词"
     },
     {
-      "lesson": 0,
+      "lesson": 16,
       "word": "these",
-      "pos": "",
-      "meaning": "这些",
+      "pos": "pron",
+      "meaning": "这些(this的复数)",
       "topic": "🧑 人物称谓",
       "subcategory": "人称代词"
     },
@@ -718,25 +719,25 @@ const vocabulary = {
       "subcategory": "人称代词"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "book",
-      "pos": "",
+      "pos": "n",
       "meaning": "书",
       "topic": "📦 日常物品",
       "subcategory": "学习办公用品"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "pen",
-      "pos": "",
+      "pos": "n",
       "meaning": "钢笔",
       "topic": "📦 日常物品",
       "subcategory": "学习办公用品"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "pencil",
-      "pos": "",
+      "pos": "n",
       "meaning": "铅笔",
       "topic": "📦 日常物品",
       "subcategory": "学习办公用品"
@@ -1286,10 +1287,10 @@ const vocabulary = {
       "subcategory": "家具电器"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "car",
-      "pos": "",
-      "meaning": "汽车",
+      "pos": "n",
+      "meaning": "小汽车",
       "topic": "📦 日常物品",
       "subcategory": "交通工具"
     },
@@ -1422,9 +1423,9 @@ const vocabulary = {
       "subcategory": "工具器械"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "house",
-      "pos": "",
+      "pos": "n",
       "meaning": "房子",
       "topic": "🏠 场所地点",
       "subcategory": "建筑场所"
@@ -1438,9 +1439,9 @@ const vocabulary = {
       "subcategory": "建筑场所"
     },
     {
-      "lesson": 0,
+      "lesson": 4,
       "word": "school",
-      "pos": "",
+      "pos": "n",
       "meaning": "学校",
       "topic": "🏠 场所地点",
       "subcategory": "建筑场所"
@@ -1846,10 +1847,10 @@ const vocabulary = {
       "subcategory": "自然地理"
     },
     {
-      "lesson": 0,
+      "lesson": 26,
       "word": "in",
-      "pos": "",
-      "meaning": "在...里",
+      "pos": "prep",
+      "meaning": "在…里",
       "topic": "🏠 场所地点",
       "subcategory": "方位词"
     },
@@ -2062,41 +2063,41 @@ const vocabulary = {
       "subcategory": "方位词"
     },
     {
-      "lesson": 0,
+      "lesson": 54,
       "word": "China",
-      "pos": "",
+      "pos": "n",
       "meaning": "中国",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
     },
     {
-      "lesson": 0,
+      "lesson": 52,
       "word": "France",
-      "pos": "",
+      "pos": "n",
       "meaning": "法国",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
     },
     {
-      "lesson": 0,
+      "lesson": 52,
       "word": "Germany",
-      "pos": "",
+      "pos": "n",
       "meaning": "德国",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
     },
     {
-      "lesson": 0,
+      "lesson": 54,
       "word": "Japan",
-      "pos": "",
+      "pos": "n",
       "meaning": "日本",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
     },
     {
-      "lesson": 0,
+      "lesson": 54,
       "word": "Korea",
-      "pos": "",
+      "pos": "n",
       "meaning": "韩国",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
@@ -2110,17 +2111,17 @@ const vocabulary = {
       "subcategory": "国家城市"
     },
     {
-      "lesson": 0,
+      "lesson": 52,
       "word": "Norway",
-      "pos": "",
+      "pos": "n",
       "meaning": "挪威",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
     },
     {
-      "lesson": 0,
+      "lesson": 52,
       "word": "Russia",
-      "pos": "",
+      "pos": "n",
       "meaning": "俄罗斯",
       "topic": "🏠 场所地点",
       "subcategory": "国家城市"
@@ -2206,10 +2207,10 @@ const vocabulary = {
       "subcategory": "基础动作"
     },
     {
-      "lesson": 0,
+      "lesson": 74,
       "word": "go",
-      "pos": "",
-      "meaning": "去",
+      "pos": "v",
+      "meaning": "走",
       "topic": "🏃 动作行为",
       "subcategory": "基础动作"
     },
@@ -2254,9 +2255,9 @@ const vocabulary = {
       "subcategory": "基础动作"
     },
     {
-      "lesson": 0,
+      "lesson": 34,
       "word": "jump",
-      "pos": "",
+      "pos": "v",
       "meaning": "跳",
       "topic": "🏃 动作行为",
       "subcategory": "基础动作"
@@ -2526,26 +2527,26 @@ const vocabulary = {
       "subcategory": "手部动作"
     },
     {
-      "lesson": 0,
+      "lesson": 32,
       "word": "eat",
-      "pos": "",
+      "pos": "v",
       "meaning": "吃",
       "topic": "🏃 动作行为",
       "subcategory": "日常活动"
     },
     {
-      "lesson": 0,
+      "lesson": 32,
       "word": "drink",
-      "pos": "",
+      "pos": "v",
       "meaning": "喝",
       "topic": "🏃 动作行为",
       "subcategory": "日常活动"
     },
     {
-      "lesson": 0,
+      "lesson": 32,
       "word": "cook",
-      "pos": "",
-      "meaning": "做饭",
+      "pos": "v",
+      "meaning": "做(饭菜)",
       "topic": "🏃 动作行为",
       "subcategory": "日常活动"
     },
@@ -2558,9 +2559,9 @@ const vocabulary = {
       "subcategory": "日常活动"
     },
     {
-      "lesson": 0,
+      "lesson": 34,
       "word": "wash",
-      "pos": "",
+      "pos": "v",
       "meaning": "洗",
       "topic": "🏃 动作行为",
       "subcategory": "日常活动"
@@ -2686,9 +2687,9 @@ const vocabulary = {
       "subcategory": "日常活动"
     },
     {
-      "lesson": 0,
+      "lesson": 34,
       "word": "sleep",
-      "pos": "",
+      "pos": "v",
       "meaning": "睡觉",
       "topic": "🏃 动作行为",
       "subcategory": "日常活动"
@@ -2758,9 +2759,9 @@ const vocabulary = {
       "subcategory": "交流动作"
     },
     {
-      "lesson": 0,
+      "lesson": 64,
       "word": "talk",
-      "pos": "",
+      "pos": "v",
       "meaning": "谈话",
       "topic": "🏃 动作行为",
       "subcategory": "交流动作"
@@ -3414,25 +3415,25 @@ const vocabulary = {
       "subcategory": "大小形状"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "tall",
-      "pos": "",
+      "pos": "adj",
       "meaning": "高的",
       "topic": "🌟 形容词",
       "subcategory": "大小形状"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "fat",
-      "pos": "",
+      "pos": "adj",
       "meaning": "胖的",
       "topic": "🌟 形容词",
       "subcategory": "大小形状"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "thin",
-      "pos": "",
+      "pos": "adj",
       "meaning": "瘦的",
       "topic": "🌟 形容词",
       "subcategory": "大小形状"
@@ -3494,17 +3495,17 @@ const vocabulary = {
       "subcategory": "新旧好坏"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "old",
-      "pos": "",
-      "meaning": "旧的/老的",
+      "pos": "adj",
+      "meaning": "老的",
       "topic": "🌟 形容词",
       "subcategory": "新旧好坏"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "young",
-      "pos": "",
+      "pos": "adj",
       "meaning": "年轻的",
       "topic": "🌟 形容词",
       "subcategory": "新旧好坏"
@@ -3686,9 +3687,9 @@ const vocabulary = {
       "subcategory": "状态感受"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "busy",
-      "pos": "",
+      "pos": "adj",
       "meaning": "忙的",
       "topic": "🌟 形容词",
       "subcategory": "状态感受"
@@ -3974,10 +3975,10 @@ const vocabulary = {
       "subcategory": "能力评价"
     },
     {
-      "lesson": 0,
+      "lesson": 10,
       "word": "lazy",
-      "pos": "",
-      "meaning": "懒惰的",
+      "pos": "adj",
+      "meaning": "懒的",
       "topic": "🌟 形容词",
       "subcategory": "能力评价"
     },
@@ -4142,9 +4143,9 @@ const vocabulary = {
       "subcategory": "能力评价"
     },
     {
-      "lesson": 0,
+      "lesson": 104,
       "word": "high",
-      "pos": "",
+      "pos": "adj",
       "meaning": "高的",
       "topic": "🌟 形容词",
       "subcategory": "能力评价"
@@ -5054,10 +5055,10 @@ const vocabulary = {
       "subcategory": "时间表达"
     },
     {
-      "lesson": 0,
+      "lesson": 16,
       "word": "red",
-      "pos": "",
-      "meaning": "红色",
+      "pos": "adj",
+      "meaning": "红色的",
       "topic": "👗 颜色服装",
       "subcategory": "颜色"
     },
@@ -5078,10 +5079,10 @@ const vocabulary = {
       "subcategory": "颜色"
     },
     {
-      "lesson": 0,
+      "lesson": 16,
       "word": "yellow",
-      "pos": "",
-      "meaning": "黄色",
+      "pos": "adj",
+      "meaning": "黄色的",
       "topic": "👗 颜色服装",
       "subcategory": "颜色"
     },
@@ -5094,10 +5095,10 @@ const vocabulary = {
       "subcategory": "颜色"
     },
     {
-      "lesson": 0,
+      "lesson": 16,
       "word": "black",
-      "pos": "",
-      "meaning": "黑色",
+      "pos": "adj",
+      "meaning": "黑色的",
       "topic": "👗 颜色服装",
       "subcategory": "颜色"
     },
@@ -5142,10 +5143,10 @@ const vocabulary = {
       "subcategory": "颜色"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "coat",
-      "pos": "",
-      "meaning": "外套",
+      "pos": "n",
+      "meaning": "上衣，外衣",
       "topic": "👗 颜色服装",
       "subcategory": "服装配饰"
     },
@@ -5158,18 +5159,18 @@ const vocabulary = {
       "subcategory": "服装配饰"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "dress",
-      "pos": "",
+      "pos": "n",
       "meaning": "连衣裙",
       "topic": "👗 颜色服装",
       "subcategory": "服装配饰"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "shirt",
-      "pos": "",
-      "meaning": "衬衫",
+      "pos": "n",
+      "meaning": "衬衣",
       "topic": "👗 颜色服装",
       "subcategory": "服装配饰"
     },
@@ -5182,9 +5183,9 @@ const vocabulary = {
       "subcategory": "服装配饰"
     },
     {
-      "lesson": 0,
+      "lesson": 2,
       "word": "skirt",
-      "pos": "",
+      "pos": "n",
       "meaning": "裙子",
       "topic": "👗 颜色服装",
       "subcategory": "服装配饰"
@@ -5566,9 +5567,9 @@ const vocabulary = {
       "subcategory": "饮品"
     },
     {
-      "lesson": 0,
+      "lesson": 32,
       "word": "milk",
-      "pos": "",
+      "pos": "n",
       "meaning": "牛奶",
       "topic": "🍎 食物饮品",
       "subcategory": "饮品"
@@ -5582,9 +5583,9 @@ const vocabulary = {
       "subcategory": "饮品"
     },
     {
-      "lesson": 0,
+      "lesson": 48,
       "word": "beer",
-      "pos": "",
+      "pos": "n",
       "meaning": "啤酒",
       "topic": "🍎 食物饮品",
       "subcategory": "饮品"
@@ -5718,10 +5719,10 @@ const vocabulary = {
       "subcategory": "连接词"
     },
     {
-      "lesson": 0,
+      "lesson": 64,
       "word": "so",
-      "pos": "",
-      "meaning": "所以",
+      "pos": "adv",
+      "meaning": "如此地",
       "topic": "📝 功能词",
       "subcategory": "连接词"
     },
@@ -5910,10 +5911,10 @@ const vocabulary = {
       "subcategory": "副词"
     },
     {
-      "lesson": 0,
+      "lesson": 64,
       "word": "quickly",
-      "pos": "",
-      "meaning": "快速地",
+      "pos": "adv",
+      "meaning": "快地",
       "topic": "📝 功能词",
       "subcategory": "副词"
     },
@@ -6102,18 +6103,18 @@ const vocabulary = {
       "subcategory": "介词"
     },
     {
-      "lesson": 0,
+      "lesson": 42,
       "word": "some",
-      "pos": "",
+      "pos": "det",
       "meaning": "一些",
       "topic": "📝 功能词",
       "subcategory": "不定代词"
     },
     {
-      "lesson": 0,
+      "lesson": 42,
       "word": "any",
-      "pos": "",
-      "meaning": "任何",
+      "pos": "det",
+      "meaning": "一些",
       "topic": "📝 功能词",
       "subcategory": "不定代词"
     },
@@ -6486,9 +6487,9 @@ const vocabulary = {
       "subcategory": "身体部位"
     },
     {
-      "lesson": 0,
+      "lesson": 32,
       "word": "tooth",
-      "pos": "",
+      "pos": "n",
       "meaning": "牙齿",
       "topic": "🏥 身体健康",
       "subcategory": "身体部位"
@@ -7380,6 +7381,1758 @@ const vocabulary = {
       "meaning": "较少的",
       "topic": "🌟 形容词",
       "subcategory": "大小形状"
+    },
+    {
+      "lesson": 2,
+      "word": "watch",
+      "pos": "n",
+      "meaning": "手表",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 4,
+      "word": "suit",
+      "pos": "n",
+      "meaning": "一套衣服",
+      "topic": "👗 颜色服装",
+      "subcategory": "服装配饰"
+    },
+    {
+      "lesson": 6,
+      "word": "make",
+      "pos": "n",
+      "meaning": "(产品的)牌号",
+      "topic": "🎭 其他名词",
+      "subcategory": "抽象名词"
+    },
+    {
+      "lesson": 6,
+      "word": "Swedish",
+      "pos": "adj",
+      "meaning": "瑞典的",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 6,
+      "word": "English",
+      "pos": "adj",
+      "meaning": "英国的",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 6,
+      "word": "American",
+      "pos": "adj",
+      "meaning": "美国的",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 6,
+      "word": "Italian",
+      "pos": "adj",
+      "meaning": "意大利的",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 6,
+      "word": "Volvo",
+      "pos": "n",
+      "meaning": "沃尔沃",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Peugeot",
+      "pos": "n",
+      "meaning": "标致",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Mercedes",
+      "pos": "n",
+      "meaning": "梅赛德斯",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Toyota",
+      "pos": "n",
+      "meaning": "丰田",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Daewoo",
+      "pos": "n",
+      "meaning": "大宇",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Mini",
+      "pos": "n",
+      "meaning": "迷你",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Ford",
+      "pos": "n",
+      "meaning": "福特",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 6,
+      "word": "Fiat",
+      "pos": "n",
+      "meaning": "菲亚特",
+      "topic": "📦 日常物品",
+      "subcategory": "交通工具"
+    },
+    {
+      "lesson": 8,
+      "word": "policewoman",
+      "pos": "n",
+      "meaning": "女警察",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 8,
+      "word": "taxi driver",
+      "pos": "",
+      "meaning": "出租汽车司机",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 8,
+      "word": "air hostess",
+      "pos": "",
+      "meaning": "空中小姐",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 10,
+      "word": "short",
+      "pos": "adj",
+      "meaning": "矮的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 10,
+      "word": "dirty",
+      "pos": "adj",
+      "meaning": "脏的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 10,
+      "word": "clean",
+      "pos": "adj",
+      "meaning": "干净的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 10,
+      "word": "hot",
+      "pos": "adj",
+      "meaning": "热的",
+      "topic": "🌟 形容词",
+      "subcategory": "状态感受"
+    },
+    {
+      "lesson": 10,
+      "word": "cold",
+      "pos": "adj",
+      "meaning": "冷的",
+      "topic": "🌟 形容词",
+      "subcategory": "状态感受"
+    },
+    {
+      "lesson": 12,
+      "word": "father",
+      "pos": "n",
+      "meaning": "父亲",
+      "topic": "🧑 人物称谓",
+      "subcategory": "家庭成员"
+    },
+    {
+      "lesson": 12,
+      "word": "mother",
+      "pos": "n",
+      "meaning": "母亲",
+      "topic": "🧑 人物称谓",
+      "subcategory": "家庭成员"
+    },
+    {
+      "lesson": 12,
+      "word": "blouse",
+      "pos": "n",
+      "meaning": "女衬衫",
+      "topic": "👗 颜色服装",
+      "subcategory": "服装配饰"
+    },
+    {
+      "lesson": 12,
+      "word": "sister",
+      "pos": "n",
+      "meaning": "姐，妹",
+      "topic": "🧑 人物称谓",
+      "subcategory": "家庭成员"
+    },
+    {
+      "lesson": 12,
+      "word": "tie",
+      "pos": "n",
+      "meaning": "领带",
+      "topic": "👗 颜色服装",
+      "subcategory": "服装配饰"
+    },
+    {
+      "lesson": 12,
+      "word": "brother",
+      "pos": "n",
+      "meaning": "兄，弟",
+      "topic": "🧑 人物称谓",
+      "subcategory": "家庭成员"
+    },
+    {
+      "lesson": 12,
+      "word": "his",
+      "pos": "pron",
+      "meaning": "他的",
+      "topic": "🧑 人物称谓",
+      "subcategory": "人称代词"
+    },
+    {
+      "lesson": 12,
+      "word": "her",
+      "pos": "pron",
+      "meaning": "她的",
+      "topic": "🧑 人物称谓",
+      "subcategory": "人称代词"
+    },
+    {
+      "lesson": 14,
+      "word": "case",
+      "pos": "n",
+      "meaning": "箱子",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 14,
+      "word": "carpet",
+      "pos": "n",
+      "meaning": "地毯",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 14,
+      "word": "dog",
+      "pos": "n",
+      "meaning": "狗",
+      "topic": "🎭 其他名词",
+      "subcategory": "动物"
+    },
+    {
+      "lesson": 16,
+      "word": "Russian",
+      "pos": "adj&n",
+      "meaning": "俄罗斯人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 16,
+      "word": "Dutch",
+      "pos": "adj&n",
+      "meaning": "荷兰人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 16,
+      "word": "grey",
+      "pos": "adj",
+      "meaning": "灰色的",
+      "topic": "👗 颜色服装",
+      "subcategory": "颜色"
+    },
+    {
+      "lesson": 16,
+      "word": "orange",
+      "pos": "adj",
+      "meaning": "橘黄色的",
+      "topic": "👗 颜色服装",
+      "subcategory": "颜色"
+    },
+    {
+      "lesson": 20,
+      "word": "big",
+      "pos": "adj",
+      "meaning": "大的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 20,
+      "word": "small",
+      "pos": "adj",
+      "meaning": "小的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 20,
+      "word": "open",
+      "pos": "adj",
+      "meaning": "开着的",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 20,
+      "word": "shut",
+      "pos": "adj",
+      "meaning": "关着的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 20,
+      "word": "light",
+      "pos": "adj",
+      "meaning": "轻的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 20,
+      "word": "heavy",
+      "pos": "adj",
+      "meaning": "重的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 20,
+      "word": "long",
+      "pos": "adj",
+      "meaning": "长的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 20,
+      "word": "shoe",
+      "pos": "n",
+      "meaning": "鞋子",
+      "topic": "👗 颜色服装",
+      "subcategory": "服装配饰"
+    },
+    {
+      "lesson": 20,
+      "word": "grandfather",
+      "pos": "n",
+      "meaning": "祖父，外祖父",
+      "topic": "🧑 人物称谓",
+      "subcategory": "家庭成员"
+    },
+    {
+      "lesson": 20,
+      "word": "grandmother",
+      "pos": "n",
+      "meaning": "祖母，外祖母",
+      "topic": "🧑 人物称谓",
+      "subcategory": "家庭成员"
+    },
+    {
+      "lesson": 22,
+      "word": "empty",
+      "pos": "adj",
+      "meaning": "空的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "full",
+      "pos": "adj",
+      "meaning": "满的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "large",
+      "pos": "adj",
+      "meaning": "大的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "little",
+      "pos": "adj",
+      "meaning": "小的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "sharp",
+      "pos": "adj",
+      "meaning": "尖的，锋利的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "small",
+      "pos": "adj",
+      "meaning": "小的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "big",
+      "pos": "adj",
+      "meaning": "大的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "blunt",
+      "pos": "adj",
+      "meaning": "钝的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 22,
+      "word": "box",
+      "pos": "n",
+      "meaning": "盒子，箱子",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 22,
+      "word": "glass",
+      "pos": "n",
+      "meaning": "杯子",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 22,
+      "word": "cup",
+      "pos": "n",
+      "meaning": "茶杯",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 22,
+      "word": "bottle",
+      "pos": "n",
+      "meaning": "瓶子",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 22,
+      "word": "tin",
+      "pos": "n",
+      "meaning": "罐头",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 22,
+      "word": "knife",
+      "pos": "n",
+      "meaning": "刀子",
+      "topic": "📦 日常物品",
+      "subcategory": "餐具厨具"
+    },
+    {
+      "lesson": 22,
+      "word": "fork",
+      "pos": "n",
+      "meaning": "叉子",
+      "topic": "📦 日常物品",
+      "subcategory": "餐具厨具"
+    },
+    {
+      "lesson": 24,
+      "word": "desk",
+      "pos": "n",
+      "meaning": "课桌",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 24,
+      "word": "table",
+      "pos": "n",
+      "meaning": "桌子",
+      "topic": "📦 日常物品",
+      "subcategory": "家具电器"
+    },
+    {
+      "lesson": 24,
+      "word": "plate",
+      "pos": "n",
+      "meaning": "盘子",
+      "topic": "📦 日常物品",
+      "subcategory": "餐具厨具"
+    },
+    {
+      "lesson": 24,
+      "word": "cupboard",
+      "pos": "n",
+      "meaning": "食橱",
+      "topic": "📦 日常物品",
+      "subcategory": "餐具厨具"
+    },
+    {
+      "lesson": 24,
+      "word": "cigarette",
+      "pos": "n",
+      "meaning": "香烟",
+      "topic": "📦 日常物品",
+      "subcategory": "工具器械"
+    },
+    {
+      "lesson": 24,
+      "word": "television",
+      "pos": "n",
+      "meaning": "电视机",
+      "topic": "📦 日常物品",
+      "subcategory": "家具电器"
+    },
+    {
+      "lesson": 24,
+      "word": "floor",
+      "pos": "n",
+      "meaning": "地板",
+      "topic": "📦 日常物品",
+      "subcategory": "家具电器"
+    },
+    {
+      "lesson": 24,
+      "word": "dressing table",
+      "pos": "",
+      "meaning": "梳妆台",
+      "topic": "📦 日常物品",
+      "subcategory": "家具电器"
+    },
+    {
+      "lesson": 24,
+      "word": "magazine",
+      "pos": "n",
+      "meaning": "杂志",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 24,
+      "word": "bed",
+      "pos": "n",
+      "meaning": "床",
+      "topic": "📦 日常物品",
+      "subcategory": "家具电器"
+    },
+    {
+      "lesson": 24,
+      "word": "newspaper",
+      "pos": "n",
+      "meaning": "报纸",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 24,
+      "word": "stereo",
+      "pos": "n",
+      "meaning": "立体声音响",
+      "topic": "📦 日常物品",
+      "subcategory": "家具电器"
+    },
+    {
+      "lesson": 26,
+      "word": "where",
+      "pos": "adv",
+      "meaning": "在哪里",
+      "topic": "📝 功能词",
+      "subcategory": "疑问词"
+    },
+    {
+      "lesson": 28,
+      "word": "trousers",
+      "pos": "n",
+      "meaning": "〔复数〕长裤",
+      "topic": "👗 颜色服装",
+      "subcategory": "服装配饰"
+    },
+    {
+      "lesson": 30,
+      "word": "empty",
+      "pos": "v",
+      "meaning": "倒空，使…变空",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 30,
+      "word": "read",
+      "pos": "v",
+      "meaning": "读",
+      "topic": "🏃 动作行为",
+      "subcategory": "日常活动"
+    },
+    {
+      "lesson": 30,
+      "word": "sharpen",
+      "pos": "v",
+      "meaning": "削尖，使锋利",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 30,
+      "word": "put on",
+      "pos": "",
+      "meaning": "穿上",
+      "topic": "📝 功能词",
+      "subcategory": "常用短语"
+    },
+    {
+      "lesson": 30,
+      "word": "take off",
+      "pos": "",
+      "meaning": "脱掉",
+      "topic": "📝 功能词",
+      "subcategory": "常用短语"
+    },
+    {
+      "lesson": 30,
+      "word": "turn on",
+      "pos": "",
+      "meaning": "开(电灯)",
+      "topic": "📝 功能词",
+      "subcategory": "常用短语"
+    },
+    {
+      "lesson": 30,
+      "word": "turn off",
+      "pos": "",
+      "meaning": "关(电灯)",
+      "topic": "📝 功能词",
+      "subcategory": "常用短语"
+    },
+    {
+      "lesson": 32,
+      "word": "type",
+      "pos": "v",
+      "meaning": "打字",
+      "topic": "🏃 动作行为",
+      "subcategory": "日常活动"
+    },
+    {
+      "lesson": 32,
+      "word": "letter",
+      "pos": "n",
+      "meaning": "信",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 32,
+      "word": "basket",
+      "pos": "n",
+      "meaning": "篮子",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 32,
+      "word": "bone",
+      "pos": "n",
+      "meaning": "骨头",
+      "topic": "🍎 食物饮品",
+      "subcategory": "肉类"
+    },
+    {
+      "lesson": 32,
+      "word": "clean",
+      "pos": "v",
+      "meaning": "清洗",
+      "topic": "🏃 动作行为",
+      "subcategory": "日常活动"
+    },
+    {
+      "lesson": 32,
+      "word": "meal",
+      "pos": "n",
+      "meaning": "饭，一顿饭",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 32,
+      "word": "tap",
+      "pos": "n",
+      "meaning": "(水)龙头",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 34,
+      "word": "shave",
+      "pos": "v",
+      "meaning": "刮脸",
+      "topic": "🏃 动作行为",
+      "subcategory": "日常活动"
+    },
+    {
+      "lesson": 34,
+      "word": "cry",
+      "pos": "v",
+      "meaning": "哭，喊",
+      "topic": "🏃 动作行为",
+      "subcategory": "交流动作"
+    },
+    {
+      "lesson": 34,
+      "word": "wait",
+      "pos": "v",
+      "meaning": "等",
+      "topic": "🏃 动作行为",
+      "subcategory": "其他动词"
+    },
+    {
+      "lesson": 36,
+      "word": "beside",
+      "pos": "prep",
+      "meaning": "在…旁",
+      "topic": "🏠 场所地点",
+      "subcategory": "方位词"
+    },
+    {
+      "lesson": 36,
+      "word": "off",
+      "pos": "prep",
+      "meaning": "离开",
+      "topic": "🏠 场所地点",
+      "subcategory": "方位词"
+    },
+    {
+      "lesson": 38,
+      "word": "homework",
+      "pos": "n",
+      "meaning": "作业",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 38,
+      "word": "listen",
+      "pos": "v",
+      "meaning": "听",
+      "topic": "🏃 动作行为",
+      "subcategory": "日常活动"
+    },
+    {
+      "lesson": 38,
+      "word": "dish",
+      "pos": "n",
+      "meaning": "盘子，碟子",
+      "topic": "📦 日常物品",
+      "subcategory": "餐具厨具"
+    },
+    {
+      "lesson": 40,
+      "word": "show",
+      "pos": "v",
+      "meaning": "给…看",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 40,
+      "word": "send",
+      "pos": "v",
+      "meaning": "送给",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 40,
+      "word": "take",
+      "pos": "v",
+      "meaning": "带给",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 42,
+      "word": "bird",
+      "pos": "n",
+      "meaning": "鸟",
+      "topic": "🎭 其他名词",
+      "subcategory": "动物"
+    },
+    {
+      "lesson": 46,
+      "word": "lift",
+      "pos": "v",
+      "meaning": "拿起，搬起，举起",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 46,
+      "word": "cake",
+      "pos": "n",
+      "meaning": "饼，蛋糕",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 46,
+      "word": "biscuit",
+      "pos": "n",
+      "meaning": "饼干",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 48,
+      "word": "fresh",
+      "pos": "adj",
+      "meaning": "新鲜的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 48,
+      "word": "egg",
+      "pos": "n",
+      "meaning": "鸡蛋",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 48,
+      "word": "butter",
+      "pos": "n",
+      "meaning": "黄油",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 48,
+      "word": "pure",
+      "pos": "adj",
+      "meaning": "纯净的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 48,
+      "word": "honey",
+      "pos": "n",
+      "meaning": "蜂蜜",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 48,
+      "word": "ripe",
+      "pos": "adj",
+      "meaning": "成熟的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 48,
+      "word": "banana",
+      "pos": "n",
+      "meaning": "香蕉",
+      "topic": "🍎 食物饮品",
+      "subcategory": "水果"
+    },
+    {
+      "lesson": 48,
+      "word": "jam",
+      "pos": "n",
+      "meaning": "果酱",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 48,
+      "word": "sweet",
+      "pos": "adj",
+      "meaning": "甜的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 48,
+      "word": "orange",
+      "pos": "n",
+      "meaning": "橙",
+      "topic": "👗 颜色服装",
+      "subcategory": "颜色"
+    },
+    {
+      "lesson": 48,
+      "word": "Scotch whisky",
+      "pos": "",
+      "meaning": "苏格兰威士忌",
+      "topic": "🍎 食物饮品",
+      "subcategory": "饮品"
+    },
+    {
+      "lesson": 48,
+      "word": "choice",
+      "pos": "adj",
+      "meaning": "上等的，精选的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 48,
+      "word": "apple",
+      "pos": "n",
+      "meaning": "苹果",
+      "topic": "🍎 食物饮品",
+      "subcategory": "水果"
+    },
+    {
+      "lesson": 48,
+      "word": "wine",
+      "pos": "n",
+      "meaning": "酒，果酒",
+      "topic": "🍎 食物饮品",
+      "subcategory": "饮品"
+    },
+    {
+      "lesson": 48,
+      "word": "blackboard",
+      "pos": "n",
+      "meaning": "黑板",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 50,
+      "word": "tomato",
+      "pos": "n",
+      "meaning": "西红柿",
+      "topic": "🍎 食物饮品",
+      "subcategory": "蔬菜"
+    },
+    {
+      "lesson": 50,
+      "word": "potato",
+      "pos": "n",
+      "meaning": "土豆",
+      "topic": "🍎 食物饮品",
+      "subcategory": "蔬菜"
+    },
+    {
+      "lesson": 50,
+      "word": "cabbage",
+      "pos": "n",
+      "meaning": "卷心菜",
+      "topic": "🍎 食物饮品",
+      "subcategory": "蔬菜"
+    },
+    {
+      "lesson": 50,
+      "word": "lettuce",
+      "pos": "n",
+      "meaning": "莴苣",
+      "topic": "🍎 食物饮品",
+      "subcategory": "蔬菜"
+    },
+    {
+      "lesson": 50,
+      "word": "pea",
+      "pos": "n",
+      "meaning": "豌豆",
+      "topic": "🍎 食物饮品",
+      "subcategory": "蔬菜"
+    },
+    {
+      "lesson": 50,
+      "word": "bean",
+      "pos": "n",
+      "meaning": "豆角",
+      "topic": "🍎 食物饮品",
+      "subcategory": "蔬菜"
+    },
+    {
+      "lesson": 50,
+      "word": "pear",
+      "pos": "n",
+      "meaning": "梨",
+      "topic": "🍎 食物饮品",
+      "subcategory": "水果"
+    },
+    {
+      "lesson": 50,
+      "word": "grape",
+      "pos": "n",
+      "meaning": "葡萄",
+      "topic": "🍎 食物饮品",
+      "subcategory": "水果"
+    },
+    {
+      "lesson": 50,
+      "word": "peach",
+      "pos": "n",
+      "meaning": "桃",
+      "topic": "🍎 食物饮品",
+      "subcategory": "水果"
+    },
+    {
+      "lesson": 52,
+      "word": "the U.S.",
+      "pos": "",
+      "meaning": "美国",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 52,
+      "word": "Brazil",
+      "pos": "n",
+      "meaning": "巴西",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 52,
+      "word": "Holland",
+      "pos": "n",
+      "meaning": "荷兰",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 52,
+      "word": "England",
+      "pos": "n",
+      "meaning": "英国",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 52,
+      "word": "Italy",
+      "pos": "n",
+      "meaning": "意大利",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 52,
+      "word": "Spain",
+      "pos": "n",
+      "meaning": "西班牙",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 52,
+      "word": "Sweden",
+      "pos": "n",
+      "meaning": "瑞典",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Australia",
+      "pos": "n",
+      "meaning": "澳大利亚",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Australian",
+      "pos": "n",
+      "meaning": "澳大利亚人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Austria",
+      "pos": "n",
+      "meaning": "奥地利",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Austrian",
+      "pos": "n",
+      "meaning": "奥地利人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Canada",
+      "pos": "n",
+      "meaning": "加拿大",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Canadian",
+      "pos": "n",
+      "meaning": "加拿大人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Finland",
+      "pos": "n",
+      "meaning": "芬兰",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Finnish",
+      "pos": "n",
+      "meaning": "芬兰人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "India",
+      "pos": "n",
+      "meaning": "印度",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Indian",
+      "pos": "n",
+      "meaning": "印度人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Nigeria",
+      "pos": "n",
+      "meaning": "尼日利亚",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Nigerian",
+      "pos": "n",
+      "meaning": "尼日利亚人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Turkey",
+      "pos": "n",
+      "meaning": "土耳其",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Turkish",
+      "pos": "n",
+      "meaning": "土耳其人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Polish",
+      "pos": "n",
+      "meaning": "波兰人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Poland",
+      "pos": "n",
+      "meaning": "波兰",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 54,
+      "word": "Thai",
+      "pos": "n",
+      "meaning": "泰国人",
+      "topic": "🌟 形容词",
+      "subcategory": "国籍形容词"
+    },
+    {
+      "lesson": 54,
+      "word": "Thailand",
+      "pos": "n",
+      "meaning": "泰国",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 64,
+      "word": "play",
+      "pos": "v",
+      "meaning": "玩",
+      "topic": "🎭 其他名词",
+      "subcategory": "抽象名词"
+    },
+    {
+      "lesson": 64,
+      "word": "match",
+      "pos": "n",
+      "meaning": "火柴",
+      "topic": "📦 日常物品",
+      "subcategory": "工具器械"
+    },
+    {
+      "lesson": 64,
+      "word": "library",
+      "pos": "n",
+      "meaning": "图书馆",
+      "topic": "🏠 场所地点",
+      "subcategory": "建筑场所"
+    },
+    {
+      "lesson": 64,
+      "word": "drive",
+      "pos": "v",
+      "meaning": "开车",
+      "topic": "🏃 动作行为",
+      "subcategory": "日常活动"
+    },
+    {
+      "lesson": 64,
+      "word": "lean out of",
+      "pos": "",
+      "meaning": "身体探出",
+      "topic": "📝 功能词",
+      "subcategory": "常用短语"
+    },
+    {
+      "lesson": 64,
+      "word": "break",
+      "pos": "v",
+      "meaning": "打破",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 66,
+      "word": "myself",
+      "pos": "pron",
+      "meaning": "我自己",
+      "topic": "🧑 人物称谓",
+      "subcategory": "人称代词"
+    },
+    {
+      "lesson": 66,
+      "word": "themselves",
+      "pos": "pron",
+      "meaning": "他们自己",
+      "topic": "🧑 人物称谓",
+      "subcategory": "人称代词"
+    },
+    {
+      "lesson": 66,
+      "word": "himself",
+      "pos": "pron",
+      "meaning": "他自己",
+      "topic": "🧑 人物称谓",
+      "subcategory": "人称代词"
+    },
+    {
+      "lesson": 66,
+      "word": "herself",
+      "pos": "pron",
+      "meaning": "她自己",
+      "topic": "🧑 人物称谓",
+      "subcategory": "人称代词"
+    },
+    {
+      "lesson": 68,
+      "word": "church",
+      "pos": "n",
+      "meaning": "教堂",
+      "topic": "🏠 场所地点",
+      "subcategory": "建筑场所"
+    },
+    {
+      "lesson": 68,
+      "word": "dairy",
+      "pos": "n",
+      "meaning": "乳品店",
+      "topic": "🏠 场所地点",
+      "subcategory": "建筑场所"
+    },
+    {
+      "lesson": 68,
+      "word": "baker",
+      "pos": "n",
+      "meaning": "面包师傅",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 68,
+      "word": "grocer",
+      "pos": "n",
+      "meaning": "食品杂货商",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 74,
+      "word": "hurriedly",
+      "pos": "adv",
+      "meaning": "匆忙地",
+      "topic": "📝 功能词",
+      "subcategory": "副词"
+    },
+    {
+      "lesson": 74,
+      "word": "cut",
+      "pos": "v",
+      "meaning": "割，切",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 74,
+      "word": "thirstily",
+      "pos": "adv",
+      "meaning": "口渴地",
+      "topic": "📝 功能词",
+      "subcategory": "副词"
+    },
+    {
+      "lesson": 74,
+      "word": "greet",
+      "pos": "v",
+      "meaning": "问候，找招呼",
+      "topic": "🏃 动作行为",
+      "subcategory": "交流动作"
+    },
+    {
+      "lesson": 80,
+      "word": "groceries",
+      "pos": "n",
+      "meaning": "食品杂货",
+      "topic": "📦 日常物品",
+      "subcategory": "生活用品"
+    },
+    {
+      "lesson": 80,
+      "word": "fruit",
+      "pos": "n",
+      "meaning": "水果",
+      "topic": "🍎 食物饮品",
+      "subcategory": "水果"
+    },
+    {
+      "lesson": 80,
+      "word": "stationery",
+      "pos": "n",
+      "meaning": "文具",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 80,
+      "word": "newsagent",
+      "pos": "n",
+      "meaning": "报刊零售人",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 80,
+      "word": "chemist",
+      "pos": "n",
+      "meaning": "化剂师，化学家",
+      "topic": "🧑 人物称谓",
+      "subcategory": "职业身份"
+    },
+    {
+      "lesson": 82,
+      "word": "breakfast",
+      "pos": "n",
+      "meaning": "早饭",
+      "topic": "🍎 食物饮品",
+      "subcategory": "主食甜点"
+    },
+    {
+      "lesson": 82,
+      "word": "haircut",
+      "pos": "n",
+      "meaning": "理发",
+      "topic": "🎭 其他名词",
+      "subcategory": "抽象名词"
+    },
+    {
+      "lesson": 82,
+      "word": "party",
+      "pos": "n",
+      "meaning": "聚会",
+      "topic": "🎭 其他名词",
+      "subcategory": "抽象名词"
+    },
+    {
+      "lesson": 82,
+      "word": "holiday",
+      "pos": "n",
+      "meaning": "假日",
+      "topic": "🎭 其他名词",
+      "subcategory": "抽象名词"
+    },
+    {
+      "lesson": 94,
+      "word": "Athens",
+      "pos": "n",
+      "meaning": "雅典",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Berlin",
+      "pos": "n",
+      "meaning": "柏林",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Bombay",
+      "pos": "n",
+      "meaning": "孟买",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Geneva",
+      "pos": "n",
+      "meaning": "日内瓦",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Moscow",
+      "pos": "n",
+      "meaning": "莫斯科",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Rome",
+      "pos": "n",
+      "meaning": "罗马",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Seoul",
+      "pos": "n",
+      "meaning": "汉城",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Stockholm",
+      "pos": "n",
+      "meaning": "斯德哥尔摩",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 94,
+      "word": "Sydney",
+      "pos": "n",
+      "meaning": "悉尼",
+      "topic": "🏠 场所地点",
+      "subcategory": "国家城市"
+    },
+    {
+      "lesson": 104,
+      "word": "clever",
+      "pos": "adj",
+      "meaning": "聪明的",
+      "topic": "🌟 形容词",
+      "subcategory": "能力评价"
+    },
+    {
+      "lesson": 104,
+      "word": "stupid",
+      "pos": "adj",
+      "meaning": "笨的",
+      "topic": "🌟 形容词",
+      "subcategory": "能力评价"
+    },
+    {
+      "lesson": 104,
+      "word": "cheap",
+      "pos": "adj",
+      "meaning": "便宜的",
+      "topic": "🌟 形容词",
+      "subcategory": "能力评价"
+    },
+    {
+      "lesson": 104,
+      "word": "expensive",
+      "pos": "adj",
+      "meaning": "贵的",
+      "topic": "🌟 形容词",
+      "subcategory": "能力评价"
+    },
+    {
+      "lesson": 104,
+      "word": "fresh",
+      "pos": "adj",
+      "meaning": "新鲜的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 104,
+      "word": "stale",
+      "pos": "adj",
+      "meaning": "变馊的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 104,
+      "word": "low",
+      "pos": "adj",
+      "meaning": "低的，矮的",
+      "topic": "🌟 形容词",
+      "subcategory": "大小形状"
+    },
+    {
+      "lesson": 104,
+      "word": "loud",
+      "pos": "adj",
+      "meaning": "大声的",
+      "topic": "🌟 形容词",
+      "subcategory": "状态感受"
+    },
+    {
+      "lesson": 104,
+      "word": "hard",
+      "pos": "adj",
+      "meaning": "硬的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 104,
+      "word": "sweet",
+      "pos": "adj",
+      "meaning": "甜的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 104,
+      "word": "soft",
+      "pos": "adj",
+      "meaning": "软的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 104,
+      "word": "sour",
+      "pos": "adj",
+      "meaning": "酸的",
+      "topic": "🌟 形容词",
+      "subcategory": "品质特征"
+    },
+    {
+      "lesson": 106,
+      "word": "carry",
+      "pos": "v",
+      "meaning": "携带",
+      "topic": "🏃 动作行为",
+      "subcategory": "手部动作"
+    },
+    {
+      "lesson": 106,
+      "word": "correct",
+      "pos": "v",
+      "meaning": "改正，纠正",
+      "topic": "🏃 动作行为",
+      "subcategory": "其他动词"
+    },
+    {
+      "lesson": 110,
+      "word": "most",
+      "pos": "adj",
+      "meaning": "(many,much的最高级)最多的",
+      "topic": "📝 功能词",
+      "subcategory": "不定代词"
+    },
+    {
+      "lesson": 110,
+      "word": "least",
+      "pos": "adj",
+      "meaning": "(little的最高级)最小的，最少的",
+      "topic": "🌟 形容词",
+      "subcategory": "新旧好坏"
+    },
+    {
+      "lesson": 110,
+      "word": "best",
+      "pos": "adj",
+      "meaning": "(good的最高级)最好的",
+      "topic": "🌟 形容词",
+      "subcategory": "新旧好坏"
+    },
+    {
+      "lesson": 110,
+      "word": "worse",
+      "pos": "adj",
+      "meaning": "(bad的比较级)更坏的",
+      "topic": "🌟 形容词",
+      "subcategory": "新旧好坏"
+    },
+    {
+      "lesson": 110,
+      "word": "worst",
+      "pos": "adj",
+      "meaning": "(bad的最高级)最坏的",
+      "topic": "🌟 形容词",
+      "subcategory": "新旧好坏"
+    },
+    {
+      "lesson": 116,
+      "word": "asleep",
+      "pos": "adj",
+      "meaning": "睡觉，睡着(用作表语)",
+      "topic": "🌟 形容词",
+      "subcategory": "状态感受"
+    },
+    {
+      "lesson": 116,
+      "word": "glasses",
+      "pos": "n",
+      "meaning": "眼镜",
+      "topic": "👗 颜色服装",
+      "subcategory": "服装配饰"
+    },
+    {
+      "lesson": 118,
+      "word": "ring",
+      "pos": "v",
+      "meaning": "响",
+      "topic": "🏃 动作行为",
+      "subcategory": "交流动作"
+    },
+    {
+      "lesson": 120,
+      "word": "exercise book",
+      "pos": "",
+      "meaning": "练习本",
+      "topic": "📦 日常物品",
+      "subcategory": "学习办公用品"
+    },
+    {
+      "lesson": 122,
+      "word": "road",
+      "pos": "n",
+      "meaning": "路",
+      "topic": "🏠 场所地点",
+      "subcategory": "自然地理"
+    },
+    {
+      "lesson": 124,
+      "word": "kitten",
+      "pos": "n",
+      "meaning": "小猫",
+      "topic": "🎭 其他名词",
+      "subcategory": "动物"
+    },
+    {
+      "lesson": 126,
+      "word": "immediately",
+      "pos": "adv",
+      "meaning": "立即地",
+      "topic": "📝 功能词",
+      "subcategory": "副词"
+    },
+    {
+      "lesson": 142,
+      "word": "worried",
+      "pos": "adj",
+      "meaning": "担心，担忧",
+      "topic": "🌟 形容词",
+      "subcategory": "状态感受"
+    },
+    {
+      "lesson": 142,
+      "word": "regularly",
+      "pos": "adv",
+      "meaning": "经常地，定期地",
+      "topic": "📝 功能词",
+      "subcategory": "副词"
     }
   ]
 };
