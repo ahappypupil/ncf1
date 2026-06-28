@@ -154,6 +154,14 @@ body {
 }
 .sound-btn:hover { background:rgba(126,200,255,0.3); }
 .sound-btn.muted { opacity:0.35; }
+.voice-badge {
+  position:absolute; top:40px; right:8px;
+  font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px;
+  pointer-events:none; white-space:nowrap; line-height:1.4;
+  display:none; border:1px solid;
+}
+.voice-badge.youdao { background:rgba(52,211,153,0.18); color:#34d399; border-color:rgba(52,211,153,0.4); }
+.voice-badge.local  { background:rgba(251,191,36,0.18); color:#fbbf24; border-color:rgba(251,191,36,0.4); }
 
 /* 控制提示 */
 .controls-hint {
@@ -272,6 +280,7 @@ body {
     <div class="bottom-bar">
       <div class="target-box" id="targetBox">
         <button class="sound-btn" id="soundBtn" title="点击朗读 / 静音切换">🔊</button>
+        <span class="voice-badge" id="voiceBadge"></span>
         <div class="tgt-lbl" id="tgtLbl">翻译：</div>
         <div class="tgt-word" id="tgtWord">—</div>
         <div class="tgt-pos" id="tgtPos"></div>
@@ -520,20 +529,99 @@ function nextQuestion(){
   syncPlayerPos();
 }
 
-/* ===== 语音朗读 ===== */
+/* ===== 语音朗读（优先有道真人发音，失败回退本地TTS） ===== */
 let soundOn = true;
+let currentAudio = null;      // 有道音频元素
+let speakSource = 'none';    // 'youdao' | 'local' | 'none'
+
+function stopSpeech(){
+  if(currentAudio){
+    try{ currentAudio.pause(); currentAudio.src=''; }catch(e){}
+    currentAudio = null;
+  }
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+}
+
+function setVoiceBadge(src){
+  speakSource = src;
+  const badge = $('voiceBadge');
+  if(!badge) return;
+  badge.className = 'voice-badge';
+  if(src==='youdao'){
+    badge.textContent = '有道';
+    badge.classList.add('youdao');
+    badge.style.display = 'block';
+  } else if(src==='local'){
+    badge.textContent = '本地';
+    badge.classList.add('local');
+    badge.style.display = 'block';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
 function speak(text){
   if(!soundOn || !text) return;
-  if(!("speechSynthesis" in window)) return;
+  stopSpeech();
+  // 构造有道发音URL：英文用美音(type=2)，中文直接用
+  var isChinese = /[\u4e00-\u9fff]/.test(text);
+  var url = 'https://dict.youdao.com/dictvoice?audio=' + encodeURIComponent(text);
+  if(!isChinese) url += '&type=2';
+
+  var audio = new Audio();
+  currentAudio = audio;
+  var settled = false;
+
+  // 2.5秒超时：网络不通则回退本地
+  var timer = setTimeout(function(){
+    if(!settled && currentAudio===audio){
+      settled = true;
+      try{ audio.src=''; }catch(e){}
+      currentAudio = null;
+      speakLocal(text);
+    }
+  }, 2500);
+
+  // 网络错误 → 回退本地
+  audio.addEventListener('error', function(){
+    clearTimeout(timer);
+    if(!settled && currentAudio===audio){
+      settled = true;
+      currentAudio = null;
+      speakLocal(text);
+    }
+  });
+
+  audio.src = url;
+  audio.play().then(function(){
+    clearTimeout(timer);
+    if(!settled){
+      settled = true;
+      setVoiceBadge('youdao');
+    }
+  }).catch(function(){
+    clearTimeout(timer);
+    if(!settled && currentAudio===audio){
+      settled = true;
+      currentAudio = null;
+      speakLocal(text);
+    }
+  });
+}
+
+/* 本地 TTS 回退 */
+function speakLocal(text){
+  if(!('speechSynthesis' in window)){ setVoiceBadge('none'); return; }
   try{
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    // 自动检测语言：含中文字符 → 中文，否则 → 英文
-    u.lang = /[\u4e00-\u9fff]/.test(text) ? "zh-CN" : "en-US";
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = /[\u4e00-\u9fff]/.test(text) ? 'zh-CN' : 'en-US';
     u.rate = 0.9;
+    u.onstart = function(){ setVoiceBadge('local'); };
     window.speechSynthesis.speak(u);
-  }catch(e){}
+  }catch(e){ setVoiceBadge('none'); }
 }
+
 const soundBtn = $("soundBtn");
 soundBtn.onclick = function(e){
   e.stopPropagation();
@@ -541,7 +629,8 @@ soundBtn.onclick = function(e){
     soundOn = false;
     soundBtn.textContent = "🔇";
     soundBtn.classList.add("muted");
-    if("speechSynthesis" in window) window.speechSynthesis.cancel();
+    stopSpeech();
+    setVoiceBadge('none');
   } else {
     soundOn = true;
     soundBtn.textContent = "🔊";
