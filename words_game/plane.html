@@ -176,6 +176,11 @@ body {
 /* 暂停按钮 */
 .pause-btn { position:absolute; top:76px; right:14px; width:36px; height:36px; border-radius:9px; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:16px; cursor:pointer; z-index:12; display:none; }
 #gameScreen.active .pause-btn { display:block; }
+/* 背景音乐按钮 */
+.bgm-btn { position:absolute; top:76px; right:58px; width:36px; height:36px; border-radius:9px; background:rgba(0,0,0,0.5); border:1px solid rgba(255,255,255,0.15); color:#fbbf24; font-size:15px; cursor:pointer; z-index:12; display:none; transition:all .15s; }
+#gameScreen.active .bgm-btn { display:block; }
+.bgm-btn:hover { background:rgba(0,0,0,0.7); }
+.bgm-btn.muted { color:#666; }
 
 /* ===== 结束界面 ===== */
 #endScreen { align-items:center; justify-content:center; padding:20px; }
@@ -276,6 +281,7 @@ body {
         <div class="hp-bar" id="hpBar"></div>
       </div>
     </div>
+    <button class="bgm-btn" id="bgmBtn" title="背景音乐开关">🎵</button>
     <button class="pause-btn" id="pauseBtn">⏸</button>
     <div class="bottom-bar">
       <div class="target-box" id="targetBox">
@@ -544,6 +550,151 @@ function nextQuestion(){
   updateProgress();
   syncPlayerPos();
 }
+
+/* ===== 背景音乐（Web Audio API 程序生成） ===== */
+let bgmCtx=null, bgmGain=null;
+let bgmOn=true, bgmActive=false;
+let bgmTimer=null, bgmStep=0, bgmNextTime=0;
+
+function ensureBGMCtx(){
+  if(bgmCtx) return;
+  try{
+    bgmCtx=new (window.AudioContext||window.webkitAudioContext)();
+    bgmGain=bgmCtx.createGain();
+    bgmGain.gain.value=0.13;
+    bgmGain.connect(bgmCtx.destination);
+  }catch(e){ bgmCtx=null; }
+}
+
+// 音名 -> 频率
+function nf(n){
+  const N={'C':0,'C#':1,'D':2,'D#':3,'E':4,'F':5,'F#':6,'G':7,'G#':8,'A':9,'A#':10,'B':11};
+  const m=n.match(/^([A-G]#?)(\d)$/);
+  if(!m) return 0;
+  return 440*Math.pow(2,(N[m[1]]+(parseInt(m[2])-4)*12-9)/12);
+}
+
+const BGM_BPM=108;
+const BGM_STEP=60/BGM_BPM/4; // 16分音符时长
+
+// 旋律（32步=4小节循环）
+const BGM_MEL=[
+  'C5',null,'E5','G5','E5',null,'G5',null,'A5',null,'G5','E5','D5',null,null,null,
+  'E5',null,'G5','C5','B4',null,'C5',null,'D5',null,'E5','D5','C5',null,null,null,
+];
+// 低音
+const BGM_BAS=[
+  'C3',null,null,null,'C3',null,null,null,'F2',null,null,null,'G2',null,null,null,
+  'C3',null,null,null,'E3',null,null,null,'G2',null,null,null,'G2',null,null,null,
+];
+// 鼓点(1=底鼓 2=军鼓 3=踩镲)
+const BGM_DRM=[
+  1,null,3,null,2,null,3,null,1,null,3,null,2,null,3,null,
+  1,null,3,null,2,null,3,null,1,null,3,null,2,null,3,null,
+];
+
+function bgmNote(freq,t,dur,type,vol){
+  if(!freq) return;
+  const o=bgmCtx.createOscillator(), g=bgmCtx.createGain();
+  o.type=type; o.frequency.value=freq;
+  g.gain.setValueAtTime(0,t);
+  g.gain.linearRampToValueAtTime(vol,t+0.008);
+  g.gain.exponentialRampToValueAtTime(0.001,t+dur);
+  o.connect(g); g.connect(bgmGain);
+  o.start(t); o.stop(t+dur);
+}
+
+function bgmDrum(t,type){
+  if(type===1){ // 底鼓
+    const o=bgmCtx.createOscillator(), g=bgmCtx.createGain();
+    o.frequency.setValueAtTime(150,t);
+    o.frequency.exponentialRampToValueAtTime(40,t+0.12);
+    g.gain.setValueAtTime(0.28,t);
+    g.gain.exponentialRampToValueAtTime(0.001,t+0.12);
+    o.connect(g); g.connect(bgmGain);
+    o.start(t); o.stop(t+0.12);
+  } else if(type===2){ // 军鼓(noise)
+    const buf=bgmCtx.createBuffer(1,bgmCtx.sampleRate*0.08,bgmCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1;
+    const n=bgmCtx.createBufferSource(); n.buffer=buf;
+    const g=bgmCtx.createGain(), f=bgmCtx.createBiquadFilter();
+    f.type='highpass'; f.frequency.value=1000;
+    g.gain.setValueAtTime(0.14,t);
+    g.gain.exponentialRampToValueAtTime(0.001,t+0.08);
+    n.connect(f); f.connect(g); g.connect(bgmGain);
+    n.start(t); n.stop(t+0.08);
+  } else if(type===3){ // 踩镲(noise高频)
+    const buf=bgmCtx.createBuffer(1,bgmCtx.sampleRate*0.03,bgmCtx.sampleRate);
+    const d=buf.getChannelData(0);
+    for(let i=0;i<d.length;i++) d[i]=Math.random()*2-1;
+    const n=bgmCtx.createBufferSource(); n.buffer=buf;
+    const g=bgmCtx.createGain(), f=bgmCtx.createBiquadFilter();
+    f.type='highpass'; f.frequency.value=6000;
+    g.gain.setValueAtTime(0.05,t);
+    g.gain.exponentialRampToValueAtTime(0.001,t+0.03);
+    n.connect(f); f.connect(g); g.connect(bgmGain);
+    n.start(t); n.stop(t+0.03);
+  }
+}
+
+function scheduleBGM(){
+  if(!bgmActive||!bgmCtx) return;
+  while(bgmNextTime < bgmCtx.currentTime + 0.2){
+    const s=bgmStep % 32;
+    const m=BGM_MEL[s];
+    if(m) bgmNote(nf(m),bgmNextTime,BGM_STEP*1.8,'square',0.07);
+    const b=BGM_BAS[s];
+    if(b) bgmNote(nf(b),bgmNextTime,BGM_STEP*2.5,'triangle',0.11);
+    const d=BGM_DRM[s];
+    if(d) bgmDrum(bgmNextTime,d);
+    bgmNextTime += BGM_STEP;
+    bgmStep++;
+  }
+  bgmTimer=setTimeout(scheduleBGM,50);
+}
+
+function startBGM(){
+  if(!bgmOn) return;
+  ensureBGMCtx();
+  if(!bgmCtx) return;
+  if(bgmCtx.state==='suspended') bgmCtx.resume();
+  bgmActive=true; bgmStep=0;
+  bgmNextTime=bgmCtx.currentTime+0.1;
+  scheduleBGM();
+}
+function stopBGM(){
+  bgmActive=false;
+  if(bgmTimer){ clearTimeout(bgmTimer); bgmTimer=null; }
+}
+function pauseBGM(){
+  bgmActive=false;
+  if(bgmTimer){ clearTimeout(bgmTimer); bgmTimer=null; }
+}
+function resumeBGM(){
+  if(!bgmOn||!bgmCtx) return;
+  if(bgmCtx.state==='suspended') bgmCtx.resume();
+  bgmActive=true;
+  bgmNextTime=bgmCtx.currentTime+0.1;
+  scheduleBGM();
+}
+
+// 背景音乐按钮
+const bgmBtn=$('bgmBtn');
+bgmBtn.onclick=function(e){
+  e.stopPropagation();
+  if(bgmOn){
+    bgmOn=false;
+    bgmBtn.textContent='🔇';
+    bgmBtn.classList.add('muted');
+    stopBGM();
+  } else {
+    bgmOn=true;
+    bgmBtn.textContent='🎵';
+    bgmBtn.classList.remove('muted');
+    if(game.running && !game.paused) startBGM();
+  }
+};
 
 /* ===== 语音朗读（优先有道真人发音，失败回退本地TTS） ===== */
 let soundOn = true;
@@ -1083,12 +1234,15 @@ function startGame(){
   game.raf=requestAnimationFrame(loop);
   // 延迟一帧同步飞机位置，确保DOM布局完成
   requestAnimationFrame(syncPlayerPos);
+  // 启动背景音乐
+  startBGM();
 }
 
 function endGame(){
   if(!game.running) return;
   game.running=false;
   game.spawnQueue=[];
+  stopBGM();
   cancelAnimationFrame(game.raf);
   $('endScore').textContent=game.score;
   $('endKill').textContent=game.correctKill;
@@ -1114,12 +1268,14 @@ function togglePause(){
   if(!game.running) return;
   game.paused=!game.paused;
   $('pauseOverlay').classList.toggle('show',game.paused);
+  if(game.paused) pauseBGM(); else resumeBGM();
 }
 $('pauseBtn').onclick=togglePause;
 $('resumeBtn').onclick=togglePause;
 $('quitBtn').onclick=()=>{
   game.running=false; game.paused=false;
   game.spawnQueue=[];
+  stopBGM();
   cancelAnimationFrame(game.raf);
   $('pauseOverlay').classList.remove('show');
   gameScreen.classList.remove('active');
